@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Projeto Android Nativo</string>
+    <string name="contactos">Contactos</string>
+    <string name="estou_em_perigo">Estou em Perigo?</string>
+    <string name="lista_de_testes">Lista</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="extra">Extra</string>
 </resources>
