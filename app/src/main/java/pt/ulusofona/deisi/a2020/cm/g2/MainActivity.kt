@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, ListaActivity::class.java))
             finish()
         }
+
+
     }
 
     override fun onResume() {
