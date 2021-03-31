@@ -10,4 +10,5 @@
     <color name="orange">#FF8C00</color>
     <color name="blue">	#0000FF</color>
     <color name="second_blue">#0000CD</color>
+    <color name="grey">#CCCCCC</color>
 </resources>
