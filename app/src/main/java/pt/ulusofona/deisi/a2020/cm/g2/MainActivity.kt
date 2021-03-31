@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
     override fun onStart() {
         super.onStart()
+        //teste
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
