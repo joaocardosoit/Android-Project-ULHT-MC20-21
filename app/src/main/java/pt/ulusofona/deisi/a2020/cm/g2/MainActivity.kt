@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 var testes: MutableList<Teste> = mutableListOf(Teste(20, 10, 30, "Lisboa"))
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,12 +19,14 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
     override fun onStart() {
         super.onStart()
-        //teste
+        bottom_navigation.selectedItemId = R.id.ic_lista
+        NavigationManager.goToListaFragment(supportFragmentManager)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.ic_lista -> NavigationManager.goToListaFragment(supportFragmentManager)
+            R.id.ic_contactos -> NavigationManager.goToContactosFragment(supportFragmentManager)
         }
         return true
     }

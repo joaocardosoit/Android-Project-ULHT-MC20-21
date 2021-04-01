@@ -7,17 +7,11 @@
     android:layout_height="match_parent"
     tools:context="pt.ulusofona.deisi.a2020.cm.g2.MainActivity">
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_above="@+id/bottom_navigation">
-
-        <FrameLayout
-            android:id="@+id/frame_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </LinearLayout>
+        android:layout_above="@id/bottom_navigation"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
