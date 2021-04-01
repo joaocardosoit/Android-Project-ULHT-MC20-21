@@ -25,6 +25,12 @@
         <item name="android:itemBackground">@color/white</item>
     </style>
 
+    <style name="NavFABTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="android:itemBackground">@color/blue</item>
+        <item name="colorOnSecondary">@color/black</item>
+    </style>
+
     <style name="ToolbarTheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/blue</item>
         <item name="android:itemBackground">@color/white</item>

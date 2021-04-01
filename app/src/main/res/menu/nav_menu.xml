@@ -2,14 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/ic_contactos"
-        android:icon="@drawable/ic_baseline_contact_phone_24"
-        android:title="@string/contactos"/>
-    <item
-        android:id="@+id/ic_perigo"
-        android:icon="@drawable/ic_baseline_emoji_people_24"
-        android:title="@string/estou_em_perigo"/>
-    <item
         android:id="@+id/ic_lista"
         android:icon="@drawable/ic_baseline_format_list_bulleted_24"
         android:title="@string/lista_de_testes"/>
@@ -17,6 +9,13 @@
         android:id="@+id/ic_dashboard"
         android:icon="@drawable/ic_baseline_dashboard_24"
         android:title="@string/dashboard"/>
+    <item
+        android:id="@+id/ic_perigo"
+        android:title="" />
+    <item
+        android:id="@+id/ic_contactos"
+        android:icon="@drawable/ic_baseline_contact_phone_24"
+        android:title="@string/contactos"/>
     <item
         android:id="@+id/ic_extra"
         android:icon="@drawable/ic_baseline_help_24"

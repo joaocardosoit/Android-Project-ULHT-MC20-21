@@ -23,5 +23,9 @@ abstract class NavigationManager {
         fun goToAdicionarTesteFragment(fm: FragmentManager){
             placeFragment(fm, AdicionarTesteFragment())
         }
+
+        fun goToEstouPerigoFragment(fm: FragmentManager){
+            placeFragment(fm, EstouPerigoFragment())
+        }
     }
 }

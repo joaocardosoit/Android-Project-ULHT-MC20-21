@@ -21,7 +21,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_navigation"
-        android:layout_below="@id/toolbar_main"/>
+        android:layout_below="@id/toolbar_main">
+    </FrameLayout>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -33,5 +35,16 @@
         app:itemTextColor="@color/bnv_tab_item_foreground"
         app:labelVisibilityMode="labeled"
         android:theme="@style/BottomNavigationTheme"
-        app:menu="@menu/nav_menu"/>
+        app:menu="@menu/nav_menu">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/ic_perigo_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:contentDescription="@string/estou_em_perigo"
+            android:src="@drawable/ic_sos"
+            android:theme="@style/NavFABTheme"
+            android:backgroundTint="@color/orange" />
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 </RelativeLayout>

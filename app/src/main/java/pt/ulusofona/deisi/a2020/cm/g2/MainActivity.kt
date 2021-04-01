@@ -1,10 +1,15 @@
 package pt.ulusofona.deisi.a2020.cm.g2
 
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.core.graphics.toColor
+import butterknife.OnClick
+import butterknife.Optional
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -26,14 +31,25 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         super.onStart()
         bottom_navigation.selectedItemId = R.id.ic_lista
         NavigationManager.goToListaFragment(supportFragmentManager)
+        onClickFab()
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
+            R.id.ic_perigo -> {
+                bottom_navigation.isSelected = false
+                NavigationManager.goToListaFragment(supportFragmentManager)}
             R.id.ic_lista -> NavigationManager.goToListaFragment(supportFragmentManager)
             R.id.ic_contactos -> NavigationManager.goToContactosFragment(supportFragmentManager)
         }
         return true
+    }
+
+    fun onClickFab(){
+        ic_perigo_fab.setOnClickListener{
+            bottom_navigation.selectedItemId = R.id.ic_perigo
+            NavigationManager.goToEstouPerigoFragment(supportFragmentManager)
+        }
     }
 
     private fun bottomNavigation(){

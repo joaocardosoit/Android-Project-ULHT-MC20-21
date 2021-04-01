@@ -11,4 +11,5 @@
     <color name="blue">	#0000FF</color>
     <color name="second_blue">#0000CD</color>
     <color name="grey">#CCCCCC</color>
+    <color name="green">#00CC00</color>
 </resources>
