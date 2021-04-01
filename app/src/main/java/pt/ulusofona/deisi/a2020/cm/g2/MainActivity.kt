@@ -39,9 +39,15 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     private fun bottomNavigation(){
         bottom_navigation.setOnNavigationItemSelectedListener{ item ->
             when(item.itemId){
-                R.id.ic_lista -> {NavigationManager.goToListaFragment(supportFragmentManager)
+                R.id.ic_lista -> {
+                    toolbar_main.title = "MyCovid-19"
+                    toolbar_main.navigationIcon = null
+                    NavigationManager.goToListaFragment(supportFragmentManager)
                     true}
-                R.id.ic_contactos -> {NavigationManager.goToContactosFragment(supportFragmentManager)
+                R.id.ic_contactos -> {
+                    toolbar_main.title = "MyCovid-19"
+                    toolbar_main.navigationIcon = null
+                    NavigationManager.goToContactosFragment(supportFragmentManager)
                     true}
                 else -> true
             }
