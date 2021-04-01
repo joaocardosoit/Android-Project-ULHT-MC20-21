@@ -24,5 +24,13 @@ class ListaFragment : Fragment() {
         super.onStart()
         list_casos.layoutManager = LinearLayoutManager(activity as Context)
         list_casos.adapter = ListaAdapter(activity as Context, R.layout.item_lista, testes)
+
+        fab.setOnClickListener(){
+            activity?.supportFragmentManager?.let { NavigationManager.goToAdicionarTesteFragment(it)}
+        }
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
     }
 }

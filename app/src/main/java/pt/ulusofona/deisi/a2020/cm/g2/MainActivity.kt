@@ -8,13 +8,18 @@ import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_adicionar_teste.*
 
-var testes: MutableList<Teste> = mutableListOf(Teste(20, 10, 30, "Lisboa"))
+var testes: MutableList<Teste> = mutableListOf(Teste("01/04/2020", "Positivo", true, "Sintra"))
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setSupportActionBar(toolbar_main)
+        bottomNavigation()
     }
 
     override fun onStart() {
@@ -29,6 +34,18 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             R.id.ic_contactos -> NavigationManager.goToContactosFragment(supportFragmentManager)
         }
         return true
+    }
+
+    private fun bottomNavigation(){
+        bottom_navigation.setOnNavigationItemSelectedListener{ item ->
+            when(item.itemId){
+                R.id.ic_lista -> {NavigationManager.goToListaFragment(supportFragmentManager)
+                    true}
+                R.id.ic_contactos -> {NavigationManager.goToContactosFragment(supportFragmentManager)
+                    true}
+                else -> true
+            }
+        }
     }
 
     override fun onResume() {

@@ -19,5 +19,9 @@ abstract class NavigationManager {
         fun goToContactosFragment(fm: FragmentManager){
             placeFragment(fm, ContactosFragment())
         }
+
+        fun goToAdicionarTesteFragment(fm: FragmentManager){
+            placeFragment(fm, AdicionarTesteFragment())
+        }
     }
 }

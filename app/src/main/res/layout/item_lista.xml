@@ -15,20 +15,20 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/text_cidade"
+            android:id="@+id/text_data"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="22sp"
-            android:textColor="@color/orange"
+            android:textColor="@color/white"
             android:textStyle="bold"
             />
         <TextView
-            android:id="@+id/text_numCasos"
+            android:id="@+id/text_resultado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="22sp"
-            android:textColor="@color/orange"
-            android:layout_toEndOf="@+id/text_cidade"
+            android:textColor="@color/white"
+            android:layout_below="@id/text_data"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             />

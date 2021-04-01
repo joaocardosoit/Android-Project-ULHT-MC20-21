@@ -22,4 +22,8 @@ class ContactosFragment : Fragment() {
         expandableListView.setAdapter(pt.ulusofona.deisi.a2020.cm.g2.ExpandableListAdapter(activity as Context, assunto, conteudo))
         super.onStart()
     }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+    }
 }
