@@ -17,11 +17,11 @@ class DashboardFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        //mostrarNumeros(numerosCovid, )
+        mostrarNumeros(numerosCovid, numerosCovid.size-1)
         return inflater.inflate(R.layout.fragment_dashboard, container, false)
     }
 
-    fun mostrarNumeros(lista: MutableList<NumsCovid>, position: Int){
+    private fun mostrarNumeros(lista: MutableList<NumsCovid>, position: Int){
         num_infetados.text = lista[position].numInfetados.toString()
         num_mortes.text = lista[position].numMortes.toString()
         num_recuperados.text = lista[position].numRecuperados.toString()

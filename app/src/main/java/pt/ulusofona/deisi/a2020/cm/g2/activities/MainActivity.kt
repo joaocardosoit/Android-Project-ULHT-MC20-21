@@ -11,17 +11,16 @@ import pt.ulusofona.deisi.a2020.cm.g2.R
 import pt.ulusofona.deisi.a2020.cm.g2.models.NumsCovid
 import pt.ulusofona.deisi.a2020.cm.g2.models.Teste
 
-var numerosCovid: MutableList<NumsCovid> = mutableListOf(NumsCovid(1000, 237, 763, 5000, 1110, 2000))
+var numerosCovid: MutableList<NumsCovid> = mutableListOf()
 var testes: MutableList<Teste> = mutableListOf(Teste("01/04/2020", "Positivo", true, "Sintra"))
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar_main)
         bottomNavigation()
+        numerosCovid.add(NumsCovid(1000, 237, 763, 5000, 1110, 2000))
     }
 
     override fun onStart() {
@@ -42,7 +41,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         return true
     }
 
-    fun onClickFab(){
+    private fun onClickFab(){
         ic_perigo_fab.setOnClickListener{
             toolbar_main.title = "MyCovid-19"
             toolbar_main.navigationIcon = null
