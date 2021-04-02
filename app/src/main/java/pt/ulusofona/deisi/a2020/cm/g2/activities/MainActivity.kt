@@ -44,6 +44,8 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
     fun onClickFab(){
         ic_perigo_fab.setOnClickListener{
+            toolbar_main.title = "MyCovid-19"
+            toolbar_main.navigationIcon = null
             bottom_navigation.selectedItemId = R.id.ic_perigo
             NavigationManager.goToEstouPerigoFragment(supportFragmentManager)
         }
