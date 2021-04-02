@@ -1,7 +1,9 @@
-package pt.ulusofona.deisi.a2020.cm.g2
+package pt.ulusofona.deisi.a2020.cm.g2.utils
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import pt.ulusofona.deisi.a2020.cm.g2.R
+import pt.ulusofona.deisi.a2020.cm.g2.fragments.*
 
 abstract class NavigationManager {
     companion object{
@@ -26,6 +28,10 @@ abstract class NavigationManager {
 
         fun goToEstouPerigoFragment(fm: FragmentManager){
             placeFragment(fm, EstouPerigoFragment())
+        }
+
+        fun goToDashboardFragment(fm: FragmentManager){
+            placeFragment(fm, DashboardFragment())
         }
     }
 }

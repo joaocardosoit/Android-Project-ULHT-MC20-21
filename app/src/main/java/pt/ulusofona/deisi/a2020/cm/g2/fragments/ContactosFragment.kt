@@ -1,4 +1,4 @@
-package pt.ulusofona.deisi.a2020.cm.g2
+package pt.ulusofona.deisi.a2020.cm.g2.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_contactos.*
+import pt.ulusofona.deisi.a2020.cm.g2.R
+import pt.ulusofona.deisi.a2020.cm.g2.adapters.ExpandableListAdapter
 
 class ContactosFragment : Fragment() {
 
@@ -19,7 +21,7 @@ class ContactosFragment : Fragment() {
 
     override fun onStart() {
 
-        expandableListView.setAdapter(pt.ulusofona.deisi.a2020.cm.g2.ExpandableListAdapter(activity as Context, assunto, conteudo))
+        expandableListView.setAdapter(ExpandableListAdapter(activity as Context, assunto, conteudo))
         super.onStart()
     }
 

@@ -1,12 +1,12 @@
-package pt.ulusofona.deisi.a2020.cm.g2
+package pt.ulusofona.deisi.a2020.cm.g2.adapters
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
 import android.widget.TextView
+import pt.ulusofona.deisi.a2020.cm.g2.R
 
 class ExpandableListAdapter (var context: Context, var assunto: MutableList<String>, var conteudo: MutableList<MutableList<String>>) : BaseExpandableListAdapter() {
     override fun getGroup(groupPosition: Int): String {

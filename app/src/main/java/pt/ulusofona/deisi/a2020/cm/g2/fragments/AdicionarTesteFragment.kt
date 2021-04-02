@@ -1,14 +1,13 @@
-package pt.ulusofona.deisi.a2020.cm.g2
+package pt.ulusofona.deisi.a2020.cm.g2.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_adicionar_teste.*
+import pt.ulusofona.deisi.a2020.cm.g2.utils.NavigationManager
+import pt.ulusofona.deisi.a2020.cm.g2.R
 
 class AdicionarTesteFragment : Fragment() {
 
@@ -27,7 +26,7 @@ class AdicionarTesteFragment : Fragment() {
         activity?.toolbar_main?.setNavigationOnClickListener{
             activity?.toolbar_main?.title = "MyCovid-19"
             activity?.toolbar_main?.navigationIcon = null
-            activity?.supportFragmentManager?.let { NavigationManager.goToListaFragment(it)}
+            activity?.supportFragmentManager?.let { NavigationManager.goToListaFragment(it) }
         }
     }
 

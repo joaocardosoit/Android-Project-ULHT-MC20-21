@@ -7,8 +7,14 @@
     <string name="extra">Extra</string>
     <string name="data">Data: </string>
     <string name="resultado">Resultado: </string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="adicionar">Adicionar</string>
     <string name="voltar">Voltar</string>
+    <string name="numDiarios">Veja aqui os numeros da Covid-19</string>
+    <string name="num_infetados">Infetados Diários</string>
+    <string name="num_mortes">Mortes Diárias</string>
+    <string name="num_recuperados">Recuperados Diários</string>
+    <string name="num_total_infetados">Total de Infetados</string>
+    <string name="num_total_mortes">Total de Mortes</string>
+    <string name="num_total_recuperados">Total de Recuperados</string>
 </resources>

@@ -1,4 +1,4 @@
-package pt.ulusofona.deisi.a2020.cm.g2
+package pt.ulusofona.deisi.a2020.cm.g2.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -8,6 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_lista.*
+import pt.ulusofona.deisi.a2020.cm.g2.utils.NavigationManager
+import pt.ulusofona.deisi.a2020.cm.g2.R
+import pt.ulusofona.deisi.a2020.cm.g2.activities.testes
+import pt.ulusofona.deisi.a2020.cm.g2.adapters.ListaAdapter
 
 class ListaFragment : Fragment() {
 
@@ -26,7 +30,7 @@ class ListaFragment : Fragment() {
         list_casos.adapter = ListaAdapter(activity as Context, R.layout.item_lista, testes)
 
         fab.setOnClickListener(){
-            activity?.supportFragmentManager?.let { NavigationManager.goToAdicionarTesteFragment(it)}
+            activity?.supportFragmentManager?.let { NavigationManager.goToAdicionarTesteFragment(it) }
         }
     }
 

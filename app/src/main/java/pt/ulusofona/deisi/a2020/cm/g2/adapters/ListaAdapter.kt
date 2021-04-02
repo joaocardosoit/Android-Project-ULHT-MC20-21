@@ -1,4 +1,4 @@
-package pt.ulusofona.deisi.a2020.cm.g2
+package pt.ulusofona.deisi.a2020.cm.g2.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_lista.view.*
+import pt.ulusofona.deisi.a2020.cm.g2.models.Teste
 
 class ListaAdapter(private val context: Context, private val layout: Int, private val items: MutableList<Teste>): RecyclerView.Adapter<ListaAdapter.ListaViewHolder>() {
 
