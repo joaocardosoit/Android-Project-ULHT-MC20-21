@@ -17,4 +17,23 @@
     <string name="num_total_infetados">Total de Infetados</string>
     <string name="num_total_mortes">Total de Mortes</string>
     <string name="num_total_recuperados">Total de Recuperados</string>
+    <string name="contactos_telefonicos">Contactos Telefónicos COVID19</string>
+    <string name="contactos_digitais">Contactos Digitais COVID19</string>
+    <string name="num_telefone_1">+351 808 24 24 24</string>
+    <string name="num_telefone_2">+351 300 502 502</string>
+    <string name="num_telefone_3">+351 217 929 714</string>
+    <string name="num_telefone_4">+351 961 706 472</string>
+    <string name="descricao_contactos_1">Linha SNS 24 para triagem de sintomas e esclarecimento de dúvidas sobre COIVD19</string>
+    <string name="descricao_contactos_2">Linha Segurança Social para esclarecimentos sobre assistência à fam+ilia, subsidio de doença e quarentena</string>
+    <string name="descricao_contactos_3">Gabinete de Emergência Consular</string>
+    <string name="contacto_digital_1">covid19.min-saude.pt</string>
+    <string name="contacto_digital_2">atendimento@SNS24.gov.pt</string>
+    <string name="contacto_digital_3">gec@mne.pt</string>
+    <string name="contacto_digital_4">Legislação COVID19</string>
+    <string name="descricao_contacto_digital_1">Plataforma da DGS para esclarecimentos sobre a COVID-19</string>
+    <string name="descricao_contacto_digital_2">Canal SNS 24 para esclarecimentos de dúvidas. Não utilizar para diagnóstico médico</string>
+    <string name="descricao_contacto_digital_3">Gabinete de Emergência Consular</string>
+    <string name="descricao_contacto_digital_4">Área do Diário da República Eletrónico dedicada à legislação relativa à pandemia</string>
+
+
 </resources>
