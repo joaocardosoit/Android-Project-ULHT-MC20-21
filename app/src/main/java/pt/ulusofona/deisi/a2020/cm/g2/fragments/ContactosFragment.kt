@@ -34,7 +34,7 @@ class ContactosFragment : Fragment() {
         val contactosTelefonico: MutableList<String> = ArrayList()
         contactosTelefonico.add(getString(R.string.num_telefone_1) + "\n" + getString(R.string.descricao_contactos_1))
         contactosTelefonico.add(getString(R.string.num_telefone_2) + "\n" + getString(R.string.descricao_contactos_2))
-        contactosTelefonico.add(getString(R.string.num_telefone_3) + " e " + getString(R.string.num_telefone_4) + "\n" + getString(R.string.descricao_contactos_3))
+        contactosTelefonico.add(getString(R.string.num_telefone_3) + " \n" + getString(R.string.num_telefone_4) + "\n" + getString(R.string.descricao_contactos_3))
 
         val contactosDigitias: MutableList<String> = ArrayList()
         contactosDigitias.add(getString(R.string.contacto_digital_1) + "\n" + getString(R.string.descricao_contacto_digital_1))
