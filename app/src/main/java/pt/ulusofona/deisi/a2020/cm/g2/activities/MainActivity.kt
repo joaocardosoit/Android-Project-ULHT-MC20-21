@@ -67,6 +67,11 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                     toolbar_main.navigationIcon = null
                     NavigationManager.goToDashboardFragment(supportFragmentManager)
                     true}
+                R.id.ic_extra -> {
+                    toolbar_main.title = "MyCovid-19"
+                    toolbar_main.navigationIcon = null
+                    NavigationManager.goToExtraFragment(supportFragmentManager)
+                    true}
                 else -> true
             }
         }

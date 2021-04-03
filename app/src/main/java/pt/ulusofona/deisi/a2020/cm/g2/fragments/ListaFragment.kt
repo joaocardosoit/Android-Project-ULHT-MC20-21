@@ -12,8 +12,10 @@ import pt.ulusofona.deisi.a2020.cm.g2.utils.NavigationManager
 import pt.ulusofona.deisi.a2020.cm.g2.R
 import pt.ulusofona.deisi.a2020.cm.g2.activities.testes
 import pt.ulusofona.deisi.a2020.cm.g2.adapters.ListaAdapter
+import pt.ulusofona.deisi.a2020.cm.g2.listeners.OnClickItemListener
+import pt.ulusofona.deisi.a2020.cm.g2.models.Teste
 
-class ListaFragment : Fragment() {
+class ListaFragment : Fragment(), OnClickItemListener {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,14 +29,14 @@ class ListaFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         list_casos.layoutManager = LinearLayoutManager(activity as Context)
-        list_casos.adapter = ListaAdapter(activity as Context, R.layout.item_lista, testes)
+        list_casos.adapter = ListaAdapter(activity as Context, R.layout.item_lista, testes, this)
 
         fab.setOnClickListener(){
             activity?.supportFragmentManager?.let { NavigationManager.goToAdicionarTesteFragment(it) }
         }
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onClickItem(teste: Teste) {
+        activity?.supportFragmentManager?.let { NavigationManager.goToDetalhesTesteFragment(it, teste) }
     }
 }
