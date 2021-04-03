@@ -29,7 +29,7 @@
                 android:textSize="15sp" />
 
             <EditText
-                android:id="@+id/brand"
+                android:id="@+id/resultado"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
@@ -52,7 +52,7 @@
                 android:textSize="15sp" />
 
             <EditText
-                android:id="@+id/model"
+                android:id="@+id/local"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
@@ -88,7 +88,7 @@
 
 
             <ImageView
-                android:id="@+id/image_edit"
+                android:id="@+id/image_add"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
@@ -98,7 +98,7 @@
 
 
             <Button
-                android:id="@+id/edit_button"
+                android:id="@+id/save_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
