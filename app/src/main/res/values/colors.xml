@@ -13,4 +13,5 @@
     <color name="grey">#CCCCCC</color>
     <color name="green">#00CC00</color>
     <color name="soft_grey">#DCDCDC</color>
+    <color name="red">#FF0000</color>
 </resources>

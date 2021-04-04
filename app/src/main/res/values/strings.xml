@@ -6,7 +6,7 @@
     <string name="dashboard">Dashboard</string>
     <string name="extra">Extra</string>
     <string name="data">Data: </string>
-    <string name="resultado">Resultado: </string>
+    <string name="resultado">Resultado:\u0020</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="adicionar">Adicionar</string>
     <string name="voltar">Voltar</string>
@@ -44,6 +44,10 @@
     <string name="guardar">Guardar</string>
     <string name="foto">Foto</string>
     <string name="filtro">Filtro</string>
+    <string name="alto">Alto</string>
+    <string name="nivel_de_risto">Nivel de risto:\u0020</string>
+    <string name="posicao_atual">Posição atual:\u0020</string>
+    <string name="lisboa">Lisboa</string>
 
 
 </resources>
