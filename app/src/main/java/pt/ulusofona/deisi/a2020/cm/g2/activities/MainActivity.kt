@@ -3,7 +3,9 @@ package pt.ulusofona.deisi.a2020.cm.g2.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import pt.ulusofona.deisi.a2020.cm.g2.utils.NavigationManager
@@ -40,10 +42,29 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         return true
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.toolbar_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when(item?.itemId){
+            R.id.filtro -> {
+                val dialogBuilder: AlertDialog.Builder = AlertDialog.Builder(this)
+                val listaDialog = mutableListOf<String>("Crescente", "Decrescente")
+                dialogBuilder.setTitle("Ordenar Lista")
+                dialogBuilder.setMessage("Escolha uma opção")
+                //dialogBuilder.setSingleChoiceItems(listaDialog, -1){}
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     private fun onClickFab(){
         ic_perigo_fab.setOnClickListener{
             toolbar_main.title = "MyCovid-19"
             toolbar_main.navigationIcon = null
+            toolbar_main.menu.findItem(R.id.filtro).setVisible(false)
             bottom_navigation.selectedItemId = R.id.ic_perigo
             NavigationManager.goToEstouPerigoFragment(supportFragmentManager)
         }
@@ -60,16 +81,19 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                 R.id.ic_contactos -> {
                     toolbar_main.title = "MyCovid-19"
                     toolbar_main.navigationIcon = null
+                    toolbar_main.menu.findItem(R.id.filtro).setVisible(false)
                     NavigationManager.goToContactosFragment(supportFragmentManager)
                     true}
                 R.id.ic_dashboard -> {
                     toolbar_main.title = "MyCovid-19"
                     toolbar_main.navigationIcon = null
+                    toolbar_main.menu.findItem(R.id.filtro).setVisible(false)
                     NavigationManager.goToDashboardFragment(supportFragmentManager)
                     true}
                 R.id.ic_extra -> {
                     toolbar_main.title = "MyCovid-19"
                     toolbar_main.navigationIcon = null
+                    toolbar_main.menu.findItem(R.id.filtro).setVisible(false)
                     NavigationManager.goToExtraFragment(supportFragmentManager)
                     true}
                 else -> true

@@ -43,6 +43,7 @@
     <string name="imagem_do_teste">Imagem do teste</string>
     <string name="guardar">Guardar</string>
     <string name="foto">Foto</string>
+    <string name="filtro">Filtro</string>
 
 
 </resources>
