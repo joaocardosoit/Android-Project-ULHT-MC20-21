@@ -18,9 +18,6 @@ import pt.ulusofona.deisi.a2020.cm.g2.models.Teste
 class ListaFragment : Fragment(), OnClickItemListener {
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_lista, container, false)
@@ -31,7 +28,7 @@ class ListaFragment : Fragment(), OnClickItemListener {
         list_casos.layoutManager = LinearLayoutManager(activity as Context)
         list_casos.adapter = ListaAdapter(activity as Context, R.layout.item_lista, testes, this)
 
-        fab.setOnClickListener(){
+        fab_add.setOnClickListener(){
             activity?.supportFragmentManager?.let { NavigationManager.goToAdicionarTesteFragment(it) }
         }
     }

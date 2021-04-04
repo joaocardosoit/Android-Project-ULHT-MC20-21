@@ -17,12 +17,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
+            android:id="@+id/fab_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:backgroundTint="@color/orange"
-            android:theme="@style/FABTheme"
+            android:theme="@style/FABAddTheme"
             android:layout_margin="16dp"
             android:contentDescription="@string/adicionar"
             android:src="@drawable/ic_baseline_add_24" />

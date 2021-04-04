@@ -34,6 +34,15 @@
     <string name="descricao_contacto_digital_2">Canal SNS 24 para esclarecimentos de dúvidas. Não utilizar para diagnóstico médico</string>
     <string name="descricao_contacto_digital_3">Gabinete de Emergência Consular</string>
     <string name="descricao_contacto_digital_4">Área do Diário da República Eletrónico dedicada à legislação relativa à pandemia</string>
+    <string name="resultado_add">Resultado</string>
+    <string name="resultado_do_teste">Resultado do teste</string>
+    <string name="local">Local</string>
+    <string name="local_de_realiza_o_do_teste">Local de realização do teste</string>
+    <string name="data_add">Data</string>
+    <string name="data_de_registo">Data de registo</string>
+    <string name="imagem_do_teste">Imagem do teste</string>
+    <string name="guardar">Guardar</string>
+    <string name="foto">Foto</string>
 
 
 </resources>

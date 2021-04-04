@@ -20,8 +20,13 @@
         <item name="android:textColorSecondary">@color/orange</item>
     </style>
 
-    <style name="FABTheme" parent="Theme.AppCompat.Light">
+    <style name="FABAddTheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/orange</item>
+        <item name="android:itemBackground">@color/white</item>
+    </style>
+
+    <style name="FABFotoTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/blue</item>
         <item name="android:itemBackground">@color/white</item>
     </style>
 

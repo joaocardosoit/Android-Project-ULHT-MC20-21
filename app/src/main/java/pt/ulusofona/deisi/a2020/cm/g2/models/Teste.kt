@@ -5,4 +5,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 class Teste(val data: String, val resultado: String, val estado: Boolean, val local: String): Parcelable {
+    override fun toString(): String {
+        return "$resultado " + local
+    }
 }

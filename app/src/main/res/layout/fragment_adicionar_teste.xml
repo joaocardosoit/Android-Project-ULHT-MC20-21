@@ -18,14 +18,23 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <ImageView
+                android:id="@+id/image_add"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:contentDescription="@string/imagem_do_teste"
+                android:padding="15dp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="20dp"
-                android:text="Resultado"
-                android:textColor="@color/white"
+                android:text="@string/resultado_add"
+                android:textColor="@color/blue"
                 android:textSize="15sp" />
 
             <EditText
@@ -34,10 +43,10 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:hint="Resultado do teste"
+                android:hint="@string/resultado_do_teste"
                 android:inputType="text"
                 android:padding="15dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="15sp" />
 
             <TextView
@@ -46,8 +55,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="20dp"
-                android:text="Local"
-                android:textColor="@color/white"
+                android:text="@string/local"
+                android:textColor="@color/blue"
                 android:textSize="15sp" />
 
             <EditText
@@ -56,10 +65,10 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:hint="Local de realização do teste"
+                android:hint="@string/local_de_realiza_o_do_teste"
                 android:inputType="text"
                 android:padding="15dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="15sp" />
 
             <TextView
@@ -68,8 +77,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="20dp"
-                android:text="Data"
-                android:textColor="@color/white"
+                android:text="@string/data_add"
+                android:textColor="@color/blue"
                 android:textSize="15sp" />
 
             <EditText
@@ -78,21 +87,12 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:hint="Data de registo"
+                android:hint="@string/data_de_registo"
                 android:inputType="date"
                 android:maxLength="8"
                 android:padding="15dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="15sp" />
-
-            <ImageView
-                android:id="@+id/image_add"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:contentDescription="Imagem do teste"
-                android:padding="15dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/save_button"
@@ -102,9 +102,20 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="80dp"
-                android:text="Guardar"
+                android:text="@string/guardar"
                 android:textColor="@color/white"
                 app:cornerRadius="10dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_foto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:backgroundTint="@color/blue"
+                android:theme="@style/FABFotoTheme"
+                android:layout_margin="16dp"
+                android:contentDescription="@string/foto"
+                android:src="@drawable/ic_baseline_add_a_photo_24"/>
 
         </LinearLayout>
 
