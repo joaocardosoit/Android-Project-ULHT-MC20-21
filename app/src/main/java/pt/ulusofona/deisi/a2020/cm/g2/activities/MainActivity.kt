@@ -8,6 +8,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_lista.*
 import pt.ulusofona.deisi.a2020.cm.g2.utils.NavigationManager
 import pt.ulusofona.deisi.a2020.cm.g2.R
 import pt.ulusofona.deisi.a2020.cm.g2.models.NumsCovid
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar_main)
-        bottomNavigation()
+        bottomNavigationClick()
     }
 
     override fun onStart() {
@@ -48,13 +49,23 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when(item?.itemId){
-            R.id.filtro -> {
-                val dialogBuilder: AlertDialog.Builder = AlertDialog.Builder(this)
-                val listaDialog = mutableListOf<String>("Crescente", "Decrescente")
-                dialogBuilder.setTitle("Ordenar Lista")
-                dialogBuilder.setMessage("Escolha uma opção")
-                //dialogBuilder.setSingleChoiceItems(listaDialog, -1){}
+        toolbar_main.setOnMenuItemClickListener{ item->
+            when(item?.itemId){
+                R.id.filtro -> {
+                    val dialogBuilder: AlertDialog.Builder = AlertDialog.Builder(this)
+                    val listaDialog = mutableListOf<String>("Crescente", "Decrescente")
+                    dialogBuilder.setTitle("Ordenar Lista")
+                    dialogBuilder.setMessage("Escolha uma opção")
+                    /*dialogBuilder.setSingleChoiceItems(listaDialog, -1) {dialogInterface, i ->
+                        if (listaDialog[i] == "Crescente"){
+
+                        } else {
+
+                        }
+                    }*/
+                    true
+                }
+                else -> true
             }
         }
         return super.onOptionsItemSelected(item)
@@ -70,7 +81,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         }
     }
 
-    private fun bottomNavigation(){
+    private fun bottomNavigationClick(){
         bottom_navigation.setOnNavigationItemSelectedListener{ item ->
             when(item.itemId){
                 R.id.ic_lista -> {
