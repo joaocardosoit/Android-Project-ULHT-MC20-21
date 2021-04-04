@@ -13,6 +13,7 @@ import pt.ulusofona.deisi.a2020.cm.g2.utils.NavigationManager
 import pt.ulusofona.deisi.a2020.cm.g2.R
 import pt.ulusofona.deisi.a2020.cm.g2.models.NumsCovid
 import pt.ulusofona.deisi.a2020.cm.g2.models.Teste
+import java.util.*
 
 var numerosCovid: MutableList<NumsCovid> = mutableListOf(NumsCovid(1000, 237, 763, 5000, 1110, 2000))
 var testes: MutableList<Teste> = mutableListOf(Teste("01/04/2020", "Positivo", true, "Sintra"))
@@ -57,6 +58,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                     dialogBuilder.setTitle("Ordenar Lista")
                     dialogBuilder.setMessage("Escolha uma opção")
                     /*dialogBuilder.setSingleChoiceItems(listaDialog, -1) {dialogInterface, i ->
+
                         if (listaDialog[i] == "Crescente"){
 
                         } else {
