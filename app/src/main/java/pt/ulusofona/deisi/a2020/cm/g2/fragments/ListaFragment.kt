@@ -19,8 +19,6 @@ import pt.ulusofona.deisi.a2020.cm.g2.models.Teste
 
 class ListaFragment : Fragment(), OnClickItemListener {
 
-
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_lista, container, false)
     }

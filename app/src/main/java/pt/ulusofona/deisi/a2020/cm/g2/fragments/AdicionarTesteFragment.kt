@@ -17,10 +17,6 @@ import java.util.*
 
 class AdicionarTesteFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_adicionar_teste, container, false)
     }
@@ -47,7 +43,6 @@ class AdicionarTesteFragment : Fragment() {
             val msg = "Você selecionou $dia-$mes-$ano"
             Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
         }
-
 
         save_button.setOnClickListener{
             if (resultado.text.toString() != "Positivo" && resultado.text.toString() != "positivo" && resultado.text.toString() != "Negativo" &&
