@@ -53,8 +53,10 @@ class AdicionarTesteFragment : Fragment() {
             if (resultado.text.toString() != "Positivo" && resultado.text.toString() != "positivo" && resultado.text.toString() != "Negativo" &&
                     resultado.text.toString() != "negativo"){
                 resultado.error = "O resultado intruduzido não é valido"
+                Toast.makeText(context, "O resultado intruduzido não é valido", Toast.LENGTH_SHORT).show()
             } else if (local.text.toString() == ""){
                 local.error = "Tem de introduzir o local onde foi feito o teste"
+                Toast.makeText(context, "Tem de introduzir o local onde foi feito o teste", Toast.LENGTH_SHORT).show()
             } else {
                 guardarTeste()
                 activity?.toolbar_main?.title = "MyCovid-19"
