@@ -81,18 +81,14 @@
                 android:textColor="@color/blue"
                 android:textSize="15sp" />
 
-            <EditText
-                android:id="@+id/dateRegister"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:hint="@string/data_de_registo"
-                android:inputType="date"
-                android:maxLength="8"
-                android:padding="15dp"
-                android:textColor="@color/black"
-                android:textSize="15sp" />
+            <DatePicker
+                android:id="@+id/date_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:headerBackground="@color/blue"
+                />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/save_button"

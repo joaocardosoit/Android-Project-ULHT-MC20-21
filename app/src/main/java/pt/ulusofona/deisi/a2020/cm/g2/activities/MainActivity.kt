@@ -16,7 +16,7 @@ import pt.ulusofona.deisi.a2020.cm.g2.models.Teste
 import java.util.*
 
 var numerosCovid: MutableList<NumsCovid> = mutableListOf(NumsCovid(1000, 237, 763, 5000, 1110, 2000))
-var testes: MutableList<Teste> = mutableListOf(Teste("01/04/2020", "Positivo", true, "Sintra"))
+var testes: MutableList<Teste> = mutableListOf(Teste("1/4/2020", "Positivo", true, "Sintra"))
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar_main)
         bottomNavigationClick()
+        val locale: Locale = resources.configuration.locale
+        Locale.setDefault(locale)
     }
 
     override fun onStart() {
