@@ -102,20 +102,22 @@
                 android:textColor="@color/white"
                 app:cornerRadius="10dp" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_foto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:backgroundTint="@color/blue"
-                android:theme="@style/FABFotoTheme"
-                android:layout_margin="16dp"
-                android:contentDescription="@string/foto"
-                android:src="@drawable/ic_baseline_add_a_photo_24"/>
-
         </LinearLayout>
-
     </ScrollView>
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_foto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:backgroundTint="@color/orange"
+            android:theme="@style/FABFotoTheme"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/foto"
+            android:src="@drawable/ic_baseline_add_a_photo_24"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </RelativeLayout>

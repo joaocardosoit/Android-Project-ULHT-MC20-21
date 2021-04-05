@@ -41,6 +41,7 @@ class ListaFragment : Fragment(), OnClickItemListener {
     }
 
     override fun onClickItem(teste: Teste) {
+        activity?.toolbar_main?.menu?.findItem(R.id.filtro)?.setVisible(false)
         activity?.supportFragmentManager?.let { NavigationManager.goToDetalhesTesteFragment(it, teste) }
     }
 

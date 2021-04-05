@@ -1,7 +1,9 @@
 package pt.ulusofona.deisi.a2020.cm.g2.models
 
+import android.annotation.SuppressLint
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
+import java.text.SimpleDateFormat
 import java.util.*
 
 @Parcelize
