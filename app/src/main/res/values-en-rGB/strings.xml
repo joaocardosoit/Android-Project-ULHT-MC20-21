@@ -46,7 +46,8 @@
     <string name="guardar" translatable="false">Save</string>
     <string name="foto" translatable="false">Photograph</string>
     <string name="alto" translatable="false">" High"</string>
-    <string name="nivel_de_risto" translatable="false">Laugh level: \\ u0020</string>
-    <string name="posicao_atual" translatable="false">Current position: \\ u0020</string>
+    <string name="nivel_de_risto" translatable="false">Laugh level:\u0020</string>
+    <string name="posicao_atual" translatable="false">Current position:\u0020</string>
     <string name="adicionar_fotografia" translatable="false">Add Photo</string>
+    <string name="imagem" translatable="false">Image</string>
 </resources>
