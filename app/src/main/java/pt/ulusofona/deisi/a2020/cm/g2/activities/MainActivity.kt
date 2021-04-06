@@ -11,6 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import pt.ulusofona.deisi.a2020.cm.g2.utils.NavigationManager
 import pt.ulusofona.deisi.a2020.cm.g2.R
+import pt.ulusofona.deisi.a2020.cm.g2.fragments.ListaFragment
 import pt.ulusofona.deisi.a2020.cm.g2.models.NumsCovid
 import pt.ulusofona.deisi.a2020.cm.g2.models.Teste
 import java.util.*
@@ -53,14 +54,13 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    /*override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         val listaDialog = arrayOf("Crescente", "Decrescente")
         toolbar_main.setOnMenuItemClickListener{ item ->
             when(item?.itemId){
                 R.id.filtro -> {
                     val dialogBuilder: AlertDialog.Builder = AlertDialog.Builder(this)
                     dialogBuilder.setTitle("Ordenar Lista")
-                    dialogBuilder.setMessage("Escolha uma opção")
                     dialogBuilder.setSingleChoiceItems(listaDialog, -1) { _, i ->
                         if (listaDialog[i] == "Crescente"){
                             listaCrescente(testes)
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             }
         }
         return super.onOptionsItemSelected(item)
-    }
+    }*/
 
     private fun onClickFab(){
         ic_perigo_fab.setOnClickListener{
@@ -99,7 +99,6 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                 R.id.filtro -> {
                     val dialogBuilder: AlertDialog.Builder = AlertDialog.Builder(this)
                     dialogBuilder.setTitle("Ordenar Lista")
-                    dialogBuilder.setMessage("Escolha uma opção")
                     dialogBuilder.setSingleChoiceItems(listaDialog, -1) { dialogInterface, i ->
                         if (listaDialog[i] == "Crescente"){
                             listaCrescente(testes)
@@ -110,6 +109,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                         }
                     }
                     dialogBuilder.setPositiveButton("Ok"){ _, _ ->
+                        NavigationManager.goToListaFragment(supportFragmentManager)
                     }
                     val dialogCreate = dialogBuilder.create()
                     dialogCreate.show()
