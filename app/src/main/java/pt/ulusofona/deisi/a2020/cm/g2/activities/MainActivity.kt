@@ -9,13 +9,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_lista.*
 import pt.ulusofona.deisi.a2020.cm.g2.utils.NavigationManager
 import pt.ulusofona.deisi.a2020.cm.g2.R
 import pt.ulusofona.deisi.a2020.cm.g2.models.NumsCovid
 import pt.ulusofona.deisi.a2020.cm.g2.models.Teste
 import java.util.*
-import kotlin.collections.ArrayList
 
 var numerosCovid: MutableList<NumsCovid> = mutableListOf(NumsCovid(1000, 237, 763, 5000, 1110, 2000))
 var testes: MutableList<Teste> = mutableListOf(Teste("1/4/2021", "Positivo", true, "Sintra"))
@@ -28,6 +26,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         bottomNavigationClick()
         val locale: Locale = resources.configuration.locale
         Locale.setDefault(locale)
+        toolbarClick()
     }
 
     override fun onStart() {
@@ -35,6 +34,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         bottom_navigation.selectedItemId = R.id.ic_lista
         NavigationManager.goToListaFragment(supportFragmentManager)
         onClickFab()
+        toolbarClick()
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -54,14 +54,14 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        toolbar_main.setOnMenuItemClickListener{ item->
+        val listaDialog = arrayOf("Crescente", "Decrescente")
+        toolbar_main.setOnMenuItemClickListener{ item ->
             when(item?.itemId){
                 R.id.filtro -> {
                     val dialogBuilder: AlertDialog.Builder = AlertDialog.Builder(this)
-                    val listaDialog = arrayListOf("Crescente", "Decrescente")
                     dialogBuilder.setTitle("Ordenar Lista")
                     dialogBuilder.setMessage("Escolha uma opção")
-                    /*dialogBuilder.setSingleChoiceItems(listaDialog, -1) { _, i ->
+                    dialogBuilder.setSingleChoiceItems(listaDialog, -1) { _, i ->
                         if (listaDialog[i] == "Crescente"){
                             listaCrescente(testes)
                             Toast.makeText(this, "A lista está agora em ordem crescente", Toast.LENGTH_SHORT).show()
@@ -69,7 +69,11 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                             listaDecrescente(testes)
                             Toast.makeText(this, "A lista está agora em ordem decrescente", Toast.LENGTH_SHORT).show()
                         }
-                    }*/
+                    }
+                    dialogBuilder.setPositiveButton("Ok"){ _, _ ->
+                    }
+                    val dialogCreate = dialogBuilder.create()
+                    dialogCreate.show()
                     true
                 }
                 else -> true
@@ -85,6 +89,34 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             toolbar_main.menu.findItem(R.id.filtro).setVisible(false)
             bottom_navigation.selectedItemId = R.id.ic_perigo
             NavigationManager.goToEstouPerigoFragment(supportFragmentManager)
+        }
+    }
+
+    private fun toolbarClick(){
+        val listaDialog = arrayOf("Crescente", "Decrescente")
+        toolbar_main.setOnMenuItemClickListener{ item ->
+            when(item?.itemId){
+                R.id.filtro -> {
+                    val dialogBuilder: AlertDialog.Builder = AlertDialog.Builder(this)
+                    dialogBuilder.setTitle("Ordenar Lista")
+                    dialogBuilder.setMessage("Escolha uma opção")
+                    dialogBuilder.setSingleChoiceItems(listaDialog, -1) { dialogInterface, i ->
+                        if (listaDialog[i] == "Crescente"){
+                            listaCrescente(testes)
+                            Toast.makeText(this, "A lista está agora em ordem crescente", Toast.LENGTH_SHORT).show()
+                        } else {
+                            listaDecrescente(testes)
+                            Toast.makeText(this, "A lista está agora em ordem decrescente", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    dialogBuilder.setPositiveButton("Ok"){ _, _ ->
+                    }
+                    val dialogCreate = dialogBuilder.create()
+                    dialogCreate.show()
+                    true
+                }
+                else -> true
+            }
         }
     }
 

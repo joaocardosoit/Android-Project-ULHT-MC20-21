@@ -32,17 +32,13 @@ class AdicionarTesteFragment : Fragment() {
         }
         val datePicker: DatePicker = date_register
         val hoje = Calendar.getInstance()
-        val primeiroDia = Calendar.getInstance()
-        primeiroDia.set(2020,0,1)
-        datePicker.minDate = primeiroDia.timeInMillis
-        datePicker.maxDate = hoje.timeInMillis
-        hoje.set(Calendar.YEAR, Calendar.MONTH + 1, Calendar.DAY_OF_MONTH)
         datePicker.init(hoje.get(Calendar.YEAR) + 2020, hoje.get(Calendar.MONTH), hoje.get(Calendar.DAY_OF_MONTH)){
-            view, ano, mes, dia ->
-            val mes = mes + 1
-            val msg = "Você selecionou $dia-$mes-$ano"
+            viewCalendario, ano, mes, dia ->
+            val mesAtual = mes + 1
+            val msg = "Você selecionou $dia-$mesAtual-$ano"
             Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
         }
+        datePicker.maxDate = hoje.timeInMillis
 
         save_button.setOnClickListener{
             if (resultado.text.toString() != "Positivo" && resultado.text.toString() != "positivo" && resultado.text.toString() != "Negativo" &&
