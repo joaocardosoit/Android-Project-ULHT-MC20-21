@@ -49,6 +49,7 @@
     <string name="adicionar_fotografia" translatable="false">Adicionar Fotografia</string>
     <string name="data" translatable="false">Data:</string>
     <string name="numDiarios" translatable="false">Veja aqui os numeros da Covid-19</string>
+    <string name="imagem" translatable="false">Imagem</string>
 
 
 </resources>
