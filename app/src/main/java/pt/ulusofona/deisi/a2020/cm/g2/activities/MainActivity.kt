@@ -111,6 +111,9 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                     dialogBuilder.setPositiveButton("Ok"){ _, _ ->
                         NavigationManager.goToListaFragment(supportFragmentManager)
                     }
+                    dialogBuilder.setNeutralButton("Cancel"){ dialog, _ ->
+                        dialog.cancel()
+                    }
                     val dialogCreate = dialogBuilder.create()
                     dialogCreate.show()
                     true
@@ -151,13 +154,13 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         }
     }
 
-    private fun listaCrescente(lista: MutableList<Teste>){
+    private fun listaDecrescente(lista: MutableList<Teste>){
         for (i in 0..lista.size-1){
             testes.sortBy { it.data }
         }
     }
 
-    private fun listaDecrescente(lista: MutableList<Teste>){
+    private fun listaCrescente(lista: MutableList<Teste>){
         for (i in 0..lista.size-1){
             testes.sortByDescending { it.data }
         }

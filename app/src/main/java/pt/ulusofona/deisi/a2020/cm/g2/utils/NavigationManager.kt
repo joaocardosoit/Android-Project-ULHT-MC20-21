@@ -39,7 +39,7 @@ abstract class NavigationManager {
         fun goToDetalhesTesteFragment(fm: FragmentManager, teste: Teste){
             val bundle = Bundle()
             bundle.putParcelable("Teste", teste)
-            val detalhesTesteFragment = DestalhesTesteFragment()
+            val detalhesTesteFragment = DetalhesTesteFragment()
             detalhesTesteFragment.arguments = bundle
 
             placeFragment(fm, detalhesTesteFragment)

@@ -91,11 +91,23 @@
                 />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/save_button"
+                android:id="@+id/foto_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/adicionar_fotografia"
+                android:textColor="@color/white"
+                app:cornerRadius="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/save_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="80dp"
                 android:text="@string/guardar"
@@ -104,20 +116,4 @@
 
         </LinearLayout>
     </ScrollView>
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_foto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:backgroundTint="@color/orange"
-            android:theme="@style/FABFotoTheme"
-            android:layout_margin="16dp"
-            android:contentDescription="@string/foto"
-            android:src="@drawable/ic_baseline_add_a_photo_24"/>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
 </RelativeLayout>

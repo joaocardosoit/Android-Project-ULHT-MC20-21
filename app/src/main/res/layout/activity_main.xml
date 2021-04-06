@@ -46,6 +46,6 @@
             android:contentDescription="@string/estou_em_perigo"
             android:src="@drawable/ic_sos"
             android:theme="@style/NavFABTheme"
-            android:backgroundTint="@color/orange" />
+            android:backgroundTint="@color/red" />
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 </RelativeLayout>

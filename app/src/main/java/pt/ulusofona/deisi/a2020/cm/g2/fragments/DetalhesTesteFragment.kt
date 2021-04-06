@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import pt.ulusofona.deisi.a2020.cm.g2.R
 import pt.ulusofona.deisi.a2020.cm.g2.utils.NavigationManager
 
-class DestalhesTesteFragment : Fragment() {
+class DetalhesTesteFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
