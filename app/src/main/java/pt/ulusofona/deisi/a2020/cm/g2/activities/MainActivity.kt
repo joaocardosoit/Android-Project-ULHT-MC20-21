@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                     dialogBuilder.setPositiveButton("Ok"){ _, _ ->
                         NavigationManager.goToListaFragment(supportFragmentManager)
                     }
-                    dialogBuilder.setNeutralButton("Cancel"){ dialog, _ ->
+                    dialogBuilder.setNeutralButton("Cancelar"){ dialog, _ ->
                         dialog.cancel()
                     }
                     val dialogCreate = dialogBuilder.create()

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Projeto Android Nativo</string>
+    <string name="contacto_digital_3" translatable="false">gec@mne.pt</string>
+    <string name="contacto_digital_2" translatable="false">atendimento@SNS24.gov.pt</string>
+    <string name="contacto_digital_1" translatable="false">covid19.min-saude.pt</string>
+    <string name="filtro" translatable="false">Filter</string>
+    <string name="num_telefone_4" translatable="false">+351 961 706 472d</string>
+    <string name="num_telefone_3" translatable="false">+351 217 929 714</string>
+    <string name="num_telefone_2" translatable="false">+351 300 502 502</string>
+    <string name="num_telefone_1" translatable="false">+351 808 24 24 24</string>
+    <string name="lisboa" translatable="false">Lisbon</string>
+    <string name="data_add" translatable="false">Date</string>
+    <string name="contactos" translatable="false">Contacts</string>
+    <string name="estou_em_perigo" translatable="false">I\'m in Danger?</string>
+    <string name="lista_de_testes" translatable="false">List</string>
+    <string name="dashboard" translatable="false">Dashboard</string>
+    <string name="extra" translatable="false">Extra</string>
+    <string name="data" translatable="false">Date:</string>
+    <string name="resultado" translatable="false">Result:</string>
+    <string name="adicionar" translatable="false">Add</string>
+    <string name="voltar" translatable="false">Back</string>
+    <string name="numDiarios" translatable="false">See the Covid-19 numbers here</string>
+    <string name="num_infetados" translatable="false">Daily Infected</string>
+    <string name="num_mortes" translatable="false">" Daily Deaths"</string>
+    <string name="num_recuperados" translatable="false">Daily Recovered</string>
+    <string name="num_total_infetados" translatable="false">" Total Infected"</string>
+    <string name="num_total_mortes" translatable="false">Total Deaths</string>
+    <string name="num_total_recuperados" translatable="false">Total Recovered</string>
+    <string name="contactos_digitais" translatable="false">COVID19 Digital Contacts</string>
+    <string name="contactos_telefonicos" translatable="false">" COVID19 Telephone Contacts"</string>
+    <string name="descricao_contactos_1" translatable="false">SNS 24 Line for screening symptoms and clarifying doubts about COIVD19</string>
+    <string name="descricao_contactos_2" translatable="false">Social Security Line for clarifications on family assistance, sickness benefits and quarantine</string>
+    <string name="descricao_contactos_3" translatable="false">Consular Emergency Office</string>
+    <string name="contacto_digital_4" translatable="false">COVID19 Legislation</string>
+    <string name="descricao_contacto_digital_1" translatable="false">DGS platform for clarification on COVID-19</string>
+    <string name="descricao_contacto_digital_2" translatable="false">SNS 24 channel for clarification of doubts. Do not use for medical diagnosis</string>
+    <string name="descricao_contacto_digital_3" translatable="false">" Consular Emergency Office"</string>
+    <string name="descricao_contacto_digital_4" translatable="false">Electronic Journal Area dedicated to pandemic legislation</string>
+    <string name="resultado_add" translatable="false">Result</string>
+    <string name="resultado_do_teste" translatable="false">" Test result"</string>
+    <string name="local" translatable="false">Location</string>
+    <string name="local_de_realiza_o_do_teste" translatable="false">" Test location"</string>
+    <string name="data_de_registo" translatable="false">Registration date</string>
+    <string name="imagem_do_teste" translatable="false">Test image</string>
+    <string name="guardar" translatable="false">Save</string>
+    <string name="foto" translatable="false">Photograph</string>
+    <string name="alto" translatable="false">" High"</string>
+    <string name="nivel_de_risto" translatable="false">Laugh level: \\ u0020</string>
+    <string name="posicao_atual" translatable="false">Current position: \\ u0020</string>
+    <string name="adicionar_fotografia" translatable="false">Add Photo</string>
+</resources>
