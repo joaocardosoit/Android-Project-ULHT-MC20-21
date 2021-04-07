@@ -28,10 +28,10 @@ class DetalhesTesteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        activity?.toolbar_main?.title = "Destalhes do Teste"
+        activity?.toolbar_main?.title = getString(R.string.detalhes_teste)
         activity?.toolbar_main?.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24)
         activity?.toolbar_main?.setNavigationOnClickListener {
-            activity?.toolbar_main?.title = "MyCovid-19"
+            activity?.toolbar_main?.title = getString(R.string.titulo)
             activity?.toolbar_main?.navigationIcon = null
             activity?.supportFragmentManager?.let { NavigationManager.goToListaFragment(it) }
         }

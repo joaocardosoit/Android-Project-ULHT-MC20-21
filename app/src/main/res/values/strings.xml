@@ -52,4 +52,7 @@
     <string name="teste_realizado_em">Teste realizado em:\u0020</string>
     <string name="teste_feito_a">Teste feito a:\u0020</string>
     <string name="o_resultado_do_teste_foi">O resultado do teste foi:\u0020</string>
+    <string name="detalhes_teste">Detalhes do Teste</string>
+    <string name="titulo">MyCovid-19</string>
+    <string name="adicionar_teste_titulo">Registe aqui o seu teste</string>
 </resources>

@@ -38,10 +38,10 @@ class AdicionarTesteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        activity?.toolbar_main?.title = "Registe aqui o seu teste"
+        activity?.toolbar_main?.title = getString(R.string.adicionar_teste_titulo)
         activity?.toolbar_main?.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24)
         activity?.toolbar_main?.setNavigationOnClickListener{
-            activity?.toolbar_main?.title = "MyCovid-19"
+            activity?.toolbar_main?.title = getString(R.string.titulo)
             activity?.toolbar_main?.navigationIcon = null
             activity?.supportFragmentManager?.let { NavigationManager.goToListaFragment(it) }
         }
@@ -55,6 +55,25 @@ class AdicionarTesteFragment : Fragment() {
         }
         datePicker.maxDate = hoje.timeInMillis
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         save_button.setOnClickListener{
             if (resultado.text.toString() != "Positivo" && resultado.text.toString() != "positivo" && resultado.text.toString() != "Negativo" &&
                     resultado.text.toString() != "negativo"){
@@ -65,7 +84,7 @@ class AdicionarTesteFragment : Fragment() {
                 Toast.makeText(context, "Tem de introduzir o local onde foi feito o teste", Toast.LENGTH_SHORT).show()
             } else {
                 guardarTeste()
-                activity?.toolbar_main?.title = "MyCovid-19"
+                activity?.toolbar_main?.title = getString(R.string.titulo)
                 activity?.toolbar_main?.navigationIcon = null
                 activity?.supportFragmentManager?.let { NavigationManager.goToListaFragment(it) }
             }
