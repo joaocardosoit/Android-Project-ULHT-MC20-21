@@ -35,11 +35,10 @@
             />
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_alignParentEnd="true"
-            android:id="@+id/teste_foto"
-            android:src="@drawable/teste_covid"
+            android:id="@+id/image_teste"
             android:contentDescription="@string/imagem">
         </ImageView>
 

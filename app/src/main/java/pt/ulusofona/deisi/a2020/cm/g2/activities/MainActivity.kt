@@ -17,7 +17,7 @@ import pt.ulusofona.deisi.a2020.cm.g2.models.Teste
 import java.util.*
 
 var numerosCovid: MutableList<NumsCovid> = mutableListOf(NumsCovid(1000, 237, 763, 5000, 1110, 2000))
-var testes: MutableList<Teste> = mutableListOf(Teste("1/4/2021", "Positivo", true, "Sintra"))
+var testes: MutableList<Teste> = mutableListOf(Teste(R.drawable.teste_covid,"1/4/2021", "Positivo", true, "Sintra"))
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {

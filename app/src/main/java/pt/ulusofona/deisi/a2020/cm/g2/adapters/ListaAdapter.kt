@@ -5,9 +5,11 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_lista.view.*
+import pt.ulusofona.deisi.a2020.cm.g2.R
 import pt.ulusofona.deisi.a2020.cm.g2.listeners.OnClickItemListener
 import pt.ulusofona.deisi.a2020.cm.g2.models.Teste
 import pt.ulusofona.deisi.a2020.cm.g2.utils.NavigationManager
@@ -17,6 +19,7 @@ class ListaAdapter(private val context: Context, private val layout: Int, privat
     class ListaViewHolder(view: View): RecyclerView.ViewHolder(view){
         val data: TextView = view.text_data
         val resultado: TextView = view.text_resultado
+        val imagem: ImageView = view.image_teste
 
         fun onClickItem(teste: Teste, listener: OnClickItemListener){
             itemView.setOnClickListener {
@@ -34,6 +37,7 @@ class ListaAdapter(private val context: Context, private val layout: Int, privat
         val item = items[position]
         holder.data.text = "Data: ${items[position].data}"
         holder.resultado.text = "Resultado: ${items[position].resultado}"
+        holder.imagem.setImageResource(item.imagem!!)
         holder.onClickItem(item, listener)
     }
 

@@ -75,10 +75,10 @@ class AdicionarTesteFragment : Fragment() {
     private fun guardarTeste(){
         val mes = date_register.month + 1
         if(resultado.text.toString() == "Positivo" || resultado.text.toString() == "positivo"){
-            val teste = Teste(date_register.dayOfMonth.toString() + "/" + mes.toString() +"/" + date_register.year.toString(), resultado.text.toString(), true, local.text.toString())
+            val teste = Teste(0,date_register.dayOfMonth.toString() + "/" + mes.toString() +"/" + date_register.year.toString(), resultado.text.toString(), true, local.text.toString())
             testes.add(teste)
         } else if (resultado.text.toString() == "Negativo" || resultado.text.toString() == "negativo"){
-            val teste = Teste(date_register.dayOfMonth.toString() + "/" + mes.toString() +"/" + date_register.year.toString(), resultado.text.toString(), false,local.text.toString())
+            val teste = Teste(0,date_register.dayOfMonth.toString() + "/" + mes.toString() +"/" + date_register.year.toString(), resultado.text.toString(), false,local.text.toString())
             testes.add(teste)
         }
     }
