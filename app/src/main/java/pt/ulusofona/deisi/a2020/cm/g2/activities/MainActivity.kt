@@ -92,6 +92,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         }
     }
 
+
     private fun toolbarClick(){
         val listaDialog = arrayOf(getString(R.string.crescente), getString(R.string.decrescente))
         toolbar_main.setOnMenuItemClickListener{ item ->
