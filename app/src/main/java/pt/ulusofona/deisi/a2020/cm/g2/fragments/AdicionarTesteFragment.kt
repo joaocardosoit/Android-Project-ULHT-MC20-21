@@ -32,6 +32,10 @@ import java.util.jar.Manifest
 
 class AdicionarTesteFragment : Fragment() {
 
+    var image_uri: Uri?=null
+    var IMAGE_CAPTURE_CODE=101
+    var PERMISSION_CODE=100
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_adicionar_teste, container, false)
     }
@@ -50,38 +54,19 @@ class AdicionarTesteFragment : Fragment() {
         datePicker.init(hoje.get(Calendar.YEAR) + 2020, hoje.get(Calendar.MONTH), hoje.get(Calendar.DAY_OF_MONTH)){
             viewCalendario, ano, mes, dia ->
             val mesAtual = mes + 1
-            val msg = "Você selecionou $dia-$mesAtual-$ano"
+            val msg = getString(R.string.selecionou) + "$dia-$mesAtual-$ano"
             Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
         }
         datePicker.maxDate = hoje.timeInMillis
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         save_button.setOnClickListener{
             if (resultado.text.toString() != "Positivo" && resultado.text.toString() != "positivo" && resultado.text.toString() != "Negativo" &&
                     resultado.text.toString() != "negativo"){
-                resultado.error = "O resultado intruduzido não é valido"
-                Toast.makeText(context, "O resultado intruduzido não é valido", Toast.LENGTH_SHORT).show()
+                resultado.error = getString(R.string.mensagem_erro_1)
+                Toast.makeText(context, getString(R.string.mensagem_erro_1), Toast.LENGTH_SHORT).show()
             } else if (local.text.toString() == ""){
-                local.error = "Tem de introduzir o local onde foi feito o teste"
-                Toast.makeText(context, "Tem de introduzir o local onde foi feito o teste", Toast.LENGTH_SHORT).show()
+                local.error = getString(R.string.mensagem_erro_2)
+                Toast.makeText(context, getString(R.string.mensagem_erro_2), Toast.LENGTH_SHORT).show()
             } else {
                 guardarTeste()
                 activity?.toolbar_main?.title = getString(R.string.titulo)
@@ -101,4 +86,37 @@ class AdicionarTesteFragment : Fragment() {
             testes.add(teste)
         }
     }
+
+
+    /*@OnClick(R.id.foto_button)
+    fun onClickImageButton(){
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
+            if(PermissionChecker.checkSelfPermission(activity as Context, android.Manifest.permission.CAMERA) ==PermissionChecker.PERMISSION_DENIED || PermissionChecker.checkSelfPermission(activity as Context, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) ==PermissionChecker.PERMISSION_DENIED){
+                requestPermissions(arrayOf(android.Manifest.permission.CAMERA, android.Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                        PERMISSION_CODE)
+            }else{
+                openCamera()
+            }
+        }else{
+            openCamera()
+        }
+
+    }
+
+    fun openCamera(){
+        val values: ContentValues = ContentValues()
+        values.put(MediaStore.Images.Media.TITLE,"New Picture")
+        values.put(MediaStore.Images.Media.DESCRIPTION,"From Camera")
+        image_uri=requireActivity().contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,values)
+        val cameraIntent: Intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT,image_uri)
+        startActivityForResult(cameraIntent, IMAGE_CAPTURE_CODE)
+    }*/
+
+
+
+
+
+
+
 }

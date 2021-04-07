@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
     private fun onClickFab(){
         ic_perigo_fab.setOnClickListener{
-            toolbar_main.title = "MyCovid-19"
+            toolbar_main.title = getString(R.string.titulo)
             toolbar_main.navigationIcon = null
             toolbar_main.menu.findItem(R.id.filtro).setVisible(false)
             bottom_navigation.selectedItemId = R.id.ic_perigo
@@ -93,25 +93,25 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     }
 
     private fun toolbarClick(){
-        val listaDialog = arrayOf("Crescente", "Decrescente")
+        val listaDialog = arrayOf(getString(R.string.crescente), getString(R.string.decrescente))
         toolbar_main.setOnMenuItemClickListener{ item ->
             when(item?.itemId){
                 R.id.filtro -> {
                     val dialogBuilder: AlertDialog.Builder = AlertDialog.Builder(this)
-                    dialogBuilder.setTitle("Ordenar Lista")
+                    dialogBuilder.setTitle(getString(R.string.ordenar_lista))
                     dialogBuilder.setSingleChoiceItems(listaDialog, -1) { dialogInterface, i ->
-                        if (listaDialog[i] == "Crescente"){
+                        if (listaDialog[i] == getString(R.string.crescente)){
                             listaCrescente(testes)
-                            Toast.makeText(this, "A lista está agora em ordem crescente", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, getString(R.string.lista_crescente_msg), Toast.LENGTH_SHORT).show()
                         } else {
                             listaDecrescente(testes)
-                            Toast.makeText(this, "A lista está agora em ordem decrescente", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, getString(R.string.lista_decrescente_msg), Toast.LENGTH_SHORT).show()
                         }
                     }
                     dialogBuilder.setPositiveButton("Ok"){ _, _ ->
                         NavigationManager.goToListaFragment(supportFragmentManager)
                     }
-                    dialogBuilder.setNeutralButton("Cancelar"){ dialog, _ ->
+                    dialogBuilder.setNeutralButton(getString(R.string.cancelar)){ dialog, _ ->
                         dialog.cancel()
                     }
                     val dialogCreate = dialogBuilder.create()
@@ -127,24 +127,24 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         bottom_navigation.setOnNavigationItemSelectedListener{ item ->
             when(item.itemId){
                 R.id.ic_lista -> {
-                    toolbar_main.title = "MyCovid-19"
+                    toolbar_main.title = getString(R.string.titulo)
                     toolbar_main.navigationIcon = null
                     NavigationManager.goToListaFragment(supportFragmentManager)
                     true}
                 R.id.ic_contactos -> {
-                    toolbar_main.title = "MyCovid-19"
+                    toolbar_main.title = getString(R.string.titulo)
                     toolbar_main.navigationIcon = null
                     toolbar_main.menu.findItem(R.id.filtro).setVisible(false)
                     NavigationManager.goToContactosFragment(supportFragmentManager)
                     true}
                 R.id.ic_dashboard -> {
-                    toolbar_main.title = "MyCovid-19"
+                    toolbar_main.title = getString(R.string.titulo)
                     toolbar_main.navigationIcon = null
                     toolbar_main.menu.findItem(R.id.filtro).setVisible(false)
                     NavigationManager.goToDashboardFragment(supportFragmentManager)
                     true}
                 R.id.ic_extra -> {
-                    toolbar_main.title = "MyCovid-19"
+                    toolbar_main.title = getString(R.string.titulo)
                     toolbar_main.navigationIcon = null
                     toolbar_main.menu.findItem(R.id.filtro).setVisible(false)
                     NavigationManager.goToExtraFragment(supportFragmentManager)

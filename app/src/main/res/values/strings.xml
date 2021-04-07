@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Projeto Android Nativo</string>
+    <string name="exemplo">Positivo</string>
     <string name="contactos">Contactos</string>
     <string name="estou_em_perigo">Estou em Perigo?</string>
     <string name="lista_de_testes">Lista</string>
@@ -55,4 +56,14 @@
     <string name="detalhes_teste">Detalhes do Teste</string>
     <string name="titulo">MyCovid-19</string>
     <string name="adicionar_teste_titulo">Registe aqui o seu teste</string>
+    <string name="mensagem_erro_1">O resultado intruduzido não é valido</string>
+    <string name="mensagem_erro_2">Tem de introduzir o local onde foi feito o teste</string>
+    <string name="selecionou">Você selecionou</string>
+    <string name="lista_crescente_msg">A lista está agora em ordem crescente</string>
+    <string name="lista_decrescente_msg">A lista está agora em ordem decrescente</string>
+    <string name="ordenar_lista">Ordenar Lista</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="crescente">Crescente</string>
+    <string name="decrescente">Decrescente</string>
+
 </resources>
