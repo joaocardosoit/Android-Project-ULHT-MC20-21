@@ -1,5 +1,6 @@
 package pt.ulusofona.deisi.a2020.cm.g2.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -41,6 +42,7 @@ class DetalhesTesteFragment : Fragment() {
         detalhesTeste(teste)
     }
 
+    @SuppressLint("SetTextI18n")
     private fun detalhesTeste(teste: Teste?){
         teste?.let {
             image_descricao.setImageResource(teste.imagem!!)
