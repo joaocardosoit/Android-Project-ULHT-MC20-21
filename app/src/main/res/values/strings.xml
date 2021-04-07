@@ -1,55 +1,55 @@
 <resources>
-    <string name="app_name" translatable="false">Projeto Android Nativo</string>
-    <string name="contactos" translatable="false">Contactos</string>
-    <string name="estou_em_perigo" translatable="false">Estou em Perigo?</string>
-    <string name="lista_de_testes" translatable="false">Lista</string>
-    <string name="dashboard" translatable="false">Dashboard</string>
-    <string name="extra" translatable="false">Extra</string>
-    <string name="resultado" translatable="false">Resultado:\u0020</string>
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
-    <string name="adicionar" translatable="false">Adicionar</string>
-    <string name="voltar" translatable="false">Voltar</string>
-    <string name="num_infetados" translatable="false">Infetados Diários</string>
-    <string name="num_mortes" translatable="false">Mortes Diárias</string>
-    <string name="num_recuperados" translatable="false">Recuperados Diários</string>
-    <string name="num_total_infetados" translatable="false">Total de Infetados</string>
-    <string name="num_total_mortes" translatable="false">Total de Mortes</string>
-    <string name="num_total_recuperados" translatable="false">Total de Recuperados</string>
-    <string name="contactos_telefonicos" translatable="false">Contactos Telefónicos COVID19</string>
-    <string name="contactos_digitais" translatable="false">Contactos Digitais COVID19</string>
-    <string name="num_telefone_1" translatable="false">+351 808 24 24 24</string>
-    <string name="num_telefone_2" translatable="false">+351 300 502 502</string>
-    <string name="num_telefone_3" translatable="false">+351 217 929 714</string>
-    <string name="num_telefone_4" translatable="false">+351 961 706 472</string>
-    <string name="descricao_contactos_1" translatable="false">Linha SNS 24 para triagem de sintomas e esclarecimento de dúvidas sobre COIVD19</string>
-    <string name="descricao_contactos_2" translatable="false">Linha Segurança Social para esclarecimentos sobre assistência à familia, subsidio de doença e quarentena</string>
-    <string name="descricao_contactos_3" translatable="false">Gabinete de Emergência Consular</string>
-    <string name="contacto_digital_1" translatable="false">covid19.min-saude.pt</string>
-    <string name="contacto_digital_2" translatable="false">atendimento@SNS24.gov.pt</string>
-    <string name="contacto_digital_3" translatable="false">gec@mne.pt</string>
-    <string name="contacto_digital_4" translatable="false">Legislação COVID19</string>
-    <string name="descricao_contacto_digital_1" translatable="false">Plataforma da DGS para esclarecimentos sobre a COVID-19</string>
-    <string name="descricao_contacto_digital_2" translatable="false">Canal SNS 24 para esclarecimentos de dúvidas. Não utilizar para diagnóstico médico</string>
-    <string name="descricao_contacto_digital_3" translatable="false">Gabinete de Emergência Consular</string>
-    <string name="descricao_contacto_digital_4" translatable="false">Área do Diário da República Eletrónico dedicada à legislação relativa à pandemia</string>
-    <string name="resultado_add" translatable="false">Resultado</string>
-    <string name="resultado_do_teste" translatable="false">Resultado do teste</string>
-    <string name="local" translatable="false">Local</string>
-    <string name="local_de_realiza_o_do_teste" translatable="false">Local de realização do teste</string>
-    <string name="data_add" translatable="false">Data</string>
-    <string name="data_de_registo" translatable="false">Data de registo</string>
-    <string name="imagem_do_teste" translatable="false">Imagem do teste</string>
-    <string name="guardar" translatable="false">Guardar</string>
-    <string name="foto" translatable="false">Foto</string>
-    <string name="filtro" translatable="false">Filtro</string>
-    <string name="alto" translatable="false">Alto</string>
-    <string name="nivel_de_risto" translatable="false">Nivel de risto:\u0020</string>
-    <string name="posicao_atual" translatable="false">Posição atual:\u0020</string>
-    <string name="lisboa" translatable="false">Lisboa</string>
-    <string name="adicionar_fotografia" translatable="false">Adicionar Fotografia</string>
-    <string name="data" translatable="false">Data:</string>
-    <string name="numDiarios" translatable="false">Veja aqui os numeros da Covid-19</string>
-    <string name="imagem" translatable="false">Imagem</string>
-
-
+    <string name="app_name">Projeto Android Nativo</string>
+    <string name="contactos">Contactos</string>
+    <string name="estou_em_perigo">Estou em Perigo?</string>
+    <string name="lista_de_testes">Lista</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="extra">Extra</string>
+    <string name="resultado">Resultado:\u0020</string>
+    <string name="adicionar">Adicionar</string>
+    <string name="voltar">Voltar</string>
+    <string name="num_infetados">Infetados Diários</string>
+    <string name="num_mortes">Mortes Diárias</string>
+    <string name="num_recuperados">Recuperados Diários</string>
+    <string name="num_total_infetados">Total de Infetados</string>
+    <string name="num_total_mortes">Total de Mortes</string>
+    <string name="num_total_recuperados">Total de Recuperados</string>
+    <string name="contactos_telefonicos">Contactos Telefónicos COVID19</string>
+    <string name="contactos_digitais">Contactos Digitais COVID19</string>
+    <string name="num_telefone_1">+351 808 24 24 24</string>
+    <string name="num_telefone_2">+351 300 502 502</string>
+    <string name="num_telefone_3">+351 217 929 714</string>
+    <string name="num_telefone_4">+351 961 706 472</string>
+    <string name="descricao_contactos_1">Linha SNS 24 para triagem de sintomas e esclarecimento de dúvidas sobre COIVD19</string>
+    <string name="descricao_contactos_2">Linha Segurança Social para esclarecimentos sobre assistência à familia, subsidio de doença e quarentena</string>
+    <string name="descricao_contactos_3">Gabinete de Emergência Consular</string>
+    <string name="contacto_digital_1">covid19.min-saude.pt</string>
+    <string name="contacto_digital_2">atendimento@SNS24.gov.pt</string>
+    <string name="contacto_digital_3">gec@mne.pt</string>
+    <string name="contacto_digital_4">Legislação COVID19</string>
+    <string name="descricao_contacto_digital_1">Plataforma da DGS para esclarecimentos sobre a COVID-19</string>
+    <string name="descricao_contacto_digital_2">Canal SNS 24 para esclarecimentos de dúvidas. Não utilizar para diagnóstico médico</string>
+    <string name="descricao_contacto_digital_3">Gabinete de Emergência Consular</string>
+    <string name="descricao_contacto_digital_4">Área do Diário da República Eletrónico dedicada à legislação relativa à pandemia</string>
+    <string name="resultado_add">Resultado</string>
+    <string name="resultado_do_teste">Resultado do teste</string>
+    <string name="local">Local</string>
+    <string name="local_de_realiza_o_do_teste">Local de realização do teste</string>
+    <string name="data_add">Data</string>
+    <string name="data_de_registo">Data de registo</string>
+    <string name="imagem_do_teste">Imagem do teste</string>
+    <string name="guardar">Guardar</string>
+    <string name="foto">Foto</string>
+    <string name="filtro">Filtro</string>
+    <string name="alto">Alto</string>
+    <string name="nivel_de_risto">Nivel de risto:\u0020</string>
+    <string name="posicao_atual">Posição atual:\u0020</string>
+    <string name="lisboa">Lisboa</string>
+    <string name="adicionar_fotografia">Adicionar Fotografia</string>
+    <string name="data">Data:</string>
+    <string name="numDiarios">Veja aqui os numeros da Covid-19</string>
+    <string name="imagem">Imagem</string>
+    <string name="teste_realizado_em">Teste realizado em:\u0020</string>
+    <string name="teste_feito_a">Teste feito a:\u0020</string>
+    <string name="o_resultado_do_teste_foi">O resultado do teste foi:\u0020</string>
 </resources>

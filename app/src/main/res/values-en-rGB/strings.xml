@@ -50,4 +50,7 @@
     <string name="posicao_atual" translatable="false">Current position:\u0020</string>
     <string name="adicionar_fotografia" translatable="false">Add Photo</string>
     <string name="imagem" translatable="false">Image</string>
+    <string name="teste_realizado_em">Test done on:\u0020</string>
+    <string name="teste_feito_a">Test done at:\u0020</string>
+    <string name="o_resultado_do_teste_foi">The result was:\u0020</string>
 </resources>

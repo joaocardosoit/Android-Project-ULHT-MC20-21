@@ -33,28 +33,6 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="20dp"
-                android:text="@string/resultado_add"
-                android:textColor="@color/blue"
-                android:textSize="15sp" />
-
-            <EditText
-                android:id="@+id/resultado"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:hint="@string/resultado_do_teste"
-                android:inputType="text"
-                android:padding="15dp"
-                android:textColor="@color/black"
-                android:textSize="15sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="20dp"
                 android:text="@string/local"
                 android:textColor="@color/blue"
                 android:textSize="15sp" />
@@ -66,6 +44,28 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:hint="@string/local_de_realiza_o_do_teste"
+                android:inputType="text"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/resultado_add"
+                android:textColor="@color/blue"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/resultado"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:hint="@string/resultado_do_teste"
                 android:inputType="text"
                 android:padding="15dp"
                 android:textColor="@color/black"
