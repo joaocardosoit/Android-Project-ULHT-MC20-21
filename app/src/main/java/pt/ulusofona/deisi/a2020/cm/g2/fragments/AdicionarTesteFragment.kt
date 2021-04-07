@@ -87,36 +87,4 @@ class AdicionarTesteFragment : Fragment() {
         }
     }
 
-
-    /*@OnClick(R.id.foto_button)
-    fun onClickImageButton(){
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
-            if(PermissionChecker.checkSelfPermission(activity as Context, android.Manifest.permission.CAMERA) ==PermissionChecker.PERMISSION_DENIED || PermissionChecker.checkSelfPermission(activity as Context, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) ==PermissionChecker.PERMISSION_DENIED){
-                requestPermissions(arrayOf(android.Manifest.permission.CAMERA, android.Manifest.permission.WRITE_EXTERNAL_STORAGE),
-                        PERMISSION_CODE)
-            }else{
-                openCamera()
-            }
-        }else{
-            openCamera()
-        }
-
-    }
-
-    fun openCamera(){
-        val values: ContentValues = ContentValues()
-        values.put(MediaStore.Images.Media.TITLE,"New Picture")
-        values.put(MediaStore.Images.Media.DESCRIPTION,"From Camera")
-        image_uri=requireActivity().contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,values)
-        val cameraIntent: Intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT,image_uri)
-        startActivityForResult(cameraIntent, IMAGE_CAPTURE_CODE)
-    }*/
-
-
-
-
-
-
-
 }
