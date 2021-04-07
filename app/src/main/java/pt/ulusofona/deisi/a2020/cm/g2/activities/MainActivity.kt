@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                             Toast.makeText(this, getString(R.string.lista_decrescente_msg), Toast.LENGTH_SHORT).show()
                         }
                     }
-                    dialogBuilder.setPositiveButton("Ok"){ _, _ ->
+                    dialogBuilder.setPositiveButton(getString(R.string.ok)){ _, _ ->
                         NavigationManager.goToListaFragment(supportFragmentManager)
                     }
                     dialogBuilder.setNeutralButton(getString(R.string.cancelar)){ dialog, _ ->

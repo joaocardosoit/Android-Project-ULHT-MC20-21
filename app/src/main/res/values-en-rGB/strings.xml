@@ -66,5 +66,6 @@
     <string name="cancelar">Cancel</string>
     <string name="crescente">Ascending</string>
     <string name="decrescente">Descending</string>
+    <string name="ok">Ok</string>
 
 </resources>
