@@ -1,6 +1,8 @@
 package pt.ulusofona.deisi.a2020.cm.g2.activities
 
 
+import android.annotation.SuppressLint
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -9,12 +11,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_estou_perigo.*
 import pt.ulusofona.deisi.a2020.cm.g2.utils.NavigationManager
 import pt.ulusofona.deisi.a2020.cm.g2.R
 import pt.ulusofona.deisi.a2020.cm.g2.fragments.ListaFragment
 import pt.ulusofona.deisi.a2020.cm.g2.models.NumsCovid
 import pt.ulusofona.deisi.a2020.cm.g2.models.Teste
 import java.util.*
+import kotlin.random.Random
 
 var numerosCovid: MutableList<NumsCovid> = mutableListOf(NumsCovid(1000, 237, 763, 5000, 1110, 2000))
 var testes: MutableList<Teste> = mutableListOf(Teste(R.drawable.teste_covid,"1/4/2021", "Positivo", true, "Sintra"))
@@ -91,7 +95,6 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             NavigationManager.goToEstouPerigoFragment(supportFragmentManager)
         }
     }
-
 
     private fun toolbarClick(){
         val listaDialog = arrayOf(getString(R.string.crescente), getString(R.string.decrescente))

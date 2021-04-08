@@ -47,7 +47,7 @@
     <string name="posicao_atual">Posição atual:\u0020</string>
     <string name="lisboa">Lisboa</string>
     <string name="adicionar_fotografia">Adicionar Fotografia</string>
-    <string name="data">Data:</string>
+    <string name="data">Data:\u0020</string>
     <string name="numDiarios">Veja aqui os numeros da Covid-19</string>
     <string name="imagem">Imagem</string>
     <string name="teste_realizado_em">Teste realizado em:\u0020</string>
@@ -66,5 +66,6 @@
     <string name="crescente">Crescente</string>
     <string name="decrescente">Decrescente</string>
     <string name="ok">Ok</string>
-
+    <string name="baixo">Baixo</string>
+    <string name="medio">Medio</string>
 </resources>

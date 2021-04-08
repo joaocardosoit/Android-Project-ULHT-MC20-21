@@ -35,11 +35,10 @@ class ListaAdapter(private val context: Context, private val layout: Int, privat
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ListaViewHolder, position: Int) {
         val item = items[position]
-        holder.data.text = "Data: ${items[position].data}"
-        holder.resultado.text = "Resultado: ${items[position].resultado}"
+        holder.data.text = context.getString(R.string.data) + items[position].data
+        holder.resultado.text = context.getString(R.string.resultado) + items[position].resultado
         holder.imagem.setImageResource(item.imagem!!)
         holder.onClickItem(item, listener)
     }
-
     override fun getItemCount(): Int = items.size
 }

@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import pt.ulusofona.deisi.a2020.cm.g2.R
+import kotlin.random.Random
+
 
 class ExtraFragment : Fragment() {
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_extra, container, false)
     }
-
 }
