@@ -18,7 +18,7 @@
         android:title="@string/contactos"/>
     <item
         android:id="@+id/ic_extra"
-        android:icon="@drawable/ic_baseline_help_24"
+        android:icon="@drawable/ic_baseline_info_24"
         android:title="@string/extra"/>
 
 </menu>

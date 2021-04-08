@@ -23,8 +23,12 @@ import kotlin.random.Random
 
 var numerosCovid: MutableList<NumsCovid> = mutableListOf(NumsCovid(1000, 237, 763, 5000, 1110, 2000))
 var testes: MutableList<Teste> = mutableListOf(Teste(R.drawable.teste_covid,"1/4/2021", "Positivo", true, "Sintra"))
-var concelhos: MutableList<Concelhos> = mutableListOf(Concelhos("Évora", 123, 321, 455),Concelhos("Lisboa", 450, 12, 500),
-    Concelhos("Beja", 423, 45, 150))
+var listaConcelhos: MutableList<Concelhos> = mutableListOf(Concelhos("Évora", 90, 321, 455),
+        Concelhos("Lisboa", 450, 12, 500),
+        Concelhos("Amadora", 210, 45, 150),
+        Concelhos("Porto", 600, 115, 240),
+        Concelhos("Sintra", 50, 76, 90)
+)
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
