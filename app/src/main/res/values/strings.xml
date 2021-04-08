@@ -68,4 +68,7 @@
     <string name="ok">Ok</string>
     <string name="baixo">Baixo</string>
     <string name="medio">Medio</string>
+    <string name="casos_ativos">Casos Ativos:\u0020</string>
+    <string name="mortos">Mortes:\u0020</string>
+    <string name="recuperados">Recuperados:\u0020</string>
 </resources>

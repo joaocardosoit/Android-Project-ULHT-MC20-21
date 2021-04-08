@@ -69,4 +69,7 @@
     <string name="ok">Ok</string>
     <string name="baixo">Low</string>
     <string name="medio">Medium</string>
+    <string name="casos_ativos">Active Cases:\u0020</string>
+    <string name="mortos">Deaths:\u0020</string>
+    <string name="recuperados">Recovered:\u0020</string>
 </resources>

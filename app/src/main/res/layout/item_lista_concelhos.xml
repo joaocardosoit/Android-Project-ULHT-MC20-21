@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp"
+    android:backgroundTint="@color/blue"
+    app:cardUseCompatPadding="true"
+    android:layout_margin="10dp">
+
+    <RelativeLayout
+        android:id="@+id/item_lista_concelhos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/concelhos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:textColor="@color/white">
+        </TextView>
+
+        <TextView
+            android:id="@+id/casos_ativos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:layout_below="@+id/concelhos"
+            android:textColor="@color/white">
+        </TextView>
+
+        <TextView
+            android:id="@+id/mortos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:layout_below="@+id/casos_ativos"
+            android:textColor="@color/white">
+        </TextView>
+
+        <TextView
+            android:id="@+id/recuperados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:layout_below="@+id/mortos"
+            android:textColor="@color/white">
+        </TextView>
+
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
