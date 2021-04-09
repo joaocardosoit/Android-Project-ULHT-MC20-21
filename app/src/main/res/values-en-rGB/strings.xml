@@ -16,7 +16,7 @@
     <string name="estou_em_perigo" translatable="false">I\'m in Danger?</string>
     <string name="lista_de_testes" translatable="false">List</string>
     <string name="dashboard" translatable="false">Dashboard</string>
-    <string name="extra" translatable="false">Extra</string>
+    <string name="extra" translatable="false">Counties</string>
     <string name="data" translatable="false">Date:\u0020</string>
     <string name="resultado" translatable="false">Result:\u0020</string>
     <string name="adicionar" translatable="false">Add</string>
