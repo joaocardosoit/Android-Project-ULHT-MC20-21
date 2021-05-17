@@ -1,4 +1,4 @@
-package pt.ulusofona.deisi.a2020.cm.g2.fragments
+package pt.ulusofona.deisi.a2020.cm.g2.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

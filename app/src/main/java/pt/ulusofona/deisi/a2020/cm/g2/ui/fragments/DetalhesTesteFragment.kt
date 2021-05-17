@@ -1,4 +1,4 @@
-package pt.ulusofona.deisi.a2020.cm.g2.fragments
+package pt.ulusofona.deisi.a2020.cm.g2.ui.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -9,9 +9,8 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_detalhes_teste.*
 import pt.ulusofona.deisi.a2020.cm.g2.R
-import pt.ulusofona.deisi.a2020.cm.g2.activities.testes
-import pt.ulusofona.deisi.a2020.cm.g2.models.Teste
-import pt.ulusofona.deisi.a2020.cm.g2.utils.NavigationManager
+import pt.ulusofona.deisi.a2020.cm.g2.domain.app.models.Teste
+import pt.ulusofona.deisi.a2020.cm.g2.ui.utils.NavigationManager
 
 class DetalhesTesteFragment : Fragment() {
 

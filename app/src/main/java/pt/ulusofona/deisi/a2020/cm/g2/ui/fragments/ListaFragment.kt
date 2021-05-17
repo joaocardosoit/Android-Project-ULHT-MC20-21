@@ -1,21 +1,20 @@
-package pt.ulusofona.deisi.a2020.cm.g2.fragments
+package pt.ulusofona.deisi.a2020.cm.g2.ui.fragments
 
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_lista.*
-import pt.ulusofona.deisi.a2020.cm.g2.utils.NavigationManager
+import pt.ulusofona.deisi.a2020.cm.g2.ui.utils.NavigationManager
 import pt.ulusofona.deisi.a2020.cm.g2.R
-import pt.ulusofona.deisi.a2020.cm.g2.activities.testes
-import pt.ulusofona.deisi.a2020.cm.g2.adapters.ListaAdapter
-import pt.ulusofona.deisi.a2020.cm.g2.listeners.OnClickItemListener
-import pt.ulusofona.deisi.a2020.cm.g2.models.Teste
+import pt.ulusofona.deisi.a2020.cm.g2.ui.activities.testes
+import pt.ulusofona.deisi.a2020.cm.g2.ui.adapters.ListaAdapter
+import pt.ulusofona.deisi.a2020.cm.g2.ui.listeners.OnClickItemListener
+import pt.ulusofona.deisi.a2020.cm.g2.domain.app.models.Teste
 
 class ListaFragment : Fragment(), OnClickItemListener {
 

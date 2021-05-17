@@ -1,21 +1,16 @@
-package pt.ulusofona.deisi.a2020.cm.g2.fragments
+package pt.ulusofona.deisi.a2020.cm.g2.ui.fragments
 
 import android.content.Context
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_extra.*
-import kotlinx.android.synthetic.main.fragment_lista.*
-import kotlinx.android.synthetic.main.item_lista_concelhos.*
 import pt.ulusofona.deisi.a2020.cm.g2.R
-import pt.ulusofona.deisi.a2020.cm.g2.activities.listaConcelhos
-import pt.ulusofona.deisi.a2020.cm.g2.adapters.ExtraAdapter
-import kotlin.random.Random
+import pt.ulusofona.deisi.a2020.cm.g2.ui.activities.listaConcelhos
+import pt.ulusofona.deisi.a2020.cm.g2.ui.adapters.ExtraAdapter
 
 
 class ExtraFragment : Fragment() {

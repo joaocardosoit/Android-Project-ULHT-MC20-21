@@ -1,4 +1,4 @@
-package pt.ulusofona.deisi.a2020.cm.g2.adapters
+package pt.ulusofona.deisi.a2020.cm.g2.ui.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -6,16 +6,12 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Filter
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.fragment_extra.view.*
-import kotlinx.android.synthetic.main.item_lista.view.*
-import kotlinx.android.synthetic.main.item_lista_concelhos.*
 import kotlinx.android.synthetic.main.item_lista_concelhos.view.*
 import pt.ulusofona.deisi.a2020.cm.g2.R
-import pt.ulusofona.deisi.a2020.cm.g2.models.Concelhos
+import pt.ulusofona.deisi.a2020.cm.g2.domain.app.models.Concelhos
 
 class ExtraAdapter(private val context: Context, private val layout: Int, private val items: MutableList<Concelhos>): RecyclerView.Adapter<ExtraAdapter.ExtraListaViewHolder>()  {
     val red = Color.rgb(255, 0, 0)

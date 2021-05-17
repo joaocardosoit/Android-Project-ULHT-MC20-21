@@ -1,34 +1,20 @@
-package pt.ulusofona.deisi.a2020.cm.g2.fragments
+package pt.ulusofona.deisi.a2020.cm.g2.ui.fragments
 
-import android.app.Activity
-import android.content.ContentValues
-import android.content.Context
-import android.content.Intent
-import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.provider.MediaStore
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.DatePicker
 import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.checkSelfPermission
-import androidx.core.content.PermissionChecker
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_adicionar_teste.*
-import pt.ulusofona.deisi.a2020.cm.g2.utils.NavigationManager
+import pt.ulusofona.deisi.a2020.cm.g2.ui.utils.NavigationManager
 import pt.ulusofona.deisi.a2020.cm.g2.R
-import pt.ulusofona.deisi.a2020.cm.g2.activities.MainActivity
-import pt.ulusofona.deisi.a2020.cm.g2.activities.testes
-import pt.ulusofona.deisi.a2020.cm.g2.models.Teste
+import pt.ulusofona.deisi.a2020.cm.g2.ui.activities.testes
+import pt.ulusofona.deisi.a2020.cm.g2.domain.app.models.Teste
 import java.util.*
-import java.util.jar.Manifest
 
 class AdicionarTesteFragment : Fragment() {
 

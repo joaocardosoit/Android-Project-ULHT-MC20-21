@@ -1,4 +1,4 @@
-package pt.ulusofona.deisi.a2020.cm.g2.adapters
+package pt.ulusofona.deisi.a2020.cm.g2.ui.adapters
 
 import android.content.Context
 import android.view.LayoutInflater

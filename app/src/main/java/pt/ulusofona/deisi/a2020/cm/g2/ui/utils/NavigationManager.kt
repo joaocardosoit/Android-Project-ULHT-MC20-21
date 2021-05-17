@@ -1,11 +1,11 @@
-package pt.ulusofona.deisi.a2020.cm.g2.utils
+package pt.ulusofona.deisi.a2020.cm.g2.ui.utils
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import pt.ulusofona.deisi.a2020.cm.g2.R
-import pt.ulusofona.deisi.a2020.cm.g2.fragments.*
-import pt.ulusofona.deisi.a2020.cm.g2.models.Teste
+import pt.ulusofona.deisi.a2020.cm.g2.ui.fragments.*
+import pt.ulusofona.deisi.a2020.cm.g2.domain.app.models.Teste
 
 abstract class NavigationManager {
     companion object{

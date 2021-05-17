@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".fragments.ListaFragment">
+    tools:context=".ui.fragments.ListaFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_casos"

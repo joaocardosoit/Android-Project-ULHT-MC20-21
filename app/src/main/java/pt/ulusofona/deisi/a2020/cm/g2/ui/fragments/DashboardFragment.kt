@@ -1,4 +1,4 @@
-package pt.ulusofona.deisi.a2020.cm.g2.fragments
+package pt.ulusofona.deisi.a2020.cm.g2.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import pt.ulusofona.deisi.a2020.cm.g2.R
-import pt.ulusofona.deisi.a2020.cm.g2.activities.numerosCovid
-import pt.ulusofona.deisi.a2020.cm.g2.models.NumsCovid
+import pt.ulusofona.deisi.a2020.cm.g2.ui.activities.numerosCovid
+import pt.ulusofona.deisi.a2020.cm.g2.domain.app.models.NumsCovid
 
 class DashboardFragment : Fragment() {
 
