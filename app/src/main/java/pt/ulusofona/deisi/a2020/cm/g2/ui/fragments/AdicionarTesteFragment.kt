@@ -8,12 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.DatePicker
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_adicionar_teste.*
 import pt.ulusofona.deisi.a2020.cm.g2.ui.utils.NavigationManager
 import pt.ulusofona.deisi.a2020.cm.g2.R
 import pt.ulusofona.deisi.a2020.cm.g2.ui.activities.testes
 import pt.ulusofona.deisi.a2020.cm.g2.domain.app.models.Teste
+import pt.ulusofona.deisi.a2020.cm.g2.ui.viewmodels.AdicinarTesteViewModel
+import pt.ulusofona.deisi.a2020.cm.g2.ui.viewmodels.ContactosViewModel
 import java.util.*
 
 class AdicionarTesteFragment : Fragment() {
@@ -22,8 +25,12 @@ class AdicionarTesteFragment : Fragment() {
     var IMAGE_CAPTURE_CODE=101
     var PERMISSION_CODE=100
 
+    private lateinit var viewModel: AdicinarTesteViewModel
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_adicionar_teste, container, false)
+        val view = inflater.inflate(R.layout.fragment_adicionar_teste, container, false)
+        viewModel = ViewModelProviders.of(this).get(AdicinarTesteViewModel::class.java)
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -54,23 +61,11 @@ class AdicionarTesteFragment : Fragment() {
                 local.error = getString(R.string.mensagem_erro_2)
                 Toast.makeText(context, getString(R.string.mensagem_erro_2), Toast.LENGTH_SHORT).show()
             } else {
-                guardarTeste()
+                viewModel.guardarTeste(resultado.text.toString(), local.text.toString(), date_register.dayOfMonth, date_register.month + 1, date_register.year)
                 activity?.toolbar_main?.title = getString(R.string.titulo)
                 activity?.toolbar_main?.navigationIcon = null
                 activity?.supportFragmentManager?.let { NavigationManager.goToListaFragment(it) }
             }
         }
     }
-
-    private fun guardarTeste(){
-        val mes = date_register.month + 1
-        if(resultado.text.toString() == "Positivo" || resultado.text.toString() == "positivo"){
-            val teste = Teste(R.drawable.no_foto,date_register.dayOfMonth.toString() + "/" + mes.toString() +"/" + date_register.year.toString(), resultado.text.toString(), true, local.text.toString())
-            testes.add(teste)
-        } else if (resultado.text.toString() == "Negativo" || resultado.text.toString() == "negativo"){
-            val teste = Teste(R.drawable.no_foto,date_register.dayOfMonth.toString() + "/" + mes.toString() +"/" + date_register.year.toString(), resultado.text.toString(), false,local.text.toString())
-            testes.add(teste)
-        }
-    }
-
 }
