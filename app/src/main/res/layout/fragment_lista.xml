@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".ui.fragments.ListaFragment">
+    tools:context="pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.fragments.ListaFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_casos"
