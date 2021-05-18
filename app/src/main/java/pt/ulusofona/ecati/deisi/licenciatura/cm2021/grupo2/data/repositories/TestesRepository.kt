@@ -13,8 +13,10 @@ class TestesRepository(private val local: TestesDao) {
     fun insert(teste: Teste){
         CoroutineScope(Dispatchers.IO).launch {
             if(teste.resultado == "Positivo" || teste.resultado == "positivo"){
+                teste.estado
                 local.insert(teste)
             } else if (teste.resultado == "Negativo" || teste.resultado == "negativo"){
+                !teste.estado
                 local.insert(teste)
             }
         }

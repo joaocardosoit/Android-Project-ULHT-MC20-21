@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_adicionar_teste.*
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.entities.Teste
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.utils.NavigationManager
 
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.viewmodels.AdicinarTesteViewModel
@@ -59,7 +60,9 @@ class AdicionarTesteFragment : Fragment() {
                 local.error = getString(R.string.mensagem_erro_2)
                 Toast.makeText(context, getString(R.string.mensagem_erro_2), Toast.LENGTH_SHORT).show()
             } else {
-                viewModel.guardarTeste(resultado.text.toString(), local.text.toString(), date_register.dayOfMonth, date_register.month + 1, date_register.year)
+                val mes = date_register.month + 1
+                val teste = Teste(R.drawable.no_foto, date_register.dayOfMonth.toString() + "/" + mes.toString() + "/" + date_register.year.toString() , resultado.text.toString(), true,  local.text.toString())
+                viewModel.insert(teste)
                 activity?.toolbar_main?.title = getString(R.string.titulo)
                 activity?.toolbar_main?.navigationIcon = null
                 activity?.supportFragmentManager?.let { NavigationManager.goToListaFragment(it) }
