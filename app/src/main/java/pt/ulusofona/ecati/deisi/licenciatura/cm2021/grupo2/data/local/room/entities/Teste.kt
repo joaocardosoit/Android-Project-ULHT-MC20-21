@@ -7,5 +7,5 @@ import kotlinx.android.parcel.Parcelize
 
 @Entity(tableName = "testes")
 @Parcelize
-data class Teste(val imagem: Int?, val data: String, val resultado: String, val estado: Boolean, val local: String): Parcelable {
+data class Teste(val imagem: Int?, val data: String, @PrimaryKey val resultado: String, val estado: Boolean, val local: String): Parcelable {
 }

@@ -21,5 +21,4 @@ class TestesRepository(private val local: TestesDao) {
             }
         }
     }
-
 }

@@ -14,6 +14,6 @@ interface TestesDao {
     @Query("SELECT * FROM testes")
     suspend fun getAll(): List<Teste>
 
-    @Query("SELECT * FROM testes WHERE resultado")
+    @Query("SELECT * FROM testes WHERE resultado = :resultado")
     suspend fun getByResultado(resultado: String): Teste
 }
