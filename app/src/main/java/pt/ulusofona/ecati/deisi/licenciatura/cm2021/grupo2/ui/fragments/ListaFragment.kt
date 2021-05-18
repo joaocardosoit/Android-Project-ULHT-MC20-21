@@ -14,7 +14,7 @@ import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.activities.testes
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.adapters.ListaAdapter
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.OnClickItemListener
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.domain.app.models.Teste
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.entities.Teste
 
 class ListaFragment : Fragment(), OnClickItemListener {
 

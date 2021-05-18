@@ -13,7 +13,7 @@ import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.utils.NavigationManager
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.domain.app.models.Concelhos
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.domain.app.models.NumsCovid
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.domain.app.models.Teste
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.entities.Teste
 import java.util.*
 
 var numerosCovid: MutableList<NumsCovid> = mutableListOf(NumsCovid(1000, 237, 763, 5000, 1110, 2000))
