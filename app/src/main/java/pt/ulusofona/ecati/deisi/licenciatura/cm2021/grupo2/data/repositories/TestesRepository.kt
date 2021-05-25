@@ -42,4 +42,24 @@ class TestesRepository(private val local: TestesDao) {
     fun unregisterListener(){
         this.listener = null
     }
+
+    /*
+    fun sortedByDescending(context: Context){
+        CoroutineScope(Dispatchers.IO).launch {
+            val testes = local.getAll()
+            CoroutineScope(Dispatchers.IO).launch {
+                listener?.listaTestes(testes)
+            }
+        }
+    }
+
+    fun sortedByAscending(){
+        CoroutineScope(Dispatchers.IO).launch {
+            val testes = local.sortedByAscending()
+            CoroutineScope(Dispatchers.IO).launch {
+                listener?.listaTestes(testes)
+            }
+        }
+    }
+     */
 }

@@ -32,4 +32,14 @@ class TesteViewModel(application: Application): AndroidViewModel(application) {
     fun getAll(context: Context){
         testeLogic.getAll(context)
     }
+
+    /*
+    fun sortedByDescending(context: Context){
+        testeLogic.sortedByDescending(context)
+    }
+
+    fun sortedByAscending(context: Context){
+        testeLogic.sortedByAscending(context)
+    }
+    */
 }

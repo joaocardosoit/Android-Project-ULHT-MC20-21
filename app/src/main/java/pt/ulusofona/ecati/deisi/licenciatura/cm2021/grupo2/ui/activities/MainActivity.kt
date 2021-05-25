@@ -14,6 +14,7 @@ import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.utils.NavigationMa
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.domain.app.models.Concelhos
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.domain.app.models.NumsCovid
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.entities.Teste
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.viewmodels.TesteViewModel
 import java.util.*
 
 var numerosCovid: MutableList<NumsCovid> = mutableListOf(NumsCovid(1000, 237, 763, 5000, 1110, 2000))
@@ -162,13 +163,13 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
     private fun listaDecrescente(lista: MutableList<Teste>){
         for (i in 0..lista.size-1){
-            testes.sortBy { it.data }
+            lista.sortBy { it.data }
         }
     }
 
     private fun listaCrescente(lista: MutableList<Teste>){
         for (i in 0..lista.size-1){
-            testes.sortByDescending { it.data }
+            lista.sortByDescending { it.data }
         }
     }
 
