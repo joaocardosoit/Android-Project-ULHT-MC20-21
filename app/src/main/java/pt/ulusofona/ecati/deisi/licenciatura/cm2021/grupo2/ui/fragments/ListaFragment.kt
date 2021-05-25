@@ -1,11 +1,18 @@
 package pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.fragments
 
+import android.app.Activity
+import android.content.ClipData
 import android.content.Context
+import android.media.Image
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
@@ -35,6 +42,37 @@ class ListaFragment : Fragment(), OnClickItemListener, ListaTestesListener {
 
         if (!activity?.toolbar_main?.menu?.findItem(R.id.filtro)?.isVisible!!){
             activity?.toolbar_main?.menu?.findItem(R.id.filtro)?.setVisible(true)
+        }
+
+        activity?.toolbar_main?.setOnMenuItemClickListener { item ->
+            when(item?.itemId){
+                R.id.filtro -> {
+                    val listaDialog = arrayOf(context?.getString(R.string.crescente), context?.getString(R.string.decrescente))
+                    val dialogBuilder: AlertDialog.Builder = AlertDialog.Builder(activity as Context)
+                    dialogBuilder.setTitle(getString(R.string.ordenar_lista))
+                    dialogBuilder.setSingleChoiceItems(listaDialog, -1) { dialogInterface, i ->
+                        if (listaDialog[i] == getString(R.string.crescente)){
+                            viewModel.sortedByAscending(context!!)
+                            Toast.makeText(context, getString(R.string.lista_crescente_msg), Toast.LENGTH_SHORT).show()
+                        } else {
+                            viewModel.sortedByDescending(context!!)
+                            Toast.makeText(context, getString(R.string.lista_decrescente_msg), Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    dialogBuilder.setPositiveButton(getString(R.string.ok)){ dialog, _ ->
+                        dialog.dismiss()
+                    }
+                    dialogBuilder.setNeutralButton(getString(R.string.cancelar)){ dialog, _ ->
+                        dialog.cancel()
+                    }
+                    val dialogCreate = dialogBuilder.create()
+                    dialogCreate.show()
+                    true
+                }
+                else -> true
+            }
+
+            true
         }
 
         fab_add.setOnClickListener(){

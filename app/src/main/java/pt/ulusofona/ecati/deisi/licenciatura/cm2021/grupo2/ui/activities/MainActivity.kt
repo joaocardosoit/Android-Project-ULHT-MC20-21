@@ -18,7 +18,6 @@ import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.viewmodels.TesteVi
 import java.util.*
 
 var numerosCovid: MutableList<NumsCovid> = mutableListOf(NumsCovid(1000, 237, 763, 5000, 1110, 2000))
-var testes: MutableList<Teste> = mutableListOf(Teste(R.drawable.teste_covid,"1/4/2021", "Positivo", true, "Sintra"))
 var listaConcelhos: MutableList<Concelhos> = mutableListOf(Concelhos("Évora", 90, 321, 455),
         Concelhos("Lisboa", 450, 12, 500),
         Concelhos("Amadora", 210, 45, 150),
@@ -27,6 +26,8 @@ var listaConcelhos: MutableList<Concelhos> = mutableListOf(Concelhos("Évora", 9
 )
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
 
+    lateinit var viewModel: TesteViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -34,7 +35,6 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         bottomNavigationClick()
         val locale: Locale = resources.configuration.locale
         Locale.setDefault(locale)
-        toolbarClick()
     }
 
     override fun onStart() {
@@ -42,7 +42,6 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         bottom_navigation.selectedItemId = R.id.ic_lista
         NavigationManager.goToListaFragment(supportFragmentManager)
         onClickFab()
-        toolbarClick()
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -96,37 +95,6 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             toolbar_main.menu.findItem(R.id.filtro).setVisible(false)
             bottom_navigation.selectedItemId = R.id.ic_perigo
             NavigationManager.goToEstouPerigoFragment(supportFragmentManager)
-        }
-    }
-
-    private fun toolbarClick(){
-        val listaDialog = arrayOf(getString(R.string.crescente), getString(R.string.decrescente))
-        toolbar_main.setOnMenuItemClickListener{ item ->
-            when(item?.itemId){
-                R.id.filtro -> {
-                    val dialogBuilder: AlertDialog.Builder = AlertDialog.Builder(this)
-                    dialogBuilder.setTitle(getString(R.string.ordenar_lista))
-                    dialogBuilder.setSingleChoiceItems(listaDialog, -1) { dialogInterface, i ->
-                        if (listaDialog[i] == getString(R.string.crescente)){
-                            listaCrescente(testes)
-                            Toast.makeText(this, getString(R.string.lista_crescente_msg), Toast.LENGTH_SHORT).show()
-                        } else {
-                            listaDecrescente(testes)
-                            Toast.makeText(this, getString(R.string.lista_decrescente_msg), Toast.LENGTH_SHORT).show()
-                        }
-                    }
-                    dialogBuilder.setPositiveButton(getString(R.string.ok)){ _, _ ->
-                        NavigationManager.goToListaFragment(supportFragmentManager)
-                    }
-                    dialogBuilder.setNeutralButton(getString(R.string.cancelar)){ dialog, _ ->
-                        dialog.cancel()
-                    }
-                    val dialogCreate = dialogBuilder.create()
-                    dialogCreate.show()
-                    true
-                }
-                else -> true
-            }
         }
     }
 

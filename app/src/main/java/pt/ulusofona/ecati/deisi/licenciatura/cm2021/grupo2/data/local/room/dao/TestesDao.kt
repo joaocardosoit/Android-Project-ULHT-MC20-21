@@ -17,11 +17,11 @@ interface TestesDao {
     @Query("SELECT * FROM testes WHERE resultado = :resultado")
     suspend fun getByResultado(resultado: String): Teste
 
-    /*
-    @Query("SELECT * FROM testes WHERE data = :lista ORDER BY data DESC")
-    suspend fun sortedByDescending(lista: List<Teste>): List<Teste>
 
-    @Query("SELECT * FROM testes WHERE data = :lista ORDER BY data ASC")
-    suspend fun sortedByAscending(lista: List<Teste>): List<Teste>
-     */
+    @Query("SELECT * FROM testes ORDER BY data DESC")
+    suspend fun sortedByDescending(): List<Teste>
+
+    @Query("SELECT * FROM testes ORDER BY data ASC")
+    suspend fun sortedByAscending(): List<Teste>
+
 }

@@ -28,7 +28,7 @@ class TestesRepository(private val local: TestesDao) {
     fun getAll(context: Context){
         CoroutineScope(Dispatchers.IO).launch {
             val testes = local.getAll()
-            CoroutineScope(Dispatchers.IO).launch {
+            CoroutineScope(Dispatchers.Main).launch {
                 listener?.listaTestes(testes)
             }
         }
@@ -43,23 +43,21 @@ class TestesRepository(private val local: TestesDao) {
         this.listener = null
     }
 
-    /*
-    fun sortedByDescending(context: Context){
+    fun sortedByAscending(context: Context){
         CoroutineScope(Dispatchers.IO).launch {
-            val testes = local.getAll()
-            CoroutineScope(Dispatchers.IO).launch {
+            val testes = local.sortedByAscending()
+            CoroutineScope(Dispatchers.Main).launch {
                 listener?.listaTestes(testes)
             }
         }
     }
 
-    fun sortedByAscending(){
+    fun sortedByDescending(context: Context){
         CoroutineScope(Dispatchers.IO).launch {
-            val testes = local.sortedByAscending()
-            CoroutineScope(Dispatchers.IO).launch {
+            val testes = local.sortedByDescending()
+            CoroutineScope(Dispatchers.Main).launch {
                 listener?.listaTestes(testes)
             }
         }
     }
-     */
 }

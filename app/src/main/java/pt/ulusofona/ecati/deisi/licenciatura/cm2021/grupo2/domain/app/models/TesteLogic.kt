@@ -27,7 +27,6 @@ class TesteLogic(private val repository: TestesRepository) {
         repository.getAll(context)
     }
 
-    /*
     fun sortedByDescending(context: Context){
         repository.sortedByDescending(context)
     }
@@ -35,5 +34,5 @@ class TesteLogic(private val repository: TestesRepository) {
     fun sortedByAscending(context: Context){
         repository.sortedByAscending(context)
     }
-    */
+
 }

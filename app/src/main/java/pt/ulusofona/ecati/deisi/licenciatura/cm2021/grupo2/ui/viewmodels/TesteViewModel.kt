@@ -4,6 +4,9 @@ import android.app.Application
 import android.content.Context
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.TestesDatabase
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.dao.TestesDao
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.entities.Teste
@@ -33,13 +36,17 @@ class TesteViewModel(application: Application): AndroidViewModel(application) {
         testeLogic.getAll(context)
     }
 
-    /*
+
     fun sortedByDescending(context: Context){
-        testeLogic.sortedByDescending(context)
+        CoroutineScope(Dispatchers.Main).launch {
+            testeLogic.sortedByDescending(context)
+        }
     }
 
     fun sortedByAscending(context: Context){
-        testeLogic.sortedByAscending(context)
+        CoroutineScope(Dispatchers.Main).launch {
+            testeLogic.sortedByAscending(context)
+        }
     }
-    */
+
 }
