@@ -8,8 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.entities.DadosCovid
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.remote.responses.DadosCovidResponse
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.DadosCovid
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.DadosCovidListener
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.viewmodels.DadosCovidViewModel
 

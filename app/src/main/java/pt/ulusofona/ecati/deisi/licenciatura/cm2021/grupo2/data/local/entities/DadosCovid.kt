@@ -1,4 +1,4 @@
-package pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.entities
+package pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

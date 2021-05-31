@@ -6,8 +6,6 @@ import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.DadosCov
 
 class DadosCovidLogic(private val dadosCovidRepository: DadosCovidRepository) {
 
-    private var listener: DadosCovidListener? = null
-
     fun getDados(context: Context){
         dadosCovidRepository.getDados(context)
     }

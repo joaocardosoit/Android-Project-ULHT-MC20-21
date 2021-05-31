@@ -5,7 +5,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.dao.DadosCovidDao
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.entities.DadosCovid
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.DadosCovid
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.remote.responses.DadosCovidResponse
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.remote.services.DadosService
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.DadosCovidListener
@@ -16,7 +16,7 @@ class DadosCovidRepository(private val local: DadosCovidDao, private val retrofi
 
     private var listener: DadosCovidListener? = null
 
-    fun mostraDados(dadosCovid: DadosCovid){
+    fun mostraDados(){
         CoroutineScope(Dispatchers.Main).launch {
             listener?.dadosCovid(local.getDados())
         }
@@ -32,15 +32,15 @@ class DadosCovidRepository(private val local: DadosCovidDao, private val retrofi
                     dadosCovidResponse = respose.body() as DadosCovidResponse
                     val dadosCovid = DadosCovid(dadosCovidResponse!!.data, dadosCovidResponse!!.confirmados, dadosCovidResponse!!.obitos, dadosCovidResponse!!.recuperados, dadosCovidResponse!!.confirmadosNovos, dadosCovidResponse!!.internados, dadosCovidResponse!!.internadosUci)
                     local.insert(dadosCovid)
-                    mostraDados(local.getDados())
+                    mostraDados()
                 } else {
                     respose.message()
-                    mostraDados(local.getDados())
+                    mostraDados()
                 }
             }
         } else {
             CoroutineScope(Dispatchers.IO).launch {
-                mostraDados(local.getDados())
+                mostraDados()
             }
         }
         return null

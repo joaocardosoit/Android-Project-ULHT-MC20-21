@@ -11,7 +11,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_lista_concelhos.view.*
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.domain.app.models.Concelhos
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.Concelhos
 
 class ExtraAdapter(private val context: Context, private val layout: Int, private val items: MutableList<Concelhos>): RecyclerView.Adapter<ExtraAdapter.ExtraListaViewHolder>()  {
     val red = Color.rgb(255, 0, 0)
@@ -35,6 +35,7 @@ class ExtraAdapter(private val context: Context, private val layout: Int, privat
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ExtraListaViewHolder, position: Int) {
         val item = items[position]
+        /*
         holder.nomeConcelho.text = items[position].nome
         holder.numCasosAtivos.text = context.getString(R.string.casos_ativos) + items[position].casosAtivos.toString()
         holder.numMortos.text = context.getString(R.string.mortos) + items[position].mortos.toString()
@@ -48,6 +49,6 @@ class ExtraAdapter(private val context: Context, private val layout: Int, privat
             } else {
                 holder.cardView.setCardBackgroundColor(red)
             }
-        }
+        }*/
     }
 }

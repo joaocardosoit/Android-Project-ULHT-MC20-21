@@ -3,16 +3,13 @@ package pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.viewmodels
 import android.app.Application
 import android.content.Context
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.TestesDatabase
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.dao.TestesDao
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.entities.Teste
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.Teste
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.repositories.TestesRepository
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.domain.app.models.TesteLogic
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.fragments.ListaFragment
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.ListaTestesListener
 
 class TesteViewModel(application: Application): AndroidViewModel(application) {

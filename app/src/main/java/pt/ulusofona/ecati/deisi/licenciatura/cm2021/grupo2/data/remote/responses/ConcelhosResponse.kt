@@ -2,7 +2,7 @@ package pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-data class DadosConcelhosResponse(
+data class ConcelhosResponse(
         @SerializedName("data") val data: String,
         @SerializedName("concelho") val concelho: String,
         @SerializedName("confirmados_14") val confirmados14: Int,

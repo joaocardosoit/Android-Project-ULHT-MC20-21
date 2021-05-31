@@ -9,17 +9,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.utils.NavigationManager
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.domain.app.models.Concelhos
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.entities.Teste
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.Concelhos
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.Teste
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.viewmodels.TesteViewModel
 import java.util.*
 
-var listaConcelhos: MutableList<Concelhos> = mutableListOf(Concelhos("Évora", 90, 321, 455),
-        Concelhos("Lisboa", 450, 12, 500),
-        Concelhos("Amadora", 210, 45, 150),
-        Concelhos("Porto", 600, 115, 240),
-        Concelhos("Sintra", 50, 76, 90)
-)
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
 
     lateinit var viewModel: TesteViewModel

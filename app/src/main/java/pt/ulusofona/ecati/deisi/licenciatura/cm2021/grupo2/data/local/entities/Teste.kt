@@ -1,4 +1,4 @@
-package pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.entities
+package pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities
 
 import android.os.Parcelable
 import androidx.room.Entity
