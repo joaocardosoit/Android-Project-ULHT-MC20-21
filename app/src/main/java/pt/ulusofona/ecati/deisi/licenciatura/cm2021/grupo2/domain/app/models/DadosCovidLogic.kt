@@ -8,10 +8,6 @@ class DadosCovidLogic(private val dadosCovidRepository: DadosCovidRepository) {
 
     private var listener: DadosCovidListener? = null
 
-    fun mostraDados(context: Context){
-        dadosCovidRepository.mostraDados(context)
-    }
-
     fun getDados(context: Context){
         dadosCovidRepository.getDados(context)
     }

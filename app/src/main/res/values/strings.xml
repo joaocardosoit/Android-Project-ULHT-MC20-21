@@ -10,8 +10,8 @@
     <string name="adicionar">Adicionar</string>
     <string name="voltar">Voltar</string>
     <string name="num_infetados">Infetados Diários</string>
-    <string name="num_mortes">Mortes Diárias</string>
-    <string name="num_recuperados">Recuperados Diários</string>
+    <string name="num_internados">Internados</string>
+    <string name="num_internados_uci">Internados UCI</string>
     <string name="num_total_infetados">Total de Infetados</string>
     <string name="num_total_mortes">Total de Mortes</string>
     <string name="num_total_recuperados">Total de Recuperados</string>

@@ -23,8 +23,8 @@
     <string name="voltar" translatable="false">Back</string>
     <string name="numDiarios" translatable="false">See the Covid-19 numbers here</string>
     <string name="num_infetados" translatable="false">Daily Infected</string>
-    <string name="num_mortes" translatable="false">"Daily Deaths"</string>
-    <string name="num_recuperados" translatable="false">Daily Recovered</string>
+    <string name="num_internados" translatable="false">Patients admitted</string>
+    <string name="num_internados_uci" translatable="false">Patients admitted at ICU</string>
     <string name="num_total_infetados" translatable="false">"Total Infected"</string>
     <string name="num_total_mortes" translatable="false">Total Deaths</string>
     <string name="num_total_recuperados" translatable="false">Total Recovered</string>

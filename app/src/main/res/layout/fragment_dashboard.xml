@@ -91,7 +91,7 @@
                     android:padding="16dp">
 
                     <TextView
-                        android:id="@+id/num_mortes"
+                        android:id="@+id/num_internados"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -103,8 +103,8 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/blue"
                         android:layout_centerInParent="true"
-                        android:layout_below="@+id/num_mortes"
-                        android:text="@string/num_mortes"
+                        android:layout_below="@+id/num_internados"
+                        android:text="@string/num_internados"
                         />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -126,7 +126,7 @@
                     android:padding="16dp">
 
                     <TextView
-                        android:id="@+id/num_recuperados"
+                        android:id="@+id/num_internados_uci"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -138,8 +138,8 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:textColor="@color/blue"
-                        android:layout_below="@+id/num_recuperados"
-                        android:text="@string/num_recuperados"
+                        android:layout_below="@+id/num_internados_uci"
+                        android:text="@string/num_internados_uci"
                         />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>

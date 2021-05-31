@@ -10,7 +10,11 @@ abstract class Connectivity private constructor(){
         fun isConnected(context: Context): Boolean{
             val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
             val activeNetwork: NetworkInfo = connectivityManager.activeNetworkInfo
-            return activeNetwork.isConnected
+            return if(activeNetwork?.isConnected!=null){
+                activeNetwork.isConnected
+            } else{
+                false
+            }
         }
     }
 }

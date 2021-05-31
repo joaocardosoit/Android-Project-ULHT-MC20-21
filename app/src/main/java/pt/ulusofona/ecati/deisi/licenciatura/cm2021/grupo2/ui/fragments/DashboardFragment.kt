@@ -9,9 +9,9 @@ import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.entities.DadosCovid
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.remote.responses.DadosCovidResponse
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.DadosCovidListener
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.viewmodels.DadosCovidViewModel
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.viewmodels.TesteViewModel
 
 class DashboardFragment : Fragment(), DadosCovidListener {
 
@@ -33,18 +33,15 @@ class DashboardFragment : Fragment(), DadosCovidListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.mostraDados(context!!)
     }
 
     override fun dadosCovid(dadosCovid: DadosCovid) {
-        num_infetados.text = dadosCovid.confirmados.toString()
-        num_mortes.text = dadosCovid.obitos.toString()
-        num_recuperados.text = dadosCovid.recuperados.toString()
-        /*
-        num_total_infetados.text = lista[position].numTotalCasos.toString()
-        num_total_mortes.text = lista[position].numTotalMortes.toString()
-        num_total_recuperados.text = lista[position].numTotalRecuperados.toString()
-        */
+        num_infetados.text = dadosCovid.confirmadosNovos.toString()
+        num_internados.text = dadosCovid.internados.toString()
+        num_internados_uci.text = dadosCovid.internadosUci.toString()
+        num_total_mortes.text = dadosCovid.obitos.toString()
+        num_total_infetados.text = dadosCovid.confirmados.toString()
+        num_total_recuperados.text = dadosCovid.recuperados.toString()
     }
 
 }

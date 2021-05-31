@@ -18,9 +18,6 @@ class DadosCovidViewModel(application: Application): AndroidViewModel(applicatio
     private val dadosCovidRepository = DadosCovidRepository(dadosCovid, RetrofitBuilder.getInstance(ENDPOINT))
     private val dadosCovidLogic = DadosCovidLogic(dadosCovidRepository)
 
-    fun mostraDados(context: Context){
-        dadosCovidLogic.mostraDados(context)
-    }
 
     fun getDados(context: Context){
         dadosCovidLogic.getDados(context)
