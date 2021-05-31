@@ -19,7 +19,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_lista.*
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.utils.NavigationManager
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.activities.testes
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.adapters.ListaAdapter
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.OnClickItemListener
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.entities.Teste

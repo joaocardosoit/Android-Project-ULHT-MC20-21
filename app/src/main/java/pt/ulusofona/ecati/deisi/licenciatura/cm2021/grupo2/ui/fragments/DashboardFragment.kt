@@ -5,32 +5,46 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.activities.numerosCovid
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.domain.app.models.NumsCovid
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.entities.DadosCovid
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.DadosCovidListener
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.viewmodels.DadosCovidViewModel
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.viewmodels.TesteViewModel
 
-class DashboardFragment : Fragment() {
+class DashboardFragment : Fragment(), DadosCovidListener {
+
+    lateinit var viewModel: DadosCovidViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
+    override fun onStart() {
+        super.onStart()
+        context?.let { viewModel.registerListener(this, it) }
+    }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_dashboard, container, false)
+        val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
+        viewModel = ViewModelProviders.of(this).get(DadosCovidViewModel::class.java)
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mostrarNumeros(numerosCovid, numerosCovid.size-1)
+        viewModel.mostraDados(context!!)
     }
 
-    private fun mostrarNumeros(lista: MutableList<NumsCovid>, position: Int){
-        num_infetados.text = lista[position].numInfetados.toString()
-        num_mortes.text = lista[position].numMortes.toString()
-        num_recuperados.text = lista[position].numRecuperados.toString()
+    override fun dadosCovid(dadosCovid: DadosCovid) {
+        num_infetados.text = dadosCovid.confirmados.toString()
+        num_mortes.text = dadosCovid.obitos.toString()
+        num_recuperados.text = dadosCovid.recuperados.toString()
+        /*
         num_total_infetados.text = lista[position].numTotalCasos.toString()
         num_total_mortes.text = lista[position].numTotalMortes.toString()
         num_total_recuperados.text = lista[position].numTotalRecuperados.toString()
+        */
     }
+
 }

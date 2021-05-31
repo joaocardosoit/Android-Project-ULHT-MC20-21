@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Projeto Android Nativo</string>
+    <string name="app_name">MyCovid-19</string>
     <string name="exemplo">Positive</string>
     <string name="contacto_digital_3" translatable="false">gec@mne.pt</string>
     <string name="contacto_digital_2" translatable="false">atendimento@SNS24.gov.pt</string>

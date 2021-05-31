@@ -5,19 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.utils.NavigationManager
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.domain.app.models.Concelhos
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.domain.app.models.NumsCovid
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.entities.DadosCovid
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.entities.Teste
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.viewmodels.TesteViewModel
 import java.util.*
 
-var numerosCovid: MutableList<NumsCovid> = mutableListOf(NumsCovid(1000, 237, 763, 5000, 1110, 2000))
 var listaConcelhos: MutableList<Concelhos> = mutableListOf(Concelhos("Évora", 90, 321, 455),
         Concelhos("Lisboa", 450, 12, 500),
         Concelhos("Amadora", 210, 45, 150),

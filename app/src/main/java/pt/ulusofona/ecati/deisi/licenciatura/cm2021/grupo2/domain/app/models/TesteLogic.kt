@@ -4,7 +4,6 @@ import android.content.Context
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.entities.Teste
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.repositories.TestesRepository
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.activities.testes
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.ListaTestesListener
 
 class TesteLogic(private val repository: TestesRepository) {

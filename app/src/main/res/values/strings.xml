@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Projeto Android Nativo</string>
+    <string name="app_name">MyCovid-19</string>
     <string name="exemplo">Positivo</string>
     <string name="contactos">Contactos</string>
     <string name="estou_em_perigo">Estou em Perigo?</string>
