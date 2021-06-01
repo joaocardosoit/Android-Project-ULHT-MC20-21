@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.Concelhos
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.Teste
 
 @Dao
 interface ConcelhosDao {
@@ -13,4 +14,7 @@ interface ConcelhosDao {
 
     @Query("SELECT * FROM concelhos")
     suspend fun getConcelhos(): List<Concelhos>
+
+    @Query("SELECT * FROM concelhos WHERE concelho = :concelho")
+    suspend fun searchByConcelho(concelho: String): List<Concelhos>
 }

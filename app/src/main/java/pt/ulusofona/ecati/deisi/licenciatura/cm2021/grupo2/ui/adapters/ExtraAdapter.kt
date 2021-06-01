@@ -16,7 +16,8 @@ import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.C
 class ExtraAdapter(private val context: Context, private val layout: Int, private val items: MutableList<Concelhos>): RecyclerView.Adapter<ExtraAdapter.ExtraListaViewHolder>()  {
     val red = Color.rgb(255, 0, 0)
     val green = Color.rgb(0, 255, 0)
-    val yellow = Color.rgb(253, 203, 0)
+    val yellow = Color.rgb(253, 230, 0)
+    val orange = Color.rgb(255, 120, 0)
 
     class ExtraListaViewHolder(view: View): RecyclerView.ViewHolder(view){
         val nomeConcelho: TextView = view.concelhos
@@ -40,11 +41,13 @@ class ExtraAdapter(private val context: Context, private val layout: Int, privat
         holder.nivelRisco.text = context.getString(R.string.nivel_de_risto) + items[position].incidenciaRisco.toString()
 
         for (i in 0..items.size - 1){
-            if (item.casos14Dias >= 0 && item.casos14Dias <= 100){
+            if (item.incidenciaRisco.equals("Baixo a Moderado")){
                 holder.cardView.setCardBackgroundColor(green)
-            } else if(item.casos14Dias > 100 && item.casos14Dias <= 250) {
+            } else if(item.incidenciaRisco.equals("Moderado")) {
                 holder.cardView.setCardBackgroundColor(yellow)
-            } else {
+            } else if(item.incidenciaRisco.equals("Elevado")){
+                holder.cardView.setCardBackgroundColor(orange)
+            } else if(item.incidenciaRisco.equals("Muito Elevado")){
                 holder.cardView.setCardBackgroundColor(red)
             }
         }
