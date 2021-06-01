@@ -21,8 +21,7 @@ class ExtraAdapter(private val context: Context, private val layout: Int, privat
     class ExtraListaViewHolder(view: View): RecyclerView.ViewHolder(view){
         val nomeConcelho: TextView = view.concelhos
         val numCasosAtivos: TextView = view.casos_ativos
-        val numMortos: TextView = view.mortos
-        val numRecuperados: TextView = view.recuperados
+        val nivelRisco: TextView = view.risco
         val cardView: CardView = view.cardview_extra
     }
 
@@ -35,20 +34,19 @@ class ExtraAdapter(private val context: Context, private val layout: Int, privat
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ExtraListaViewHolder, position: Int) {
         val item = items[position]
-        /*
-        holder.nomeConcelho.text = items[position].nome
-        holder.numCasosAtivos.text = context.getString(R.string.casos_ativos) + items[position].casosAtivos.toString()
-        holder.numMortos.text = context.getString(R.string.mortos) + items[position].mortos.toString()
-        holder.numRecuperados.text = context.getString(R.string.recuperados) + items[position].recuperados.toString()
+
+        holder.nomeConcelho.text = items[position].concelho
+        holder.numCasosAtivos.text = context.getString(R.string.casos_ativos) + items[position].casos14Dias.toString()
+        holder.nivelRisco.text = context.getString(R.string.nivel_de_risto) + items[position].incidenciaRisco.toString()
 
         for (i in 0..items.size - 1){
-            if (item.casosAtivos >= 0 && item.casosAtivos <= 100){
+            if (item.casos14Dias >= 0 && item.casos14Dias <= 100){
                 holder.cardView.setCardBackgroundColor(green)
-            } else if(item.casosAtivos > 100 && item.casosAtivos <= 250) {
+            } else if(item.casos14Dias > 100 && item.casos14Dias <= 250) {
                 holder.cardView.setCardBackgroundColor(yellow)
             } else {
                 holder.cardView.setCardBackgroundColor(red)
             }
-        }*/
+        }
     }
 }

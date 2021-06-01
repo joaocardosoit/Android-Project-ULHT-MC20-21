@@ -35,20 +35,11 @@
         </TextView>
 
         <TextView
-            android:id="@+id/mortos"
+            android:id="@+id/risco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="22sp"
             android:layout_below="@+id/casos_ativos"
-            android:textColor="@color/white">
-        </TextView>
-
-        <TextView
-            android:id="@+id/recuperados"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="22sp"
-            android:layout_below="@+id/mortos"
             android:textColor="@color/white">
         </TextView>
 

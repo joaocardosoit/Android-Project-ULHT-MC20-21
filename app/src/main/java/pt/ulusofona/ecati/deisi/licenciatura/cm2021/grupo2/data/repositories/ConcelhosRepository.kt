@@ -32,7 +32,7 @@ class ConcelhosRepository(private val local: ConcelhosDao, private val retrofit:
                 if(response.isSuccessful){
                     concelhosResponse = response.body() as ConcelhosResponse
                     concelhos.forEach {
-                        val concelho = Concelhos(concelhosResponse!!.data)
+                        val concelho = Concelhos(concelhosResponse!!.data, concelhosResponse!!.concelho, concelhosResponse!!.incidenciaRisco, concelhosResponse!!.casos14Dias)
                         local.insert(concelho)
                     }
                     mostraConcelhos(local.getConcelhos())
