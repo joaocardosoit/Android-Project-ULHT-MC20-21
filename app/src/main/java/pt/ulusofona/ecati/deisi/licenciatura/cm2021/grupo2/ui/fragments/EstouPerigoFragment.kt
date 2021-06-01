@@ -22,6 +22,6 @@ class EstouPerigoFragment : Fragment(), ConcelhosListener {
         return view
     }
 
-    override fun concelhos(listaConcelhos: List<Concelhos>) {
+    override fun listaConcelhos(listaConcelhos: List<Concelhos>) {
     }
 }

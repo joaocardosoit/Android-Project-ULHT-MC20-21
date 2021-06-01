@@ -18,21 +18,21 @@ class ConcelhosRepository(private val local: ConcelhosDao, private val retrofit:
 
     fun mostraConcelhos(listaConcelhos: List<Concelhos>){
         CoroutineScope(Dispatchers.Main).launch {
-            listener?.concelhos(listaConcelhos)
+            listener?.listaConcelhos(listaConcelhos)
         }
     }
 
     fun getConcelhos(context: Context): List<Concelhos>?{
         var concelhosResponse: List<ConcelhosResponse>
-        val concelhos: List<Concelhos> = mutableListOf()
         if(Connectivity.isConnected(context)){
             val service = retrofit.create(ConcelhosService::class.java)
             CoroutineScope(Dispatchers.IO).launch{
                 val response = service.getUltimosDadosConcelhos()
                 if(response.isSuccessful){
                     concelhosResponse = response.body() as List<ConcelhosResponse>
-                    concelhos.forEach {
+                    concelhosResponse.forEach {
                         val concelho = Concelhos(it.data, it.concelho, it.incidenciaRisco, it.casos14Dias)
+                        println(concelho)
                         local.insert(concelho)
                     }
                     mostraConcelhos(local.getConcelhos())
