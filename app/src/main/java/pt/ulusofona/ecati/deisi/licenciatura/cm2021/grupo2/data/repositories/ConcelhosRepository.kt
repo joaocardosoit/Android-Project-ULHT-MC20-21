@@ -23,16 +23,16 @@ class ConcelhosRepository(private val local: ConcelhosDao, private val retrofit:
     }
 
     fun getConcelhos(context: Context): List<Concelhos>?{
-        var concelhosResponse: ConcelhosResponse? = null
+        var concelhosResponse: List<ConcelhosResponse>
         val concelhos: List<Concelhos> = mutableListOf()
         if(Connectivity.isConnected(context)){
             val service = retrofit.create(ConcelhosService::class.java)
             CoroutineScope(Dispatchers.IO).launch{
                 val response = service.getUltimosDadosConcelhos()
                 if(response.isSuccessful){
-                    concelhosResponse = response.body() as ConcelhosResponse
+                    concelhosResponse = response.body() as List<ConcelhosResponse>
                     concelhos.forEach {
-                        val concelho = Concelhos(concelhosResponse!!.data, concelhosResponse!!.concelho, concelhosResponse!!.incidenciaRisco, concelhosResponse!!.casos14Dias)
+                        val concelho = Concelhos(it.data, it.concelho, it.incidenciaRisco, it.casos14Dias)
                         local.insert(concelho)
                     }
                     mostraConcelhos(local.getConcelhos())
