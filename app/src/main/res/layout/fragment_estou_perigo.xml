@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.fragments.EstouPerigoFragment">
 
     <ScrollView
@@ -12,50 +13,68 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/nivel_risco">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/nivel_de_risto"
-                    android:textColor="@color/blue"
-                    android:textSize="20sp"/>
+            android:padding="16dp">
 
-                <TextView
-                    android:id="@+id/text_risco"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/alto"
-                    android:textColor="@color/red"
-                    android:textSize="20sp"/>
-            </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="999dp"
+                android:layout_height="150dp"
+                android:layout_columnWeight="1"
+                android:layout_row="1"
+                android:backgroundTint="@color/orange"
+                android:layout_margin="12dp"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/nivel_risco">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/posicao_atual"
-                    android:textColor="@color/blue"
-                    android:textSize="20sp"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/text_posicao"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/lisboa"
-                    android:textColor="@color/red"
-                    android:textSize="20sp" />
-            </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/nivel_risco">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/nivel_de_risto"
+                            android:textColor="@color/blue"
+                            android:textSize="20sp"/>
 
+                        <TextView
+                            android:id="@+id/text_risco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/alto"
+                            android:textColor="@color/red"
+                            android:textSize="20sp"/>
+                    </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nivel_risco">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/posicao_atual"
+                            android:textColor="@color/blue"
+                            android:textSize="20sp"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/text_posicao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lisboa"
+                            android:textColor="@color/red"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
         </RelativeLayout>
     </ScrollView>
 
