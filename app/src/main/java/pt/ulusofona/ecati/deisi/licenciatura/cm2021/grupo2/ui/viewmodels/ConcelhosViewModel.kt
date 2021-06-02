@@ -31,9 +31,6 @@ class ConcelhosViewModel(application: Application): AndroidViewModel(application
     }
 
     fun searchByConcelho(context: Context, nomeConcelho: String){
-        CoroutineScope(Dispatchers.Main).launch {
-            concelhosLogic.searchByConcelho(context, nomeConcelho)
-            println("VIEWMODEL")
-        }
+        concelhosLogic.searchByConcelho(context, nomeConcelho)
     }
 }

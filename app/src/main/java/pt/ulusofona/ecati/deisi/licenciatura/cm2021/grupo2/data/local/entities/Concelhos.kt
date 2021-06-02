@@ -8,8 +8,6 @@ import java.util.*
 data class Concelhos(var data: String) {
 
     @PrimaryKey
-    var uuid: String = UUID.randomUUID().toString()
-
     var concelho: String = ""
     var incidenciaRisco: String = ""
     var casos14Dias: Int = 0

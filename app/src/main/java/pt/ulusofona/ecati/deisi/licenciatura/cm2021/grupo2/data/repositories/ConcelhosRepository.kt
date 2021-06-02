@@ -34,7 +34,6 @@ class ConcelhosRepository(private val local: ConcelhosDao, private val retrofit:
                     concelhosResponse = response.body() as List<ConcelhosResponse>
                     concelhosResponse.forEach {
                         val concelho = Concelhos(it.data, it.concelho, it.incidenciaRisco, it.casos14Dias)
-                        println(concelho)
                         local.insert(concelho)
                     }
                     mostraConcelhos(local.getConcelhos())
@@ -52,14 +51,9 @@ class ConcelhosRepository(private val local: ConcelhosDao, private val retrofit:
     }
 
     fun searchByConcelho(context: Context, nomeConcelho: String){
-        CoroutineScope(Dispatchers.IO).launch{
-            local.delete(local.searchByConcelho(nomeConcelho)[0])
-            CoroutineScope(Dispatchers.Main).launch {
-                if (local.searchByConcelho(nomeConcelho).size == 1) {
-                    listener?.listaConcelhos(local.searchByConcelho(nomeConcelho))
-                    println("REPOSITORIO")
-                }
-            }
+        CoroutineScope(Dispatchers.Main).launch {
+            listener?.listaConcelhos(local.searchByConcelho(nomeConcelho))
+
         }
     }
 

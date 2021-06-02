@@ -35,10 +35,11 @@ class ExtraFragment : Fragment(), ListaConcelhosListener {
 
         val searchView: SearchView = activity?.toolbar_main?.menu?.findItem(R.id.pesquisa)?.actionView as SearchView
         searchView.queryHint = context?.getString(R.string.pesquisa)
+        searchView.setQuery("", false)
+        searchView.isIconified = true
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 viewModel.searchByConcelho(context!!, query.toUpperCase())
-                println("VIEW")
                 return true
             }
 
