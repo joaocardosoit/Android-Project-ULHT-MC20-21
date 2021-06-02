@@ -14,7 +14,7 @@ interface ConcelhosDao {
     @Insert(onConflict = REPLACE)
     suspend fun insert(concelhos: Concelhos)
 
-    @Query("SELECT * FROM concelhos ORDER BY concelho")
+    @Query("SELECT * FROM concelhos")
     suspend fun getConcelhos(): List<Concelhos>
 
     @Query("SELECT * FROM concelhos WHERE concelho = :concelho")

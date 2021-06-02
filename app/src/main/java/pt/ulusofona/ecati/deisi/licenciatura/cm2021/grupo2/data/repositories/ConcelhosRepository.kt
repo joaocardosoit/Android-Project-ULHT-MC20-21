@@ -8,14 +8,12 @@ import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.C
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.dao.ConcelhosDao
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.remote.responses.ConcelhosResponse
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.remote.services.ConcelhosService
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.ConcelhosListener
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.ListaConcelhosListener
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.utils.Connectivity
 import retrofit2.Retrofit
 
 class ConcelhosRepository(private val local: ConcelhosDao, private val retrofit: Retrofit) {
 
-    private var listenerConcelho: ConcelhosListener? = null
     private var listener: ListaConcelhosListener? = null
 
     fun mostraConcelhos(listaConcelhos: List<Concelhos>){
@@ -53,7 +51,6 @@ class ConcelhosRepository(private val local: ConcelhosDao, private val retrofit:
     fun searchByConcelho(context: Context, nomeConcelho: String){
         CoroutineScope(Dispatchers.Main).launch {
             listener?.listaConcelhos(local.searchByConcelho(nomeConcelho))
-
         }
     }
 
