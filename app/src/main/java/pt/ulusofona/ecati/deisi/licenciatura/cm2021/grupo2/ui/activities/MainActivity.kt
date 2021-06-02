@@ -9,7 +9,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.utils.NavigationManager
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.Concelhos
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.Teste
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.viewmodels.TesteViewModel
 import java.util.*
@@ -47,6 +46,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.toolbar_menu, menu)
+        toolbar_main.menu.findItem(R.id.pesquisa).setVisible(false)
         return true
     }
 
@@ -83,6 +83,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             toolbar_main.title = getString(R.string.titulo)
             toolbar_main.navigationIcon = null
             toolbar_main.menu.findItem(R.id.filtro).setVisible(false)
+            toolbar_main.menu.findItem(R.id.pesquisa).setVisible(false)
             bottom_navigation.selectedItemId = R.id.ic_perigo
             NavigationManager.goToEstouPerigoFragment(supportFragmentManager)
         }
@@ -94,17 +95,20 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                 R.id.ic_lista -> {
                     toolbar_main.title = getString(R.string.titulo)
                     toolbar_main.navigationIcon = null
+                    toolbar_main.menu.findItem(R.id.pesquisa).setVisible(false)
                     NavigationManager.goToListaFragment(supportFragmentManager)
                     true}
                 R.id.ic_contactos -> {
                     toolbar_main.title = getString(R.string.titulo)
                     toolbar_main.navigationIcon = null
+                    toolbar_main.menu.findItem(R.id.pesquisa).setVisible(false)
                     toolbar_main.menu.findItem(R.id.filtro).setVisible(false)
                     NavigationManager.goToContactosFragment(supportFragmentManager)
                     true}
                 R.id.ic_dashboard -> {
                     toolbar_main.title = getString(R.string.titulo)
                     toolbar_main.navigationIcon = null
+                    toolbar_main.menu.findItem(R.id.pesquisa).setVisible(false)
                     toolbar_main.menu.findItem(R.id.filtro).setVisible(false)
                     NavigationManager.goToDashboardFragment(supportFragmentManager)
                     true}
@@ -112,6 +116,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                     toolbar_main.title = getString(R.string.titulo)
                     toolbar_main.navigationIcon = null
                     toolbar_main.menu.findItem(R.id.filtro).setVisible(false)
+                    toolbar_main.menu.findItem(R.id.pesquisa).setVisible(true)
                     NavigationManager.goToExtraFragment(supportFragmentManager)
                     true}
                 else -> true

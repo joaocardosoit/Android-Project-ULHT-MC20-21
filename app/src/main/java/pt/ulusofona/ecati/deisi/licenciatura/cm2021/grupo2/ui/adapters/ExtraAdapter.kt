@@ -38,7 +38,7 @@ class ExtraAdapter(private val context: Context, private val layout: Int, privat
 
         holder.nomeConcelho.text = items[position].concelho
         holder.numCasosAtivos.text = context.getString(R.string.casos_ativos) + items[position].casos14Dias.toString()
-        holder.nivelRisco.text = context.getString(R.string.nivel_de_risto) + items[position].incidenciaRisco.toString()
+        holder.nivelRisco.text = context.getString(R.string.nivel_de_risco) + items[position].incidenciaRisco.toString()
 
         for (i in 0..items.size - 1){
             if (item.incidenciaRisco.equals("Baixo a Moderado")){

@@ -39,6 +39,7 @@
     <style name="ToolbarTheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/blue</item>
         <item name="android:itemBackground">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
         <item name="android:textColorPrimary">@color/white</item>
         <item name="android:textColorSecondary">@color/white</item>
     </style>

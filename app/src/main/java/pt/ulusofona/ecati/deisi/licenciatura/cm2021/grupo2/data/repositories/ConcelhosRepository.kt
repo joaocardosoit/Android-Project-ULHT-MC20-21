@@ -9,12 +9,14 @@ import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.dao.C
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.remote.responses.ConcelhosResponse
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.remote.services.ConcelhosService
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.ConcelhosListener
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.ListaConcelhosListener
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.utils.Connectivity
 import retrofit2.Retrofit
 
 class ConcelhosRepository(private val local: ConcelhosDao, private val retrofit: Retrofit) {
 
-    private var listener: ConcelhosListener? = null
+    private var listenerConcelho: ConcelhosListener? = null
+    private var listener: ListaConcelhosListener? = null
 
     fun mostraConcelhos(listaConcelhos: List<Concelhos>){
         CoroutineScope(Dispatchers.Main).launch {
@@ -49,7 +51,17 @@ class ConcelhosRepository(private val local: ConcelhosDao, private val retrofit:
         return null
     }
 
-    fun registerListener(listener: ConcelhosListener, context: Context){
+    fun searchByConcelho(context: Context, nomeConcelho: String){
+            CoroutineScope(Dispatchers.Main).launch {
+                if (local.searchByConcelho(nomeConcelho).size == 1) {
+                    listener?.listaConcelhos(local.searchByConcelho(nomeConcelho))
+                }
+                local.delete(local.searchByConcelho(nomeConcelho)[0])
+
+            }
+    }
+
+    fun registerListener(listener: ListaConcelhosListener, context: Context){
         this.listener = listener
         getConcelhos(context)
     }

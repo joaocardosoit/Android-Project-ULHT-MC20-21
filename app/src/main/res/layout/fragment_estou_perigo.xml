@@ -37,7 +37,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="@string/nivel_de_risto"
+                            android:text="@string/nivel_de_risco"
                             android:textColor="@color/blue"
                             android:textSize="20sp"/>
 

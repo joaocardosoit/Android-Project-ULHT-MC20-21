@@ -7,8 +7,7 @@ import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.Conce
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.remote.RetrofitBuilder
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.repositories.ConcelhosRepository
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.domain.app.models.ConcelhosLogic
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.ConcelhosListener
-import retrofit2.Retrofit
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.ListaConcelhosListener
 
 class ConcelhosViewModel(application: Application): AndroidViewModel(application) {
 
@@ -20,11 +19,15 @@ class ConcelhosViewModel(application: Application): AndroidViewModel(application
         concelhosLogic.getConcelhos(context)
     }
 
-    fun registerListener(listener: ConcelhosListener, context: Context){
+    fun registerListener(listener: ListaConcelhosListener, context: Context){
         concelhosLogic.registerListener(listener, context)
     }
 
     fun unregisterListener(){
         concelhosLogic.unregisterListener()
+    }
+
+    fun searchByConcelho(context: Context, nomeConcelho: String){
+        concelhosLogic.searchByConcelho(context, nomeConcelho)
     }
 }

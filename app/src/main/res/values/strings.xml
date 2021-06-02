@@ -43,7 +43,7 @@
     <string name="foto">Foto</string>
     <string name="filtro">Filtro</string>
     <string name="alto">Alto</string>
-    <string name="nivel_de_risto">Nível de risto:\u0020</string>
+    <string name="nivel_de_risco">Nível de risco:\u0020</string>
     <string name="posicao_atual">Posição atual:\u0020</string>
     <string name="lisboa">Lisboa</string>
     <string name="adicionar_fotografia">Adicionar Fotografia</string>
@@ -70,4 +70,5 @@
     <string name="medio">Medio</string>
     <string name="casos_ativos">Casos Ativos:\u0020</string>
     <string name="mortos">Mortes:\u0020</string>
+    <string name="pesquisa">Pesquisar</string>
 </resources>

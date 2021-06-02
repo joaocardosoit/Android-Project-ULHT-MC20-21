@@ -61,9 +61,7 @@ class ListaFragment : Fragment(), OnClickItemListener, ListaTestesListener {
                     }
                     val dialogCreate = dialogBuilder.create()
                     dialogCreate.show()
-                    true
                 }
-                else -> true
             }
 
             true

@@ -8,4 +8,11 @@
         app:showAsAction="always"
         >
     </item>
+    <item
+        android:id="@+id/pesquisa"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="@string/pesquisa"
+        app:showAsAction="ifRoom|withText"
+        app:actionViewClass="android.widget.SearchView">
+    </item>
 </menu>

@@ -1,23 +1,25 @@
 package pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.fragments
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_extra.*
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.Concelhos
-//import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.activities.listaConcelhos
+import kotlinx.android.synthetic.main.activity_main.*
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.adapters.ExtraAdapter
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.ConcelhosListener
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.ListaConcelhosListener
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.viewmodels.ConcelhosViewModel
 
 
-class ExtraFragment : Fragment(), ConcelhosListener {
+class ExtraFragment : Fragment(), ListaConcelhosListener {
 
     lateinit var viewModel: ConcelhosViewModel
 
@@ -27,9 +29,24 @@ class ExtraFragment : Fragment(), ConcelhosListener {
         return view
     }
 
+
     override fun onStart() {
         super.onStart()
         context?.let { viewModel.registerListener(this, it) }
+
+        val searchView: SearchView = activity?.toolbar_main?.menu?.findItem(R.id.pesquisa)?.actionView as SearchView
+        searchView.queryHint = context?.getString(R.string.pesquisa)
+        searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String): Boolean {
+                viewModel.searchByConcelho(context!!, query)
+                return true
+            }
+
+            override fun onQueryTextChange(query: String): Boolean {
+                return false
+            }
+
+        })
     }
 
     override fun listaConcelhos(listaConcelhos: List<Concelhos>) {
