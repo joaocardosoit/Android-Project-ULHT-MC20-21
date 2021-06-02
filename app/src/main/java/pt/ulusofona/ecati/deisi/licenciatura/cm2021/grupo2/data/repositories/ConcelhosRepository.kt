@@ -52,13 +52,15 @@ class ConcelhosRepository(private val local: ConcelhosDao, private val retrofit:
     }
 
     fun searchByConcelho(context: Context, nomeConcelho: String){
+        CoroutineScope(Dispatchers.IO).launch{
+            local.delete(local.searchByConcelho(nomeConcelho)[0])
             CoroutineScope(Dispatchers.Main).launch {
                 if (local.searchByConcelho(nomeConcelho).size == 1) {
                     listener?.listaConcelhos(local.searchByConcelho(nomeConcelho))
+                    println("REPOSITORIO")
                 }
-                local.delete(local.searchByConcelho(nomeConcelho)[0])
-
             }
+        }
     }
 
     fun registerListener(listener: ListaConcelhosListener, context: Context){

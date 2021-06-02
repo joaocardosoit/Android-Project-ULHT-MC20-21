@@ -3,6 +3,9 @@ package pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.viewmodels
 import android.app.Application
 import android.content.Context
 import androidx.lifecycle.AndroidViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.room.ConcelhosDatabase
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.remote.RetrofitBuilder
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.repositories.ConcelhosRepository
@@ -28,6 +31,9 @@ class ConcelhosViewModel(application: Application): AndroidViewModel(application
     }
 
     fun searchByConcelho(context: Context, nomeConcelho: String){
-        concelhosLogic.searchByConcelho(context, nomeConcelho)
+        CoroutineScope(Dispatchers.Main).launch {
+            concelhosLogic.searchByConcelho(context, nomeConcelho)
+            println("VIEWMODEL")
+        }
     }
 }

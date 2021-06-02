@@ -20,5 +20,6 @@ class ConcelhosLogic(private val concelhosRepository: ConcelhosRepository) {
 
     fun searchByConcelho(context: Context, nomeConcelho: String){
         concelhosRepository.searchByConcelho(context, nomeConcelho)
+        println("LOGICA")
     }
 }
