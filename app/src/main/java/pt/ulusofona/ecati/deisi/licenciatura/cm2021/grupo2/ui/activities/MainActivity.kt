@@ -10,12 +10,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.utils.NavigationManager
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.Teste
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.sensors.battery.Battery
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.OnBatteryCurrentListener
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.viewmodels.TesteViewModel
 import java.util.*
 
-class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
-
-    lateinit var viewModel: TesteViewModel
+class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener, OnBatteryCurrentListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,34 +49,6 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         toolbar_main.menu.findItem(R.id.pesquisa).setVisible(false)
         return true
     }
-
-    /*override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        val listaDialog = arrayOf("Crescente", "Decrescente")
-        toolbar_main.setOnMenuItemClickListener{ item ->
-            when(item?.itemId){
-                R.id.filtro -> {
-                    val dialogBuilder: AlertDialog.Builder = AlertDialog.Builder(this)
-                    dialogBuilder.setTitle("Ordenar Lista")
-                    dialogBuilder.setSingleChoiceItems(listaDialog, -1) { _, i ->
-                        if (listaDialog[i] == "Crescente"){
-                            listaCrescente(testes)
-                            Toast.makeText(this, "A lista está agora em ordem crescente", Toast.LENGTH_SHORT).show()
-                        } else {
-                            listaDecrescente(testes)
-                            Toast.makeText(this, "A lista está agora em ordem decrescente", Toast.LENGTH_SHORT).show()
-                        }
-                    }
-                    dialogBuilder.setPositiveButton("Ok"){ _, _ ->
-                    }
-                    val dialogCreate = dialogBuilder.create()
-                    dialogCreate.show()
-                    true
-                }
-                else -> true
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }*/
 
     private fun onClickFab(){
         ic_perigo_fab.setOnClickListener{
@@ -124,18 +96,10 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         }
     }
 
-    private fun listaDecrescente(lista: MutableList<Teste>){
-        for (i in 0..lista.size-1){
-            lista.sortBy { it.data }
-        }
+    fun registerListener(onBatteryCurrentListener: OnBatteryCurrentListener){
+        Battery.start(this)
+        Battery.registerListener(this)
     }
-
-    private fun listaCrescente(lista: MutableList<Teste>){
-        for (i in 0..lista.size-1){
-            lista.sortByDescending { it.data }
-        }
-    }
-
     override fun onResume() {
         super.onResume()
     }
@@ -144,7 +108,14 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         super.onRestart()
     }
 
+    override fun onStop() {
+        super.onStop()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
+    }
+
+    override fun onCurrentChanged(current: Double) {
     }
 }

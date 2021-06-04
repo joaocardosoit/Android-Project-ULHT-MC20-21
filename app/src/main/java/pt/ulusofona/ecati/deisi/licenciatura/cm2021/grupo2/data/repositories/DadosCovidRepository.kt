@@ -9,7 +9,7 @@ import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.D
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.remote.responses.DadosCovidResponse
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.remote.services.DadosService
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.DadosCovidListener
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.utils.Connectivity
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.sensors.connectivity.Connectivity
 import retrofit2.Retrofit
 
 class DadosCovidRepository(private val local: DadosCovidDao, private val retrofit: Retrofit) {

@@ -1,4 +1,4 @@
-package pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.utils
+package pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.sensors.connectivity
 
 import android.content.Context
 import android.net.ConnectivityManager
