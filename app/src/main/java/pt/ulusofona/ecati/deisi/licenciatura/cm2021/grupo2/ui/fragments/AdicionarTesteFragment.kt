@@ -1,28 +1,38 @@
 package pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.fragments
 
+import android.app.Activity
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.DatePicker
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_adicionar_teste.*
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.Teste
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.activities.MainActivity
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.utils.NavigationManager
 
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.viewmodels.TesteViewModel
 import java.util.*
+import java.util.jar.Manifest
 
 class AdicionarTesteFragment : Fragment() {
 
     var image_uri: Uri?=null
     var IMAGE_CAPTURE_CODE=101
     var PERMISSION_CODE=100
+    private val CAMERA_PERMISSION_CODE = 0
 
     private lateinit var viewModel: TesteViewModel
 
@@ -51,6 +61,15 @@ class AdicionarTesteFragment : Fragment() {
         }
         datePicker.maxDate = hoje.timeInMillis
 
+        foto_button.setOnClickListener {
+            if (ContextCompat.checkSelfPermission(context!!, android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
+                val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                startActivityForResult(intent, CAMERA_PERMISSION_CODE)
+            } else {
+                Toast.makeText(context, "A premissão para abrir a câmera foi negada", Toast.LENGTH_LONG).show()
+            }
+        }
+
         save_button.setOnClickListener{
             if (resultado.text.toString() != "Positivo" && resultado.text.toString() != "positivo" && resultado.text.toString() != "Negativo" &&
                     resultado.text.toString() != "negativo"){
@@ -66,6 +85,28 @@ class AdicionarTesteFragment : Fragment() {
                 activity?.toolbar_main?.title = getString(R.string.titulo)
                 activity?.toolbar_main?.navigationIcon = null
                 activity?.supportFragmentManager?.let { NavigationManager.goToListaFragment(it) }
+            }
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == CAMERA_PERMISSION_CODE){
+            if(grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                startActivityForResult(intent, CAMERA_PERMISSION_CODE)
+            } else {
+                Toast.makeText(context, "A premissão para abrir a câmera foi negada", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK){
+            if (requestCode == CAMERA_PERMISSION_CODE){
+                val image: Bitmap = data?.extras?.get("data") as Bitmap
+                image_add.setImageBitmap(image)
             }
         }
     }

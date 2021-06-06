@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
@@ -96,10 +97,6 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         }
     }
 
-    fun registerListener(onBatteryCurrentListener: OnBatteryCurrentListener){
-        Battery.start(this)
-        Battery.registerListener(this)
-    }
     override fun onResume() {
         super.onResume()
     }
@@ -117,5 +114,22 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     }
 
     override fun onCurrentChanged(current: Double) {
+        var darkMode = getSharedPreferences("AppSettingsPreferences", 0).getBoolean("DarkMode", false)
+        var guardaBateria = getSharedPreferences("AppSettingsPreferences", 0).getBoolean("GuardaBateria", false)
+        val darkModeAtual = getSharedPreferences("AppSettingsPreferences", 0).getBoolean("DarkModeAtual", false)
+        val alcanceBateria = getSharedPreferences("AppSettingsPreferences", 0).getInt("AlcanceBateria", 20)
+
+        if (!darkMode && guardaBateria){
+            if (current < alcanceBateria && !darkModeAtual){
+                getSharedPreferences("AppSettingsPreferences" ,0).edit().putBoolean("DarkModeAtual", true).apply()
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else if (current > alcanceBateria && darkModeAtual){
+                getSharedPreferences("AppSettingsPreferences" ,0).edit().putBoolean("DarkModeAtual", false).apply()
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+        } else if(!darkMode && !guardaBateria && darkModeAtual) {
+            getSharedPreferences("AppSettingsPreferences" ,0).edit().putBoolean("DarkModeAtual", false).apply()
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
     }
 }
