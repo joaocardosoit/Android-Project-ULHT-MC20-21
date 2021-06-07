@@ -25,7 +25,7 @@ class Battery private constructor(private val context: Context): Runnable {
             Companion.listener = listener
         }
 
-        fun notifyListeners(current: Int) {
+        fun notifyListener(current: Int) {
             listener?.onCurrentChanged(current)
         }
 
@@ -33,11 +33,8 @@ class Battery private constructor(private val context: Context): Runnable {
             listener = null
         }
 
-
         fun start(context: Context) {
-            instance = if (instance == null) Battery(
-                context
-            ) else instance
+            instance = if (instance == null) Battery(context) else instance
             instance?.start()
 
         }
@@ -58,16 +55,8 @@ class Battery private constructor(private val context: Context): Runnable {
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
         if (sharedPreferences.getBoolean("locked", true)) {
             if (currentBattery <= 20) {
-                val countBoolean = sharedPreferences.getInt("count", 0)
-                if (!sharedPreferences.getBoolean(
-                        "darkModeOn",
-                        true
-                    ) && countBoolean == 0 && sharedPreferences.getBoolean("popup", true)
-                ) {
-                    notifyListeners(
-                        currentBattery
-                    )
-                    editor.putInt("count", 1)
+                if (!sharedPreferences.getBoolean("darkModeOn", true) && sharedPreferences.getBoolean("popup", true)) {
+                    notifyListener(currentBattery)
                     editor.putBoolean("darkMode", true)
                     editor.apply()
                 } else {
@@ -77,7 +66,6 @@ class Battery private constructor(private val context: Context): Runnable {
             } else {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 editor.putBoolean("battery", false)
-                editor.putInt("count", 0)
                 editor.apply()
             }
 
@@ -87,7 +75,6 @@ class Battery private constructor(private val context: Context): Runnable {
             editor.putBoolean("darkMode", false)
             editor.putBoolean("battery", false)
             editor.putBoolean("popup", true)
-            editor.putInt("count", 0)
             editor.apply()
         }
 

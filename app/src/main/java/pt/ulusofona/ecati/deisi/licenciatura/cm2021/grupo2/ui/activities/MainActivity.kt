@@ -104,7 +104,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         }
     }
 
-    fun registerListener(current: Int){
+    fun notifyListener(current: Int){
         currentBattery?.onCurrentChanged(current)
     }
 
