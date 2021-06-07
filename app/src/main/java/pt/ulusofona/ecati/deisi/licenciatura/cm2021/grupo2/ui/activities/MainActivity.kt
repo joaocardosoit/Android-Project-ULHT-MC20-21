@@ -14,10 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.utils.NavigationManager
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.Teste
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.sensors.battery.Battery
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.OnBatteryCurrentListener
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.viewmodels.TesteViewModel
 import java.util.*
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener, OnBatteryCurrentListener {
@@ -128,37 +125,37 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         super.onDestroy()
     }
 
+    private fun popUpBattery(){
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+        val dialog: AlertDialog = builder.setTitle("Ver string correta")
+                .setMessage("Ver qual é a string certa")
+                .setPositiveButton(android.R.string.ok) { _, _ ->
+                    val sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this)
+                    val editor: SharedPreferences.Editor=sharedPreferences.edit()
+                    editor.putBoolean("darkModeOn",true)
+                    editor.apply()
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                }
+                .setNegativeButton(android.R.string.cancel) { _, _ ->
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    val sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this)
+                    val editor: SharedPreferences.Editor=sharedPreferences.edit()
+                    editor.putBoolean("cancelDarkMode",true)
+                    editor.apply()
+                }.create()
+        dialog.show()
+
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(ContextCompat.getColor(this,R.color.black))
+
+        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(ContextCompat.getColor(this,R.color.black))
+    }
+
     override fun onCurrentChanged(current: Int) {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
         editor.putBoolean("darkModeOn", true)
         editor.apply()
         popUpBattery()
-    }
-
-    private fun popUpBattery(){
-        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-        val dialog: AlertDialog = builder.setTitle("Ver string correta")
-            .setMessage("Ver qual é a string certa")
-            .setPositiveButton(android.R.string.yes) { _, _ ->
-                val sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this)
-                val editor: SharedPreferences.Editor=sharedPreferences.edit()
-                editor.putBoolean("darkModeOn",true)
-                editor.apply()
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            }
-            .setNegativeButton(android.R.string.no) { _, _ ->
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                val sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this)
-                val editor: SharedPreferences.Editor=sharedPreferences.edit()
-                editor.putBoolean("cancelDarkode",true)
-                editor.apply()
-            }.create()
-        dialog.show()
-
-        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(ContextCompat.getColor(this,R.color.black))
-
-        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(ContextCompat.getColor(this,R.color.black))
     }
 
 }
