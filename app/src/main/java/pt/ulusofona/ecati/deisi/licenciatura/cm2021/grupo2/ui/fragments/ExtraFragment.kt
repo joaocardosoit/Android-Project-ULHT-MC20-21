@@ -56,8 +56,8 @@ class ExtraFragment : Fragment(), ListaConcelhosListener {
 
     override fun listaConcelhos(listaConcelhos: List<Concelhos>) {
         listaConcelhos.let {
-            list_casos_concelho.layoutManager = LinearLayoutManager(activity as Context)
-            list_casos_concelho.adapter = ExtraAdapter(activity as Context, R.layout.item_lista_concelhos, listaConcelhos.toMutableList() as ArrayList<Concelhos>)
+            list_casos_concelho?.layoutManager = LinearLayoutManager(activity as Context)
+            list_casos_concelho?.adapter = ExtraAdapter(activity as Context, R.layout.item_lista_concelhos, listaConcelhos.toMutableList() as ArrayList<Concelhos>)
         }
     }
 

@@ -70,6 +70,7 @@
                         android:layout_centerInParent="true"
                         android:textColor="@color/blue"
                         android:text="@string/num_infetados"
+                        android:textAlignment="center"
                         />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -105,6 +106,7 @@
                         android:layout_centerInParent="true"
                         android:layout_below="@+id/num_internados"
                         android:text="@string/num_internados"
+                        android:textAlignment="center"
                         />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -140,6 +142,7 @@
                         android:textColor="@color/blue"
                         android:layout_below="@+id/num_internados_uci"
                         android:text="@string/num_internados_uci"
+                        android:textAlignment="center"
                         />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -175,6 +178,7 @@
                         android:textColor="@color/blue"
                         android:layout_below="@+id/num_total_infetados"
                         android:text="@string/num_total_infetados"
+                        android:textAlignment="center"
                         />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -210,6 +214,7 @@
                         android:textColor="@color/blue"
                         android:layout_below="@+id/num_total_mortes"
                         android:text="@string/num_total_mortes"
+                        android:textAlignment="center"
                         />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -245,6 +250,7 @@
                         android:textColor="@color/blue"
                         android:layout_below="@+id/num_total_recuperados"
                         android:text="@string/num_total_recuperados"
+                        android:textAlignment="center"
                         />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>

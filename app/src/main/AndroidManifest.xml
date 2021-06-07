@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera2" android:required="true"/>
     <application
+        android:name="pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.utils.Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
