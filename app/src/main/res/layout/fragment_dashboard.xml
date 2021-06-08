@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/dashboard_background"
     tools:context="pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.fragments.DashboardFragment">
 
     <LinearLayout
@@ -25,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/numDiarios"
                 android:textSize="22sp"
-                android:textColor="@color/white"
+                android:textColor="@color/blue"
                 />
         </RelativeLayout>
 

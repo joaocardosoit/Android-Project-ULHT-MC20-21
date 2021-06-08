@@ -7,15 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="orange">#FF8C00</color>
+    <color name="orange">#C87005</color>
     <color name="tool_principal">#353535</color>
     <color name="second_blue">#2424FC</color>
     <color name="grey">#CCCCCC</color>
-    <color name="green">#00CC00</color>
+    <color name="green">#1C801C</color>
     <color name="soft_grey">#DCDCDC</color>
-    <color name="red">#FF0000</color>
-    <color name="yellow">#FFFF00</color>
+    <color name="red">#8F1D1D</color>
+    <color name="yellow">#AAAA02</color>
     <color name="icon">#000000</color>
     <color name="fundo_main_activity">#808080</color>
-
+    <color name="blue">#FFFFFF</color>
 </resources>

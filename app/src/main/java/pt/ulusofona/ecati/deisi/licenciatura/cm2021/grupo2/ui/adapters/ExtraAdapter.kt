@@ -14,10 +14,10 @@ import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.Concelhos
 
 class ExtraAdapter(private val context: Context, private val layout: Int, private val items: MutableList<Concelhos>): RecyclerView.Adapter<ExtraAdapter.ExtraListaViewHolder>()  {
-    val red = Color.rgb(255, 0, 0)
-    val green = Color.rgb(0, 255, 0)
-    val yellow = Color.rgb(253, 230, 0)
-    val orange = Color.rgb(255, 120, 0)
+    val red = Color.rgb(143, 29, 29)
+    val green = Color.rgb(28, 128, 28)
+    val yellow = Color.rgb(170, 170, 2)
+    val orange = Color.rgb(170, 93, 0)
 
     class ExtraListaViewHolder(view: View): RecyclerView.ViewHolder(view){
         val nomeConcelho: TextView = view.concelhos
