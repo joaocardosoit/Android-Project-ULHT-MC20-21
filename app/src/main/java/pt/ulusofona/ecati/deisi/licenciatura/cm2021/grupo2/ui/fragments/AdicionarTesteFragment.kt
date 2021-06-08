@@ -70,16 +70,9 @@ class AdicionarTesteFragment : Fragment() {
         datePicker.maxDate = hoje.timeInMillis
 
         foto_button.setOnClickListener {
-            if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.M){
-                if(PermissionChecker.checkSelfPermission(
-                        activity as Context,
-                        android.Manifest.permission.CAMERA
-                    ) == PermissionChecker.PERMISSION_DENIED || PermissionChecker.checkSelfPermission(
-                        activity as Context,
-                        android.Manifest.permission.WRITE_EXTERNAL_STORAGE
-                    ) == PermissionChecker.PERMISSION_DENIED){
-                    requestPermissions(arrayOf(android.Manifest.permission.CAMERA, android.Manifest.permission.WRITE_EXTERNAL_STORAGE),
-                        PERMISSION_CODE)
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+                if(PermissionChecker.checkSelfPermission(activity as Context, android.Manifest.permission.CAMERA) == PermissionChecker.PERMISSION_DENIED || PermissionChecker.checkSelfPermission(activity as Context, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PermissionChecker.PERMISSION_DENIED){
+                    requestPermissions(arrayOf(android.Manifest.permission.CAMERA, android.Manifest.permission.WRITE_EXTERNAL_STORAGE), PERMISSION_CODE)
                 }else{
                     openCamera()
                 }
@@ -107,19 +100,6 @@ class AdicionarTesteFragment : Fragment() {
         }
     }
 
-    override fun onStart() {
-        val sharedPreferences= PreferenceManager.getDefaultSharedPreferences(activity as Context)
-        val editor: SharedPreferences.Editor=sharedPreferences.edit()
-        editor.putBoolean("otherFragment",true)
-        editor.apply()
-        super.onStart()
-    }
-
-    override fun onDestroy() {
-        viewModel.unregisterListener()
-        super.onDestroy()
-    }
-
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when (requestCode) {
@@ -134,8 +114,8 @@ class AdicionarTesteFragment : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode==IMAGE_CAPTURE_CODE){
-            if(resultCode== Activity.RESULT_OK){
+        if(requestCode == IMAGE_CAPTURE_CODE){
+            if(resultCode == Activity.RESULT_OK){
                 getImage().setImageURI(image_uri)
             }
         }
@@ -147,11 +127,11 @@ class AdicionarTesteFragment : Fragment() {
 
     fun openCamera(){
         val values: ContentValues = ContentValues()
-        values.put(MediaStore.Images.Media.TITLE,"New Picture")
-        values.put(MediaStore.Images.Media.DESCRIPTION,"From Camera")
-        image_uri=requireActivity().contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,values)
+        values.put(MediaStore.Images.Media.TITLE, "New Picture")
+        values.put(MediaStore.Images.Media.DESCRIPTION, "From Camera")
+        image_uri = requireActivity().contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
         val cameraIntent:Intent=Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT,image_uri)
+        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, image_uri)
         startActivityForResult(cameraIntent, IMAGE_CAPTURE_CODE)
     }
 }

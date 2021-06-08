@@ -59,7 +59,7 @@
     <string name="adicionar_teste_titulo">Register your test here</string>
     <string name="mensagem_erro_1">The entered result is not valid</string>
     <string name="mensagem_erro_2">You must enter the location where the test was performed</string>
-    <string name="selecionou">You have selected</string>
+    <string name="selecionou">You have selected\u0020</string>
     <string name="lista_crescente_msg">The list is now in ascending order</string>
     <string name="lista_decrescente_msg">The list is now in descending order</string>
     <string name="ordenar_lista">Sort List</string>

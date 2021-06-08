@@ -58,7 +58,7 @@
     <string name="adicionar_teste_titulo">Registe aqui o seu teste</string>
     <string name="mensagem_erro_1">O resultado intruduzido não é valido</string>
     <string name="mensagem_erro_2">Tem de introduzir o local onde foi feito o teste</string>
-    <string name="selecionou">Você selecionou</string>
+    <string name="selecionou">Você selecionou\u0020</string>
     <string name="lista_crescente_msg">A lista está agora em ordem crescente</string>
     <string name="lista_decrescente_msg">A lista está agora em ordem decrescente</string>
     <string name="ordenar_lista">Ordenar Lista</string>
