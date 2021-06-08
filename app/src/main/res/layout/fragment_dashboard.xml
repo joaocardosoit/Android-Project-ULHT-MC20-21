@@ -60,7 +60,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:textColor="@color/blue"
+                        android:textColor="@color/tool_principal"
                         android:text=""
                         android:textSize="40sp"/>
                     <TextView
@@ -68,7 +68,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/num_infetados"
                         android:layout_centerInParent="true"
-                        android:textColor="@color/blue"
+                        android:textColor="@color/tool_principal"
                         android:text="@string/num_infetados"
                         android:textAlignment="center"
                         />
@@ -96,13 +96,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:textColor="@color/blue"
+                        android:textColor="@color/tool_principal"
                         android:text=""
                         android:textSize="40sp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/blue"
+                        android:textColor="@color/tool_principal"
                         android:layout_centerInParent="true"
                         android:layout_below="@+id/num_internados"
                         android:text="@string/num_internados"
@@ -132,14 +132,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:textColor="@color/blue"
+                        android:textColor="@color/tool_principal"
                         android:text=""
                         android:textSize="40sp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:textColor="@color/blue"
+                        android:textColor="@color/tool_principal"
                         android:layout_below="@+id/num_internados_uci"
                         android:text="@string/num_internados_uci"
                         android:textAlignment="center"
@@ -168,14 +168,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:textColor="@color/blue"
+                        android:textColor="@color/tool_principal"
                         android:text=""
                         android:textSize="40sp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:textColor="@color/blue"
+                        android:textColor="@color/tool_principal"
                         android:layout_below="@+id/num_total_infetados"
                         android:text="@string/num_total_infetados"
                         android:textAlignment="center"
@@ -204,14 +204,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:textColor="@color/blue"
+                        android:textColor="@color/tool_principal"
                         android:text=""
                         android:textSize="40sp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:textColor="@color/blue"
+                        android:textColor="@color/tool_principal"
                         android:layout_below="@+id/num_total_mortes"
                         android:text="@string/num_total_mortes"
                         android:textAlignment="center"
@@ -240,14 +240,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:textColor="@color/blue"
+                        android:textColor="@color/tool_principal"
                         android:text=""
                         android:textSize="40sp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:textColor="@color/blue"
+                        android:textColor="@color/tool_principal"
                         android:layout_below="@+id/num_total_recuperados"
                         android:text="@string/num_total_recuperados"
                         android:textAlignment="center"

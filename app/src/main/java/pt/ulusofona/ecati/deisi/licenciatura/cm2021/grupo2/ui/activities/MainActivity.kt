@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.sensors.battery.Battery
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.utils.NavigationManager
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.OnBatteryCurrentListener
 import java.util.*
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     override fun onStart() {
         super.onStart()
         onClickFab()
+        Battery.registerListener(this)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -126,21 +128,23 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     }
 
     private fun popUpBattery(){
+        val sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this)
+        val editor: SharedPreferences.Editor=sharedPreferences.edit()
+        editor.putBoolean("popup", true)
+        editor.apply()
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
         val dialog: AlertDialog = builder.setTitle("Ver string correta")
                 .setMessage("Ver qual é a string certa")
                 .setPositiveButton(android.R.string.ok) { _, _ ->
-                    val sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this)
-                    val editor: SharedPreferences.Editor=sharedPreferences.edit()
                     editor.putBoolean("darkModeOn",true)
+                    editor.putBoolean("popup", false)
                     editor.apply()
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                 }
                 .setNegativeButton(android.R.string.cancel) { _, _ ->
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                    val sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this)
-                    val editor: SharedPreferences.Editor=sharedPreferences.edit()
                     editor.putBoolean("cancelDarkMode",true)
+                    editor.putBoolean("popup", false)
                     editor.apply()
                 }.create()
         dialog.show()

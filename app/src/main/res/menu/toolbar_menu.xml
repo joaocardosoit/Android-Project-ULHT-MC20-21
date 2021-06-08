@@ -5,6 +5,7 @@
         android:id="@+id/filtro"
         android:icon="@drawable/ic_baseline_filter_alt_24"
         android:title="@string/filtro"
+
         app:showAsAction="always"
         >
     </item>

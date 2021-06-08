@@ -38,7 +38,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="@string/nivel_de_risco"
-                            android:textColor="@color/blue"
+                            android:textColor="@color/tool_principal"
                             android:textSize="20sp"/>
 
                         <TextView
@@ -60,7 +60,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="@string/posicao_atual"
-                            android:textColor="@color/blue"
+                            android:textColor="@color/tool_principal"
                             android:textSize="20sp"
 
                             />
