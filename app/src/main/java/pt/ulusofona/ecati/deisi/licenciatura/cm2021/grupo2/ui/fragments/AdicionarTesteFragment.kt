@@ -22,6 +22,7 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.PermissionChecker
+import androidx.core.graphics.drawable.toDrawable
 import androidx.lifecycle.ViewModelProviders
 import butterknife.ButterKnife
 import kotlinx.android.synthetic.main.activity_main.*
@@ -91,8 +92,13 @@ class AdicionarTesteFragment : Fragment() {
                 Toast.makeText(context, getString(R.string.mensagem_erro_2), Toast.LENGTH_SHORT).show()
             } else {
                 val mes = date_register.month + 1
-                val teste = Teste(R.drawable.no_foto, date_register.dayOfMonth.toString() + "/" + mes.toString() + "/" + date_register.year.toString() , resultado.text.toString(), true,  local.text.toString())
-                viewModel.insert(teste)
+                if (image_add == null){
+                    val teste = Teste(R.drawable.no_foto, date_register.dayOfMonth.toString() + "/" + mes.toString() + "/" + date_register.year.toString() , resultado.text.toString(), true,  local.text.toString())
+                    viewModel.insert(teste)
+                } else {
+                    val teste = Teste(image_add.id, date_register.dayOfMonth.toString() + "/" + mes.toString() + "/" + date_register.year.toString() , resultado.text.toString(), true,  local.text.toString())
+                    viewModel.insert(teste)
+                }
                 activity?.toolbar_main?.title = getString(R.string.titulo)
                 activity?.toolbar_main?.navigationIcon = null
                 activity?.supportFragmentManager?.let { NavigationManager.goToListaFragment(it) }

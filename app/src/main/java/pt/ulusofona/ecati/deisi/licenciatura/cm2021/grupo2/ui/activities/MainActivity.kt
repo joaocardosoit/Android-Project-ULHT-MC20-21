@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar_main)
         bottomNavigationClick()
+        bottom_navigation.selectedItemId = R.id.ic_lista
+        NavigationManager.goToListaFragment(supportFragmentManager)
         val locale: Locale = resources.configuration.locale
         Locale.setDefault(locale)
         val sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this)
@@ -36,8 +38,6 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
     override fun onStart() {
         super.onStart()
-        bottom_navigation.selectedItemId = R.id.ic_lista
-        NavigationManager.goToListaFragment(supportFragmentManager)
         onClickFab()
     }
 
