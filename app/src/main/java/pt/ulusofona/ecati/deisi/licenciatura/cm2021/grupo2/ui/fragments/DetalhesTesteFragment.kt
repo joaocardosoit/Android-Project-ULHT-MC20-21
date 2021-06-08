@@ -1,6 +1,7 @@
 package pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.fragments
 
 import android.annotation.SuppressLint
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -44,7 +45,8 @@ class DetalhesTesteFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     private fun detalhesTeste(teste: Teste?){
         teste?.let {
-            image_descricao.setImageResource(teste.imagem!!)
+            val uri: Uri = Uri.parse(teste.imagem)
+            image_descricao.setImageURI(uri)
             texta_local_descricao.text = getString(R.string.teste_realizado_em) + teste.local
             texta_data_descricao.text = getString(R.string.teste_feito_a) + teste.data
             texta_resultado_descricao.text = getString(R.string.o_resultado_do_teste_foi) + teste.resultado

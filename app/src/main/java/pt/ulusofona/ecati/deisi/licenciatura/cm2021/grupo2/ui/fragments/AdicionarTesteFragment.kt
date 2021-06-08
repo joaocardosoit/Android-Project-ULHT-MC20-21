@@ -93,10 +93,10 @@ class AdicionarTesteFragment : Fragment() {
             } else {
                 val mes = date_register.month + 1
                 if (image_add == null){
-                    val teste = Teste(R.drawable.no_foto, date_register.dayOfMonth.toString() + "/" + mes.toString() + "/" + date_register.year.toString() , resultado.text.toString(), true,  local.text.toString())
+                    val teste = Teste(R.drawable.no_foto.toString(), date_register.dayOfMonth.toString() + "/" + mes.toString() + "/" + date_register.year.toString() , resultado.text.toString(), true,  local.text.toString())
                     viewModel.insert(teste)
                 } else {
-                    val teste = Teste(image_add.id, date_register.dayOfMonth.toString() + "/" + mes.toString() + "/" + date_register.year.toString() , resultado.text.toString(), true,  local.text.toString())
+                    val teste = Teste(image_uri.toString(), date_register.dayOfMonth.toString() + "/" + mes.toString() + "/" + date_register.year.toString() , resultado.text.toString(), true,  local.text.toString())
                     viewModel.insert(teste)
                 }
                 activity?.toolbar_main?.title = getString(R.string.titulo)

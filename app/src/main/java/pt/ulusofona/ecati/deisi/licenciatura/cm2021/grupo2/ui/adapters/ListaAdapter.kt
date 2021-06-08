@@ -2,6 +2,7 @@ package pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,9 +35,10 @@ class ListaAdapter(private val context: Context, private val layout: Int, privat
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ListaViewHolder, position: Int) {
         val item = items[position]
+        val uri: Uri = Uri.parse(item.imagem)
         holder.data.text = context.getString(R.string.data) + items[position].data
         holder.resultado.text = context.getString(R.string.resultado) + items[position].resultado
-        holder.imagem.setImageResource(item.imagem!!)
+        holder.imagem.setImageURI(uri)
         holder.onClickItem(item, listener)
     }
     override fun getItemCount(): Int = items.size
