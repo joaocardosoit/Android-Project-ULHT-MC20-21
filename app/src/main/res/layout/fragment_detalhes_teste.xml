@@ -25,7 +25,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:text="@string/teste_realizado_em"
-            android:textColor="@color/tool_principal"
+            android:textColor="@color/blue"
             android:textStyle="bold"
             android:textSize="20sp"/>
 
@@ -36,7 +36,7 @@
             android:layout_below="@+id/texta_local_descricao"
             android:layout_marginStart="20dp"
             android:text="@string/teste_feito_a"
-            android:textColor="@color/tool_principal"
+            android:textColor="@color/blue"
             android:textStyle="bold"
             android:textSize="20sp"/>
 
@@ -47,7 +47,7 @@
             android:layout_below="@+id/texta_data_descricao"
             android:layout_marginStart="20dp"
             android:text="@string/o_resultado_do_teste_foi"
-            android:textColor="@color/tool_principal"
+            android:textColor="@color/blue"
             android:textStyle="bold"
             android:textSize="20sp"/>
     </RelativeLayout>
