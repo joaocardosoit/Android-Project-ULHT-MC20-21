@@ -44,4 +44,5 @@
         <item name="android:textColorSecondary">@color/white</item>
         <item name="android:iconPreview">@color/white</item>
     </style>
-</resources>
+
+    </resources>

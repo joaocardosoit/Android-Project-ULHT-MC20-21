@@ -1,5 +1,6 @@
 package pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.fragments
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -30,6 +31,7 @@ class ListaFragment : Fragment(), OnClickItemListener, ListaTestesListener {
         return view
     }
 
+    @SuppressLint("ResourceAsColor")
     override fun onStart() {
         super.onStart()
         context?.let { viewModel.registerListener(this, it) }
@@ -61,6 +63,7 @@ class ListaFragment : Fragment(), OnClickItemListener, ListaTestesListener {
                     }
                     val dialogCreate = dialogBuilder.create()
                     dialogCreate.show()
+
                 }
             }
 

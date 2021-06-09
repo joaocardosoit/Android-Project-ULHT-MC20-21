@@ -133,15 +133,15 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         editor.putBoolean("popup", true)
         editor.apply()
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-        val dialog: AlertDialog = builder.setTitle("Ver string correta")
-                .setMessage("Ver qual é a string certa")
-                .setPositiveButton(android.R.string.ok) { _, _ ->
+        val dialog: AlertDialog = builder.setTitle(R.string.bateria)
+                .setMessage(R.string.darkmode)
+                .setPositiveButton(R.string.sim) { _, _ ->
                     editor.putBoolean("darkModeOn",true)
                     editor.putBoolean("popup", false)
                     editor.apply()
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                 }
-                .setNegativeButton(android.R.string.cancel) { _, _ ->
+                .setNegativeButton(R.string.nao) { _, _ ->
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                     editor.putBoolean("cancelDarkMode",true)
                     editor.putBoolean("popup", false)

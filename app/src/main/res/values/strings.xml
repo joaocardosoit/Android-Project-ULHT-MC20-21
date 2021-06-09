@@ -71,4 +71,8 @@
     <string name="casos_ativos">Casos Ativos:\u0020</string>
     <string name="mortos">Mortes:\u0020</string>
     <string name="pesquisa">Pesquisar</string>
+    <string name="bateria">A sua bateria é inferor a 20%</string>
+    <string name="darkmode">Deseja ativar o Dark Mode?</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
 </resources>

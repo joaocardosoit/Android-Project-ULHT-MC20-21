@@ -72,4 +72,8 @@
     <string name="casos_ativos">Active Cases:\u0020</string>
     <string name="mortos">Deaths:\u0020</string>
     <string name="pesquisa">Search</string>
+    <string name="bateria">Your battery is less than 20%</string>
+    <string name="darkmode">Do you want to activate Dark Mode?</string>
+    <string name="sim">Yes</string>
+    <string name="nao">No</string>
 </resources>
