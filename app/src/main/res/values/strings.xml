@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyCovid-19</string>
+    <string name="app_name">MyInfo-19</string>
     <string name="exemplo">Positivo</string>
     <string name="contactos">Contactos</string>
     <string name="estou_em_perigo">Estou em Perigo?</string>
@@ -54,7 +54,7 @@
     <string name="teste_feito_a">Teste feito a:\u0020</string>
     <string name="o_resultado_do_teste_foi">O resultado do teste foi:\u0020</string>
     <string name="detalhes_teste">Detalhes do Teste</string>
-    <string name="titulo">MyCovid-19</string>
+    <string name="titulo">MyInfo-19</string>
     <string name="adicionar_teste_titulo">Registe aqui o seu teste</string>
     <string name="mensagem_erro_1">O resultado intruduzido não é valido</string>
     <string name="mensagem_erro_2">Tem de introduzir o local onde foi feito o teste</string>

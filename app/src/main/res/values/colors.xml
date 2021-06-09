@@ -8,7 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#FF8C00</color>
-    <color name="tool_principal">	#1B1BFF</color>
+    <color name="tool_principal">#1B1BFF</color>
     <color name="second_blue">#2424FC</color>
     <color name="grey">#CCCCCC</color>
     <color name="green">#00CC00</color>
@@ -18,9 +18,4 @@
     <color name="icon">#FFFFFF</color>
     <color name="fundo_main_activity">#FFFFFF</color>
     <color name="blue">#1B1BFF</color>
-
-
-
-
-
 </resources>

@@ -1,17 +1,23 @@
 package pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.fragments
 
+import android.location.Address
+import android.location.Geocoder
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.gms.location.LocationResult
+import kotlinx.android.synthetic.main.fragment_estou_perigo.*
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.Concelhos
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.sensors.location.FusedLocation
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.ListaConcelhosListener
+import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.OnLocationChangedListener
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.viewmodels.ConcelhosViewModel
 
-class EstouPerigoFragment : Fragment(), ListaConcelhosListener {
+class EstouPerigoFragment : Fragment(), OnLocationChangedListener {
 
     lateinit var viewModel: ConcelhosViewModel
 
@@ -21,6 +27,21 @@ class EstouPerigoFragment : Fragment(), ListaConcelhosListener {
         return view
     }
 
-    override fun listaConcelhos(listaConcelhos: List<Concelhos>) {
+    override fun onStart() {
+        super.onStart()
+        FusedLocation.registerListener(this)
+    }
+
+    override fun onLocationChanged(locationResult: LocationResult, listaConcelhos: List<Concelhos>) {
+        val location = locationResult.lastLocation
+        val geocoder = Geocoder(context)
+        val listaResultados = geocoder.getFromLocation(location.latitude, location.longitude, 1)
+        val distritoAtual = listaResultados[0].adminArea
+        listaConcelhos.forEach {
+            if (it.distrito == distritoAtual){
+                text_risco.text = it.incidenciaRisco
+                text_posicao.text = it.distrito
+            }
+        }
     }
 }

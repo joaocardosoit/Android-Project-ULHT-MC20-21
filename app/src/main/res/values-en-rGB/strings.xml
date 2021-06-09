@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MyCovid-19</string>
+    <string name="app_name">MyInfo-19</string>
     <string name="exemplo">Positive</string>
     <string name="contacto_digital_3" translatable="false">gec@mne.pt</string>
     <string name="contacto_digital_2" translatable="false">atendimento@SNS24.gov.pt</string>
@@ -55,7 +55,7 @@
     <string name="teste_feito_a">Test done at:\u0020</string>
     <string name="o_resultado_do_teste_foi">The result was:\u0020</string>
     <string name="detalhes_teste">Test Details</string>
-    <string name="titulo">MyCovid-19</string>
+    <string name="titulo">MyInfo-19</string>
     <string name="adicionar_teste_titulo">Register your test here</string>
     <string name="mensagem_erro_1">The entered result is not valid</string>
     <string name="mensagem_erro_2">You must enter the location where the test was performed</string>

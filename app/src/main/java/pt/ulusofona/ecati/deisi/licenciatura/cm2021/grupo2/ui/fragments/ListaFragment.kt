@@ -2,6 +2,7 @@ package pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.fragments
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.res.Resources
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -63,7 +64,6 @@ class ListaFragment : Fragment(), OnClickItemListener, ListaTestesListener {
                     }
                     val dialogCreate = dialogBuilder.create()
                     dialogCreate.show()
-
                 }
             }
 
