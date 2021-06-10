@@ -21,4 +21,8 @@ class ConcelhosLogic(private val concelhosRepository: ConcelhosRepository) {
     fun searchByConcelho(context: Context, nomeConcelho: String){
         concelhosRepository.searchByConcelho(context, nomeConcelho)
     }
+
+    fun searchByDistrito(context: Context, nomeDistrito: String){
+        concelhosRepository.searchByConcelho(context, nomeDistrito)
+    }
 }

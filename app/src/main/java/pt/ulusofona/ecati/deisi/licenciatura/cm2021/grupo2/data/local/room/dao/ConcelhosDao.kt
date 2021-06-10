@@ -20,6 +20,9 @@ interface ConcelhosDao {
     @Query("SELECT * FROM concelhos WHERE concelho = :concelho")
     suspend fun searchByConcelho(concelho: String): List<Concelhos>
 
+    @Query("SELECT * FROM concelhos WHERE distrito = :distrito")
+    suspend fun searchByDistrito(distrito: String): List<Concelhos>
+
     @Delete
     suspend fun delete(concelhos: Concelhos)
 }

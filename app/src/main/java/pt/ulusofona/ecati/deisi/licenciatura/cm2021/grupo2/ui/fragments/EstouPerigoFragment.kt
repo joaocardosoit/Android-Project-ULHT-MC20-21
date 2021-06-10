@@ -32,16 +32,11 @@ class EstouPerigoFragment : Fragment(), OnLocationChangedListener {
         FusedLocation.registerListener(this)
     }
 
-    override fun onLocationChanged(locationResult: LocationResult, listaConcelhos: List<Concelhos>) {
+    override fun onLocationChanged(locationResult: LocationResult) {
         val location = locationResult.lastLocation
         val geocoder = Geocoder(context)
         val listaResultados = geocoder.getFromLocation(location.latitude, location.longitude, 1)
-        val distritoAtual = listaResultados[0].adminArea
-        listaConcelhos.forEach {
-            if (it.distrito == distritoAtual){
-                text_risco.text = it.incidenciaRisco
-                text_posicao.text = it.distrito
-            }
-        }
+        viewModel.searchByDistrito(context!!, listaResultados[0].adminArea)
+        text_posicao.text = listaResultados[0].adminArea
     }
 }

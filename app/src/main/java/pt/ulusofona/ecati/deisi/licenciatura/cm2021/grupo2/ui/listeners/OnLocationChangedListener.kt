@@ -5,5 +5,5 @@ import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.C
 
 interface OnLocationChangedListener {
 
-    fun onLocationChanged(locationResult: LocationResult, listaConcelhos: List<Concelhos>)
+    fun onLocationChanged(locationResult: LocationResult)
 }

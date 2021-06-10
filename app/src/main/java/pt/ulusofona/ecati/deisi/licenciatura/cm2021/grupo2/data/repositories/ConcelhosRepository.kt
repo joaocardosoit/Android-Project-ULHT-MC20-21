@@ -54,6 +54,12 @@ class ConcelhosRepository(private val local: ConcelhosDao, private val retrofit:
         }
     }
 
+    fun searchByDistrito(context: Context, nomeDistrito: String){
+        CoroutineScope(Dispatchers.Main).launch {
+            listener?.listaConcelhos(local.searchByConcelho(nomeDistrito))
+        }
+    }
+
     fun registerListener(listener: ListaConcelhosListener, context: Context){
         this.listener = listener
         getConcelhos(context)

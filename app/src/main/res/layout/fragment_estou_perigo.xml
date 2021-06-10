@@ -69,7 +69,6 @@
                             android:id="@+id/text_posicao"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/lisboa"
                             android:textColor="@color/red"
                             android:textSize="20sp" />
                     </LinearLayout>
