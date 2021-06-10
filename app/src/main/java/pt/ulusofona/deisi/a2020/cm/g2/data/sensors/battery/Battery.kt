@@ -1,6 +1,8 @@
 package pt.ulusofona.deisi.a2020.cm.g2.data.sensors.battery
 
 import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
 import android.content.SharedPreferences
 import android.os.BatteryManager
 import android.preference.PreferenceManager
@@ -23,7 +25,7 @@ class Battery private constructor(private val context: Context): Runnable {
             Companion.listener = listener
         }
 
-        fun notifyListener(current: Int) {
+        fun notifyListener(current: Float) {
             listener?.onCurrentChanged(current)
         }
 
@@ -42,9 +44,15 @@ class Battery private constructor(private val context: Context): Runnable {
         handler.postDelayed(this, Time_BETWEEN_UPDATES)
     }
 
-    private fun getBatteryCurrentNow(): Int {
-        val manager = context.getSystemService(Context.BATTERY_SERVICE) as BatteryManager
-        return manager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
+    private fun getBatteryCurrentNow(): Float {
+        val batteryStatus: Intent? = IntentFilter(Intent.ACTION_BATTERY_CHANGED).let { ifilter ->
+            context.registerReceiver(null, ifilter)
+        }
+        batteryStatus.let { intent ->
+            val level: Int = intent!!.getIntExtra(BatteryManager.EXTRA_LEVEL, -1)
+            val scale: Int = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1)
+            return level * 100 / scale.toFloat()
+        }
     }
 
     override fun run() {

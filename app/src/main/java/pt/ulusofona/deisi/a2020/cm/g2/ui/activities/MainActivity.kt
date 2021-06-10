@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         }
     }
 
-    fun notifyListener(current: Int){
+    fun notifyListener(current: Float){
         currentBattery?.onCurrentChanged(current)
     }
 
@@ -154,7 +154,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(ContextCompat.getColor(this,R.color.black))
     }
 
-    override fun onCurrentChanged(current: Int) {
+    override fun onCurrentChanged(current: Float) {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
         editor.putBoolean("darkModeOn", true)
