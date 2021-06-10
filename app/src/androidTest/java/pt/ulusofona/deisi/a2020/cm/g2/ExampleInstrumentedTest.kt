@@ -1,4 +1,4 @@
-package pt.ulusofona.deisi.a2020.cm.g2.grupo2
+package pt.ulusofona.deisi.a2020.cm.g2
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
