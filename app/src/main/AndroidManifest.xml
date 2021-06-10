@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2">
+    package="pt.ulusofona.deisi.a2020.cm.g2.grupo2">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -11,14 +11,14 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-feature android:name="android.hardware.camera2" android:required="true"/>
     <application
-        android:name="pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.utils.Application"
+        android:name="pt.ulusofona.deisi.a2020.cm.g2.ui.utils.Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Projeto">
-        <activity android:name="pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.activities.MainActivity">
+        <activity android:name="pt.ulusofona.deisi.a2020.cm.g2.ui.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

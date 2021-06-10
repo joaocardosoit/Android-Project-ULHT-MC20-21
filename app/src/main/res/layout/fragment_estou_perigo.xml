@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.fragments.EstouPerigoFragment">
+    tools:context="pt.ulusofona.deisi.a2020.cm.g2.ui.fragments.EstouPerigoFragment">
 
     <ScrollView
         android:layout_width="match_parent"
