@@ -51,10 +51,8 @@ class Battery private constructor(private val context: Context): Runnable {
 
     override fun run() {
         val currentBattery = getBatteryCurrentNow()
-        Log.d("Estou aqui", "" + currentBattery)
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
-        //if (sharedPreferences.getBoolean("locked", true)) {
             if (currentBattery <= 20) {
                 if (!sharedPreferences.getBoolean("darkModeOn", true) && sharedPreferences.getBoolean("popup", true)) {
                     notifyListener(currentBattery)
@@ -69,16 +67,6 @@ class Battery private constructor(private val context: Context): Runnable {
                 editor.putBoolean("battery", false)
                 editor.apply()
             }
-
-        /*} else if (sharedPreferences.getBoolean("darkMode", true)) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            editor.putBoolean("darkModeOn", false)
-            editor.putBoolean("darkMode", false)
-            editor.putBoolean("battery", false)
-            editor.putBoolean("popup", true)
-            editor.apply()
-        }*/
-
         handler.postDelayed(this, Time_BETWEEN_UPDATES)
 
     }

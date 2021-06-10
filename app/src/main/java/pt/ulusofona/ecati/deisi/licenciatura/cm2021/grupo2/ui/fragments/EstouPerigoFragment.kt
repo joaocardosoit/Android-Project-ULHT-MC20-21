@@ -11,15 +11,14 @@ import androidx.lifecycle.ViewModelProviders
 import com.google.android.gms.location.LocationResult
 import kotlinx.android.synthetic.main.fragment_estou_perigo.*
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.R
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.local.entities.Concelhos
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.data.sensors.location.FusedLocation
-import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.ListaConcelhosListener
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.listeners.OnLocationChangedListener
 import pt.ulusofona.ecati.deisi.licenciatura.cm2021.grupo2.ui.viewmodels.ConcelhosViewModel
 
 class EstouPerigoFragment : Fragment(), OnLocationChangedListener {
 
     lateinit var viewModel: ConcelhosViewModel
+    private var locationListener: OnLocationChangedListener? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_estou_perigo, container, false)
@@ -30,6 +29,14 @@ class EstouPerigoFragment : Fragment(), OnLocationChangedListener {
     override fun onStart() {
         super.onStart()
         FusedLocation.registerListener(this)
+    }
+
+    fun registerListener(listener: OnLocationChangedListener){
+        this.locationListener = listener
+    }
+
+    fun notifyListener(currentLocation: LocationResult){
+        locationListener?.onLocationChanged(currentLocation)
     }
 
     override fun onLocationChanged(locationResult: LocationResult) {
