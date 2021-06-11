@@ -76,4 +76,5 @@
     <string name="darkmode">Do you want to activate Dark Mode?</string>
     <string name="sim">Yes</string>
     <string name="nao">No</string>
+    <string name="permissões">Permissions have been refused</string>
 </resources>

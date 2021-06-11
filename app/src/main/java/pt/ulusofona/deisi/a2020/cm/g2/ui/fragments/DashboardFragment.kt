@@ -35,12 +35,12 @@ class DashboardFragment : Fragment(), DadosCovidListener {
     }
 
     override fun dadosCovid(dadosCovid: DadosCovid?) {
-        num_infetados.text = dadosCovid?.confirmadosNovos.toString()
-        num_internados.text = dadosCovid?.internados.toString()
-        num_internados_uci.text = dadosCovid?.internadosUci.toString()
-        num_total_mortes.text = dadosCovid?.obitos.toString()
-        num_total_infetados.text = dadosCovid?.confirmados.toString()
-        num_total_recuperados.text = dadosCovid?.recuperados.toString()
+        num_infetados?.text = dadosCovid?.confirmadosNovos.toString()
+        num_internados?.text = dadosCovid?.internados.toString()
+        num_internados_uci?.text = dadosCovid?.internadosUci.toString()
+        num_total_mortes?.text = dadosCovid?.obitos.toString()
+        num_total_infetados?.text = dadosCovid?.confirmados.toString()
+        num_total_recuperados?.text = dadosCovid?.recuperados.toString()
     }
 
 }

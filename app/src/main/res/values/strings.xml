@@ -75,4 +75,5 @@
     <string name="darkmode">Deseja ativar o Dark Mode?</string>
     <string name="sim">Sim</string>
     <string name="nao">Não</string>
+    <string name="permissões">As permissões foram recusadas</string>
 </resources>
