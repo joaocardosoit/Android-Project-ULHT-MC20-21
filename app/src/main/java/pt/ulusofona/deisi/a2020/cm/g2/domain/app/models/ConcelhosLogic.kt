@@ -23,6 +23,6 @@ class ConcelhosLogic(private val concelhosRepository: ConcelhosRepository) {
     }
 
     fun searchByDistrito(context: Context, nomeDistrito: String){
-        concelhosRepository.searchByConcelho(context, nomeDistrito)
+        concelhosRepository.searchByDistrito(context, nomeDistrito)
     }
 }

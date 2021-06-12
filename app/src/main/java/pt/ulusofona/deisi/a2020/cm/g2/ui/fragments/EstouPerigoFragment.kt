@@ -16,8 +16,10 @@ import androidx.lifecycle.ViewModelProviders
 import com.google.android.gms.location.LocationResult
 import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.fragment_estou_perigo.*
+import pt.ulusofona.deisi.a2020.cm.g2.data.local.entities.Concelhos
 import pt.ulusofona.deisi.a2020.cm.g2.grupo2.R
 import pt.ulusofona.deisi.a2020.cm.g2.data.sensors.location.FusedLocation
+import pt.ulusofona.deisi.a2020.cm.g2.ui.listeners.ListaConcelhosListener
 import pt.ulusofona.deisi.a2020.cm.g2.ui.listeners.OnLocationChangedListener
 import pt.ulusofona.deisi.a2020.cm.g2.ui.viewmodels.ConcelhosViewModel
 
@@ -50,5 +52,6 @@ class EstouPerigoFragment : PermissionedFragment(REQUEST_CODE), OnLocationChange
         val geocoder = Geocoder(context)
         val listaResultados = geocoder.getFromLocation(location.latitude, location.longitude, 1)
         text_posicao?.text = listaResultados[0].adminArea
+        viewModel.searchByDistrito(context!!, listaResultados[0].adminArea)
     }
 }

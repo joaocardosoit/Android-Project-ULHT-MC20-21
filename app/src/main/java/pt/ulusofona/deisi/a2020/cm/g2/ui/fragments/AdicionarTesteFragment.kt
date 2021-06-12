@@ -41,7 +41,6 @@ class AdicionarTesteFragment : Fragment() {
         return view
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.toolbar_main?.title = getString(R.string.adicionar_teste_titulo)

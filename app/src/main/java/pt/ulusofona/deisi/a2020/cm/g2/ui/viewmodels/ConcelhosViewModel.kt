@@ -32,6 +32,6 @@ class ConcelhosViewModel(application: Application): AndroidViewModel(application
     }
 
     fun searchByDistrito(context: Context, nomeDistrito: String){
-        concelhosLogic.searchByConcelho(context, nomeDistrito)
+        concelhosLogic.searchByDistrito(context, nomeDistrito)
     }
 }
