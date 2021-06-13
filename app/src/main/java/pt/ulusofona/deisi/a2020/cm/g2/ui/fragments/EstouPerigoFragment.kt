@@ -47,7 +47,7 @@ class EstouPerigoFragment : PermissionedFragment(REQUEST_CODE), OnLocationChange
         super.onRequestPermissions(activity?.baseContext!!, arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION))
         super.onStart()
         viewModel.registerListener(this, context!!)
-        sosCard.setCardBackgroundColor(Color.YELLOW)
+        sosCard.setCardBackgroundColor(Color.GRAY)
     }
 
     override fun onRequestPermissionsSuccess() {
@@ -69,16 +69,16 @@ class EstouPerigoFragment : PermissionedFragment(REQUEST_CODE), OnLocationChange
             for(c in listaDeConcelhos!!){
                 if (c.distrito.equals(lastDistrito.toUpperCase())){
                     if(c.incidenciaRisco.equals("Moderado") || c.incidenciaRisco.equals("Baixo a Moderado")){
-                        text_risco.text = getString(R.string.moderada)
+                        text_risco?.text = getString(R.string.moderada)
                         cardview?.setCardBackgroundColor(green)
                     } else if (c.incidenciaRisco.equals("Elevado")){
-                        text_risco.text = getString(R.string.elevada)
+                        text_risco?.text = getString(R.string.elevada)
                         cardview?.setCardBackgroundColor(yellow)
                     } else if (c.incidenciaRisco.equals("Muito Elevado")){
-                        text_risco.text = getString(R.string.muito_elevada)
+                        text_risco?.text = getString(R.string.muito_elevada)
                         cardview?.setCardBackgroundColor(orange)
                     } else if (c.incidenciaRisco.equals("Extremamente Elevado")){
-                        text_risco.text = getString(R.string.extremamente_elevada)
+                        text_risco?.text = getString(R.string.extremamente_elevada)
                         cardview?.setCardBackgroundColor(red)
                     }
                 }

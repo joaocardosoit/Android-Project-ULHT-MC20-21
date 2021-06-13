@@ -46,7 +46,6 @@
             android:layout_gravity="center|bottom"
             android:contentDescription="@string/estou_em_perigo"
             android:src="@drawable/ic_sos"
-            android:theme="@style/NavFABTheme"
-            android:backgroundTint="@color/red" />
+            android:theme="@style/NavFABTheme"/>
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 </RelativeLayout>

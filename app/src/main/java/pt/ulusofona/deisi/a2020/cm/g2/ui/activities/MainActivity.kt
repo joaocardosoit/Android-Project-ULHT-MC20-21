@@ -9,11 +9,13 @@ import android.location.Geocoder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProviders
 import com.google.android.gms.location.LocationResult
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -38,6 +40,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     val green = Color.rgb(28, 128, 28)
     val yellow = Color.rgb(170, 170, 2)
     val orange = Color.rgb(170, 93, 0)
+    lateinit var viewModel: ConcelhosViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +55,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         val editor: SharedPreferences.Editor=sharedPreferences.edit()
         editor.putBoolean("popup",true)
         editor.apply()
+        viewModel = ViewModelProviders.of(this).get(ConcelhosViewModel::class.java)
     }
 
     override fun onStart() {
@@ -59,6 +63,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         onClickFab()
         Battery.registerListener(this)
         FusedLocation.registerListener(this)
+        viewModel.registerListener(this, this)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -183,11 +188,12 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     override fun onLocationChanged(locationResult: LocationResult) {
         val location = locationResult.lastLocation
         val geocoder = Geocoder(this)
+        Log.i("OLAAA", "OLAAAAA")
         val listaResultados = geocoder.getFromLocation(location.latitude, location.longitude, 1)
         if (!listaResultados[0].adminArea.equals(lastDistrito) && listaDeConcelhos != null){
-            text_posicao?.text = listaResultados[0].adminArea
             lastDistrito = listaResultados[0].adminArea
             for(c in listaDeConcelhos!!){
+                Log.i("ALOOOOO", "ALOOOOOOO")
                 if (c.distrito.equals(lastDistrito.toUpperCase())){
                     if(c.incidenciaRisco.equals("Moderado") || c.incidenciaRisco.equals("Baixo a Moderado")){
                         ic_perigo_fab.setBackgroundTintList(ColorStateList.valueOf(green))
