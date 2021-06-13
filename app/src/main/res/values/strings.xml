@@ -76,4 +76,8 @@
     <string name="sim">Sim</string>
     <string name="nao">Não</string>
     <string name="permissões">As permissões foram recusadas</string>
+    <string name="moderada">Moderada</string>
+    <string name="elevada">Elevada</string>
+    <string name="muito_elevada">Muito Elevada</string>
+    <string name="extremamente_elevada">Extremamente Elevada</string>
 </resources>

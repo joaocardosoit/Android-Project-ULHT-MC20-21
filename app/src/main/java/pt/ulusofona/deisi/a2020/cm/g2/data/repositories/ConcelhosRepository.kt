@@ -60,7 +60,7 @@ class ConcelhosRepository(private val local: ConcelhosDao, private val retrofit:
         }
     }
 
-    fun registerListener(listener: ListaConcelhosListener, context: Context){
+    fun registerListener(listener: ListaConcelhosListener?, context: Context){
         this.listener = listener
         getConcelhos(context)
     }

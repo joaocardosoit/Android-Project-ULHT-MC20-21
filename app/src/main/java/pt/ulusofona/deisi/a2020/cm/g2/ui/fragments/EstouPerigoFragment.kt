@@ -32,8 +32,10 @@ class EstouPerigoFragment : PermissionedFragment(REQUEST_CODE), OnLocationChange
     lateinit var viewModel: ConcelhosViewModel
     var listaDeConcelhos : List <Concelhos>? = null
     var lastDistrito : String = ""
-
     val red = Color.rgb(143, 29, 29)
+    val green = Color.rgb(28, 128, 28)
+    val yellow = Color.rgb(170, 170, 2)
+    val orange = Color.rgb(170, 93, 0)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_estou_perigo, container, false)
@@ -45,7 +47,7 @@ class EstouPerigoFragment : PermissionedFragment(REQUEST_CODE), OnLocationChange
         super.onRequestPermissions(activity?.baseContext!!, arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION))
         super.onStart()
         viewModel.registerListener(this, context!!)
-        sosCard.setCardBackgroundColor(Color.GRAY)
+        sosCard.setCardBackgroundColor(Color.YELLOW)
     }
 
     override fun onRequestPermissionsSuccess() {
@@ -60,17 +62,25 @@ class EstouPerigoFragment : PermissionedFragment(REQUEST_CODE), OnLocationChange
         val location = locationResult.lastLocation
         val geocoder = Geocoder(context)
         val listaResultados = geocoder.getFromLocation(location.latitude, location.longitude, 1)
-
-        //viewModel.searchByDistrito(context!!, listaResultados[0].adminArea)
+        val cardview : CardView? = sosCard
         if (!listaResultados[0].adminArea.equals(lastDistrito) && listaDeConcelhos != null){
             text_posicao?.text = listaResultados[0].adminArea
             lastDistrito = listaResultados[0].adminArea
             for(c in listaDeConcelhos!!){
-                Log.e(c.concelho, c.distrito)
                 if (c.distrito.equals(lastDistrito.toUpperCase())){
-                    text_risco.text = c.incidenciaRisco
-                    var cardview : CardView = sosCard
-                    cardview.setCardBackgroundColor(red)
+                    if(c.incidenciaRisco.equals("Moderado") || c.incidenciaRisco.equals("Baixo a Moderado")){
+                        text_risco.text = getString(R.string.moderada)
+                        cardview?.setCardBackgroundColor(green)
+                    } else if (c.incidenciaRisco.equals("Elevado")){
+                        text_risco.text = getString(R.string.elevada)
+                        cardview?.setCardBackgroundColor(yellow)
+                    } else if (c.incidenciaRisco.equals("Muito Elevado")){
+                        text_risco.text = getString(R.string.muito_elevada)
+                        cardview?.setCardBackgroundColor(orange)
+                    } else if (c.incidenciaRisco.equals("Extremamente Elevado")){
+                        text_risco.text = getString(R.string.extremamente_elevada)
+                        cardview?.setCardBackgroundColor(red)
+                    }
                 }
             }
         }
@@ -79,6 +89,4 @@ class EstouPerigoFragment : PermissionedFragment(REQUEST_CODE), OnLocationChange
     override fun listaConcelhos(listaConcelhos: List<Concelhos>) {
         listaDeConcelhos = listaConcelhos
     }
-
-
 }

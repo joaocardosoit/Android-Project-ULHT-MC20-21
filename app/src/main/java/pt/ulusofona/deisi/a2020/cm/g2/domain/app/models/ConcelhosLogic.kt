@@ -10,7 +10,7 @@ class ConcelhosLogic(private val concelhosRepository: ConcelhosRepository) {
         concelhosRepository.getConcelhos(context)
     }
 
-    fun registerListener(listener: ListaConcelhosListener, context: Context){
+    fun registerListener(listener: ListaConcelhosListener?, context: Context){
         concelhosRepository.registerListener(listener, context)
     }
 

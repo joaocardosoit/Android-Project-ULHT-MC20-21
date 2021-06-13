@@ -19,7 +19,7 @@ class ConcelhosViewModel(application: Application): AndroidViewModel(application
         concelhosLogic.getConcelhos(context)
     }
 
-    fun registerListener(listener: ListaConcelhosListener, context: Context){
+    fun registerListener(listener: ListaConcelhosListener?, context: Context){
         concelhosLogic.registerListener(listener, context)
     }
 

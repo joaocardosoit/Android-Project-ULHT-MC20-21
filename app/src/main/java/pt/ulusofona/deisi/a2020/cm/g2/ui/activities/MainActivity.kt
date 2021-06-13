@@ -3,24 +3,41 @@ package pt.ulusofona.deisi.a2020.cm.g2.ui.activities
 
 import android.app.AlertDialog
 import android.content.SharedPreferences
+import android.content.res.ColorStateList
+import android.graphics.Color
+import android.location.Geocoder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import com.google.android.gms.location.LocationResult
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_estou_perigo.*
+import pt.ulusofona.deisi.a2020.cm.g2.data.local.entities.Concelhos
 import pt.ulusofona.deisi.a2020.cm.g2.grupo2.R
 import pt.ulusofona.deisi.a2020.cm.g2.data.sensors.battery.Battery
+import pt.ulusofona.deisi.a2020.cm.g2.data.sensors.location.FusedLocation
+import pt.ulusofona.deisi.a2020.cm.g2.ui.listeners.ListaConcelhosListener
 import pt.ulusofona.deisi.a2020.cm.g2.ui.utils.NavigationManager
 import pt.ulusofona.deisi.a2020.cm.g2.ui.listeners.OnBatteryCurrentListener
+import pt.ulusofona.deisi.a2020.cm.g2.ui.listeners.OnLocationChangedListener
+import pt.ulusofona.deisi.a2020.cm.g2.ui.viewmodels.ConcelhosViewModel
 import java.util.*
 
-class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener, OnBatteryCurrentListener {
+class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener, OnBatteryCurrentListener, OnLocationChangedListener, ListaConcelhosListener {
 
     private var currentBattery: OnBatteryCurrentListener? = null
+    var listaDeConcelhos : List <Concelhos>? = null
+    var lastDistrito : String = ""
+    val red = Color.rgb(143, 29, 29)
+    val green = Color.rgb(28, 128, 28)
+    val yellow = Color.rgb(170, 170, 2)
+    val orange = Color.rgb(170, 93, 0)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +58,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         super.onStart()
         onClickFab()
         Battery.registerListener(this)
+        FusedLocation.registerListener(this)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -160,6 +178,33 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         editor.putBoolean("darkModeOn", true)
         editor.apply()
         popUpBattery()
+    }
+
+    override fun onLocationChanged(locationResult: LocationResult) {
+        val location = locationResult.lastLocation
+        val geocoder = Geocoder(this)
+        val listaResultados = geocoder.getFromLocation(location.latitude, location.longitude, 1)
+        if (!listaResultados[0].adminArea.equals(lastDistrito) && listaDeConcelhos != null){
+            text_posicao?.text = listaResultados[0].adminArea
+            lastDistrito = listaResultados[0].adminArea
+            for(c in listaDeConcelhos!!){
+                if (c.distrito.equals(lastDistrito.toUpperCase())){
+                    if(c.incidenciaRisco.equals("Moderado") || c.incidenciaRisco.equals("Baixo a Moderado")){
+                        ic_perigo_fab.setBackgroundTintList(ColorStateList.valueOf(green))
+                    } else if (c.incidenciaRisco.equals("Elevado")){
+                        ic_perigo_fab.setBackgroundTintList(ColorStateList.valueOf(yellow))
+                    } else if (c.incidenciaRisco.equals("Muito Elevado")){
+                        ic_perigo_fab.setBackgroundTintList(ColorStateList.valueOf(orange))
+                    } else if (c.incidenciaRisco.equals("Extremamente Elevado")){
+                        ic_perigo_fab.setBackgroundTintList(ColorStateList.valueOf(red))
+                    }
+                }
+            }
+        }
+    }
+
+    override fun listaConcelhos(listaConcelhos: List<Concelhos>) {
+        listaDeConcelhos = listaConcelhos
     }
 
 }
