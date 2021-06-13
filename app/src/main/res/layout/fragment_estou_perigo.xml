@@ -16,11 +16,11 @@
             android:padding="16dp">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/sosCard"
                 android:layout_width="999dp"
                 android:layout_height="150dp"
                 android:layout_columnWeight="1"
                 android:layout_row="1"
-                android:backgroundTint="@color/orange"
                 android:layout_margin="12dp"
                 app:cardElevation="6dp"
                 app:cardCornerRadius="12dp">
@@ -45,6 +45,7 @@
                             android:id="@+id/text_risco"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:text="@string/alto"
                             android:textColor="@color/red"
                             android:textSize="20sp" />
                     </LinearLayout>
