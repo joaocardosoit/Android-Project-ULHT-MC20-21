@@ -145,7 +145,7 @@
                 android:layout_height="match_parent"
                 android:layout_below="@id/vermelho"
                 android:textColor="@color/blue"
-                android:text="@string/mantanha_se_em_seguran_a"
+                android:text="@string/mantenha_se_em_seguran_a"
                 android:textAlignment="center"
                 android:textSize="25sp"
                 android:layout_marginTop="20dp"
