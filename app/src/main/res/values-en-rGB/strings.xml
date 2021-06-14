@@ -86,6 +86,6 @@
     <string name="amarelo_risco_elevado">Yellow - High Risk</string>
     <string name="laranja_risco_muito_elevado">Orange - Very High Risk</string>
     <string name="vermelho_risco_extremamente_elevado">Red - Extremely High Risk</string>
-    <string name="mantanha_se_em_seguran_a">Stay safe!</string>
+    <string name="mantenha_se_em_seguran_a">Stay safe!</string>
     <string name="estou_em_perigo_titulo">Am I in danger?</string>
 </resources>

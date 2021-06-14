@@ -85,6 +85,6 @@
     <string name="amarelo_risco_elevado">Amarelo - Risco Elevado</string>
     <string name="laranja_risco_muito_elevado">Laranja - Risco Muito Elevado</string>
     <string name="vermelho_risco_extremamente_elevado">Vermelho - Risco Extremamente Elevado</string>
-    <string name="mantanha_se_em_seguran_a">Mantanha-se em Segurança!</string>
+    <string name="mantenha_se_em_seguran_a">Mantenha-se em Segurança!</string>
     <string name="estou_em_perigo_titulo">Estou em perigo?</string>
 </resources>
