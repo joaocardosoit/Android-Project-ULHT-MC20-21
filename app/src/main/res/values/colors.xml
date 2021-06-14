@@ -11,11 +11,12 @@
     <color name="tool_principal">#1B1BFF</color>
     <color name="second_blue">#2424FC</color>
     <color name="grey">#CCCCCC</color>
-    <color name="green">#00CC00</color>
+    <color name="green">#1C801C</color>
     <color name="soft_grey">#DCDCDC</color>
-    <color name="red">#FF0000</color>
-    <color name="yellow">#FFFF00</color>
+    <color name="red">#8F1D1D</color>
+    <color name="yellow">#AAAA02</color>
     <color name="icon">#FFFFFF</color>
     <color name="fundo_main_activity">#FFFFFF</color>
     <color name="blue">#1B1BFF</color>
+    <color name="laranja_escuro">#AA5D00</color>
 </resources>
